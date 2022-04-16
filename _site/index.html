@@ -6,8 +6,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Michelle Blog</title>
-        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/> 
-        <link rel="stylesheet" type="text/css" href="/_inlcudes/scss/style.css" />
+        
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="/styles/style.css" />
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
 
@@ -32,8 +33,6 @@
 
     <div class="content">
         <h2>List of posts</h2>
-        <p>this is a page!</p>
-
     </div>
 
     <ul>
@@ -51,16 +50,17 @@
   all: [
     {
       template: [Template],
-      inputPath: &#39;./blog/truchet-tiles.md&#39;,
+      inputPath: &#39;./src/blog/truchet-tiles.md&#39;,
       fileSlug: &#39;truchet-tiles&#39;,
       filePathStem: &#39;/blog/truchet-tiles&#39;,
       data: [Object],
       date: 2021-09-19T00:00:00.000Z,
       outputPath: &#39;_site/blog/truchet-tiles/index.html&#39;,
       url: &#39;/blog/truchet-tiles/&#39;,
+      checkTemplateContent: true,
       templateContent: [Getter/Setter],
       _templateContent: `&lt;p&gt;I recently learned about &lt;a href=&quot;https://en.wikipedia.org/wiki/Truchet_tiles&quot;&gt;truchet tiles&lt;/a&gt; and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn&#39;t create the most elegant results. I wanted to create symmetry out of the randomness in some way.&lt;/p&gt;\n` +
-        `&lt;p&gt;After playing awhile with  I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
+        `&lt;p&gt;After playing awhile with I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
         &#39;&lt;h2&gt;The process:&lt;/h2&gt;\n&#39; +
         &#39;&lt;p&gt;Build an image of a large tile, made up of &lt;code&gt;n&lt;/code&gt; rows of &lt;code&gt;n&lt;/code&gt; smaller tiles. So if &lt;code&gt;n = 3&lt;/code&gt;, you have a large square tile made up of 9 smaller tiles.&lt;/p&gt;\n&#39; +
         &#39;&lt;p&gt;Then, print your large tile in 2 rows of 2...applying transformations to create symmetry.&lt;/p&gt;\n&#39; +
@@ -92,25 +92,39 @@
     },
     {
       template: [Template],
-      inputPath: &#39;./index.md&#39;,
+      inputPath: &#39;./src/index.njk&#39;,
       fileSlug: &#39;&#39;,
       filePathStem: &#39;/index&#39;,
       data: [Object],
-      date: 2021-09-19T15:27:23.797Z,
+      date: 2021-09-19T15:27:49.855Z,
       outputPath: &#39;_site/index.html&#39;,
       url: &#39;/&#39;,
-      templateContent: [Getter/Setter],
-      _templateContent: &#39;&lt;p&gt;this is a page!&lt;/p&gt;\n&#39;
+      checkTemplateContent: true,
+      templateContent: [Getter/Setter]
     },
     {
       template: [Template],
-      inputPath: &#39;./blog/shaping-functions.md&#39;,
+      inputPath: &#39;./src/styles/_normalize.scss&#39;,
+      fileSlug: &#39;_normalize&#39;,
+      filePathStem: &#39;/styles/_normalize&#39;,
+      data: [Object],
+      date: 2021-10-01T00:08:49.109Z,
+      outputPath: &#39;_site/styles/_normalize.css&#39;,
+      url: &#39;/styles/_normalize.css&#39;,
+      checkTemplateContent: false,
+      templateContent: [Getter/Setter],
+      _templateContent: undefined
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./src/blog/shaping-functions.md&#39;,
       fileSlug: &#39;shaping-functions&#39;,
       filePathStem: &#39;/blog/shaping-functions&#39;,
       data: [Object],
       date: 2021-10-24T00:00:00.000Z,
       outputPath: &#39;_site/blog/shaping-functions/index.html&#39;,
       url: &#39;/blog/shaping-functions/&#39;,
+      checkTemplateContent: true,
       templateContent: [Getter/Setter],
       _templateContent: `&lt;p&gt;I still haven&#39;t really figured out the mystery that is shaders, but this weekend I watched a &lt;a href=&quot;https://www.twitch.tv/videos/1184743691&quot;&gt;twitch stream&lt;/a&gt; from &lt;a href=&quot;https://www.curiouslyminded.xyz/&quot;&gt;curiouslyminded&lt;/a&gt; exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.&lt;/p&gt;\n` +
         `&lt;p&gt;So, the &lt;a href=&quot;https://thebookofshaders.com/05/&quot;&gt;shaping function&lt;/a&gt; chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a &#39;toolbox&#39; of functions for various projects. This table of equations shows a bunch of ways to manipulate values between 0 and 1:&lt;/p&gt;\n` +
@@ -121,27 +135,258 @@
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;ifdef&lt;/span&gt; &lt;span class=&quot;token expression&quot;&gt;GL_ES&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;precision&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mediump&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;uniform&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; st &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gl_FragCoord&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    gl_FragColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
         &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
         &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
-        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vTexCoord = aTexCoord;&lt;br&gt;    vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;    positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;    gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;    st -= vec2(1.0, 1.0);&lt;br&gt;    float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;    vec3 color = vec3(step(c, st.y));&lt;br&gt;    gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vTexCoord = aTexCoord;&lt;br&gt;vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;st -= vec2(1.0, 1.0);&lt;br&gt;float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;vec3 color = vec3(step(c, st.y));&lt;br&gt;gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
         &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the&quot;... 22041 more characters
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more anot&quot;... 21972 more characters
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./src/styles/style.scss&#39;,
+      fileSlug: &#39;style&#39;,
+      filePathStem: &#39;/styles/style&#39;,
+      data: [Object],
+      date: 2021-10-30T21:04:38.878Z,
+      outputPath: &#39;_site/styles/style.css&#39;,
+      url: &#39;/styles/style.css&#39;,
+      checkTemplateContent: true,
+      templateContent: [Getter/Setter],
+      _templateContent: &#39;html {\n&#39; +
+        &#39;  font-size: 16px;\n&#39; +
+        &#39;  line-height: 1.6;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;body {\n&#39; +
+        &#39;  font-family: &quot;Exo&quot;;\n&#39; +
+        &#39;  font-weight: 300;\n&#39; +
+        &#39;  color: #020402;\n&#39; +
+        &#39;  padding: 20px;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  box-sizing: border-box;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;body *, body:before, body:after {\n&#39; +
+        &#39;  box-sizing: inherit;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;h1 {\n&#39; +
+        &#39;  font-size: 3rem;\n&#39; +
+        &#39;  font-weight: 700;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;h2 {\n&#39; +
+        &#39;  font-size: 2.2rem;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;h1,\n&#39; +
+        &#39;h2,\n&#39; +
+        &#39;h3,\n&#39; +
+        &#39;h4,\n&#39; +
+        &#39;h5 {\n&#39; +
+        &#39;  margin-bottom: 1rem;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;a {\n&#39; +
+        &#39;  color: #227c9d;\n&#39; +
+        &#39;  text-decoration: none;\n&#39; +
+        &#39;  position: relative;\n&#39; +
+        &#39;  transition: 200ms linear;\n&#39; +
+        &#39;  --h: 2px;\n&#39; +
+        &#39;  background: linear-gradient(0deg, #fb8b24 0, #fb8b24 100%);\n&#39; +
+        &#39;  background-size: 100% 2px;\n&#39; +
+        &#39;  background-repeat: no-repeat;\n&#39; +
+        &#39;  background-position: bottom;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;a:hover, a:focus {\n&#39; +
+        &#39;  background-size: 100% 4px;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;a img {\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;nav {\n&#39; +
+        &#39;  display: flex;\n&#39; +
+        &#39;  font-size: 1.7rem;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;nav a {\n&#39; +
+        &#39;  margin: 0 2rem;\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;  position: relative;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;nav a:first-child {\n&#39; +
+        &#39;  margin-left: 0;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;nav a:first-child:after {\n&#39; +
+        &#39;  content: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;.content.post {\n&#39; +
+        &#39;  max-width: 680px;\n&#39; +
+        &#39;  margin: 1rem;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@media (min-width: 1280px) {\n&#39; +
+        &#39;  .content.post {\n&#39; +
+        &#39;    max-width: 720px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.content.post pre[class*=language-] {\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  padding: 1rem 10px;\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.content.post pre[class*=language-] code {\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.content.post p img {\n&#39; +
+        &#39;  max-width: 90%;\n&#39; +
+        &#39;  height: auto;\n&#39; +
+        &#39;  margin: 0 auto;\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;img {\n&#39; +
+        &#39;  max-width: 90%;\n&#39; +
+        &#39;  height: auto;\n&#39; +
+        &#39;  margin: 0 auto;\n&#39; +
+        &#39;  display: inline-block;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;.post pre,\n&#39; +
+        &#39;.post pre[class*=language-],\n&#39; +
+        &#39;.post code,\n&#39; +
+        &#39;.post code[class*=language-] {\n&#39; +
+        &#39;  font-size: 0.9rem;\n&#39; +
+        &#39;  line-height: 1.4;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;code {\n&#39; +
+        &#39;  background-color: #efdfef;\n&#39; +
+        &#39;  font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;\n&#39; +
+        &#39;  padding-left: 3px;\n&#39; +
+        &#39;  padding-right: 3px;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;.code-imgs-columns .column {\n&#39; +
+        &#39;  position: relative;\n&#39; +
+        &#39;  max-width: 300px;\n&#39; +
+        &#39;  margin: 0 auto 20px;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-imgs-columns .column pre[class*=language-] {\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  padding: 12px 10px 16px 8px;\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-imgs-columns .column pre[class*=language-] code {\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-imgs-columns .column img {\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@media (min-width: 990px) {\n&#39; +
+        &#39;  .code-imgs-columns {\n&#39; +
+        &#39;    display: flex;\n&#39; +
+        &#39;    justify-content: space-between;\n&#39; +
+        &#39;    margin-right: -200px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;  .code-imgs-columns .column {\n&#39; +
+        &#39;    flex: 0 0 32%;\n&#39; +
+        &#39;    max-width: 32%;\n&#39; +
+        &#39;    margin: 0;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@media (min-width: 1280px) {\n&#39; +
+        &#39;  .code-imgs-columns {\n&#39; +
+        &#39;    margin-right: -250px;\n&#39; +
+        &#39;    justify-content: flex-start;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;  .code-imgs-columns .column {\n&#39; +
+        &#39;    flex: 0 0 250px;\n&#39; +
+        &#39;    max-width: 250px;\n&#39; +
+        &#39;    margin-right: 20px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;.code-img {\n&#39; +
+        &#39;  position: relative;\n&#39; +
+        &#39;  background: #f5f2f0;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-img img {\n&#39; +
+        &#39;  max-width: 300px;\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;  margin-top: 5px;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-img pre[class*=language-] {\n&#39; +
+        &#39;  border-bottom: 1px solid gray;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  padding: 1rem 10px;\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-img pre[class*=language-] code {\n&#39; +
+        &#39;  font-size: 0.8rem;\n&#39; +
+        &#39;  width: 100%;\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@media (min-width: 990px) {\n&#39; +
+        &#39;  .code-img {\n&#39; +
+        &#39;    display: flex;\n&#39; +
+        &#39;    margin-right: -200px;\n&#39; +
+        &#39;    margin-bottom: 30px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;  .code-img pre[class*=language-] {\n&#39; +
+        &#39;    border-bottom: none;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;  .code-img img {\n&#39; +
+        &#39;    flex: 0 0 250px;\n&#39; +
+        &#39;    max-width: 250px;\n&#39; +
+        &#39;    align-self: flex-start;\n&#39; +
+        &#39;    position: sticky;\n&#39; +
+        &#39;    top: 0;\n&#39; +
+        &#39;    margin: 0;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@media (min-width: 1280px) {\n&#39; +
+        &#39;  .code-img {\n&#39; +
+        &#39;    margin-right: -250px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;  .code-img img {\n&#39; +
+        &#39;    flex: 0 0 250px;\n&#39; +
+        &#39;    max-width: 250px;\n&#39; +
+        &#39;  }\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.code-img pre[class*=language-] {\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  flex-grow: 1;\n&#39; +
+        &#39;}&#39;
     }
   ],
   post: [
     {
       template: [Template],
-      inputPath: &#39;./blog/truchet-tiles.md&#39;,
+      inputPath: &#39;./src/blog/truchet-tiles.md&#39;,
       fileSlug: &#39;truchet-tiles&#39;,
       filePathStem: &#39;/blog/truchet-tiles&#39;,
       data: [Object],
       date: 2021-09-19T00:00:00.000Z,
       outputPath: &#39;_site/blog/truchet-tiles/index.html&#39;,
       url: &#39;/blog/truchet-tiles/&#39;,
+      checkTemplateContent: true,
       templateContent: [Getter/Setter],
       _templateContent: `&lt;p&gt;I recently learned about &lt;a href=&quot;https://en.wikipedia.org/wiki/Truchet_tiles&quot;&gt;truchet tiles&lt;/a&gt; and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn&#39;t create the most elegant results. I wanted to create symmetry out of the randomness in some way.&lt;/p&gt;\n` +
-        `&lt;p&gt;After playing awhile with  I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
+        `&lt;p&gt;After playing awhile with I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
         &#39;&lt;h2&gt;The process:&lt;/h2&gt;\n&#39; +
         &#39;&lt;p&gt;Build an image of a large tile, made up of &lt;code&gt;n&lt;/code&gt; rows of &lt;code&gt;n&lt;/code&gt; smaller tiles. So if &lt;code&gt;n = 3&lt;/code&gt;, you have a large square tile made up of 9 smaller tiles.&lt;/p&gt;\n&#39; +
         &#39;&lt;p&gt;Then, print your large tile in 2 rows of 2...applying transformations to create symmetry.&lt;/p&gt;\n&#39; +
@@ -173,13 +418,14 @@
     },
     {
       template: [Template],
-      inputPath: &#39;./blog/shaping-functions.md&#39;,
+      inputPath: &#39;./src/blog/shaping-functions.md&#39;,
       fileSlug: &#39;shaping-functions&#39;,
       filePathStem: &#39;/blog/shaping-functions&#39;,
       data: [Object],
       date: 2021-10-24T00:00:00.000Z,
       outputPath: &#39;_site/blog/shaping-functions/index.html&#39;,
       url: &#39;/blog/shaping-functions/&#39;,
+      checkTemplateContent: true,
       templateContent: [Getter/Setter],
       _templateContent: `&lt;p&gt;I still haven&#39;t really figured out the mystery that is shaders, but this weekend I watched a &lt;a href=&quot;https://www.twitch.tv/videos/1184743691&quot;&gt;twitch stream&lt;/a&gt; from &lt;a href=&quot;https://www.curiouslyminded.xyz/&quot;&gt;curiouslyminded&lt;/a&gt; exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.&lt;/p&gt;\n` +
         `&lt;p&gt;So, the &lt;a href=&quot;https://thebookofshaders.com/05/&quot;&gt;shaping function&lt;/a&gt; chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a &#39;toolbox&#39; of functions for various projects. This table of equations shows a bunch of ways to manipulate values between 0 and 1:&lt;/p&gt;\n` +
@@ -190,12 +436,12 @@
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;ifdef&lt;/span&gt; &lt;span class=&quot;token expression&quot;&gt;GL_ES&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;precision&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mediump&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;uniform&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; st &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gl_FragCoord&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    gl_FragColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
         &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
         &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
-        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vTexCoord = aTexCoord;&lt;br&gt;    vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;    positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;    gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;    st -= vec2(1.0, 1.0);&lt;br&gt;    float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;    vec3 color = vec3(step(c, st.y));&lt;br&gt;    gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vTexCoord = aTexCoord;&lt;br&gt;vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;st -= vec2(1.0, 1.0);&lt;br&gt;float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;vec3 color = vec3(step(c, st.y));&lt;br&gt;gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
         &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the&quot;... 22041 more characters
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more anot&quot;... 21972 more characters
     }
   ]
 }

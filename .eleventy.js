@@ -1,19 +1,26 @@
 const util = require('util')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const sass = require('sass')
+const del = require('del')
+const path = require('path')
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats('scss')
 	eleventyConfig.addExtension('scss', {
 		outputFileExtension: 'css',
-		compile: async function (inputContent) {
-			let result = sass.compileString(inputContent)
-			return result.css.toString('utf8')
+		compile(content, inputPath) {
+			let parsed = path.parse(inputPath)
+			if (parsed.name.startsWith('_')) return
+
+			let result = sass.compile(inputPath)
+			return (data) => {
+				return result.css
+			}
 		},
 	})
 
-	eleventyConfig.addPassthroughCopy('public')
-	eleventyConfig.addPassthroughCopy('css')
+	eleventyConfig.addPassthroughCopy('src/images')
+	// eleventyConfig.addPassthroughCopy('css')
 
 	eleventyConfig.addPlugin(syntaxHighlight)
 
@@ -27,4 +34,12 @@ module.exports = function (eleventyConfig) {
 	let markdownLib = markdownIt(options).use(markdownItClassy)
 
 	eleventyConfig.setLibrary('md', markdownLib)
+
+	return {
+		dir: {
+			input: 'src',
+			output: '_site',
+			layouts: 'layouts',
+		},
+	}
 }
