@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Michelle Blog</title>
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/> 
+        <link rel="stylesheet" type="text/css" href="{{ '/_inlcudes/scss/style.css' | url }}" />
+        {# <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" /> #}
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+
+    </head>
+
+    <body>
+    
+        <main id="main">
+        
+            {{ content | safe }}
+
+        </main>
+
+        <footer class="footer">
+        
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Michelle Blog</title>
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/> 
+        <link rel="stylesheet" type="text/css" href="/_inlcudes/scss/style.css" />
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+
+    </head>
+
+    <body>
+    
+        <main id="main">
+        
+            
+<div class="wrapper home">
+
+    <header class="header">
+        <h1>michelle enos</h1>
+    </header>
+
+    <nav class="nav">
+        <a href="/blog">blog</a>
+        <a href="#">generative art experiments</a>
+        <a href="#">another linko</a>
+    </nav>
+
+    <div class="content">
+        <h2>List of posts</h2>
+        <p>this is a page!</p>
+
+    </div>
+
+    <ul>
+        <li>
+            <a href="/blog/truchet-tiles/">Generative Art Experiments - Truchet Tiles</a>
+        </li>
+        <li>
+            <a href="/blog/shaping-functions/">shaders &amp; shapes</a>
+        </li>
+
+    </ul>
+
+    <pre>
+        {
+  all: [
+    {
+      template: [Template],
+      inputPath: &#39;./blog/truchet-tiles.md&#39;,
+      fileSlug: &#39;truchet-tiles&#39;,
+      filePathStem: &#39;/blog/truchet-tiles&#39;,
+      data: [Object],
+      date: 2021-09-19T00:00:00.000Z,
+      outputPath: &#39;_site/blog/truchet-tiles/index.html&#39;,
+      url: &#39;/blog/truchet-tiles/&#39;,
+      templateContent: [Getter/Setter],
+      _templateContent: `&lt;p&gt;I recently learned about &lt;a href=&quot;https://en.wikipedia.org/wiki/Truchet_tiles&quot;&gt;truchet tiles&lt;/a&gt; and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn&#39;t create the most elegant results. I wanted to create symmetry out of the randomness in some way.&lt;/p&gt;\n` +
+        `&lt;p&gt;After playing awhile with  I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
+        &#39;&lt;h2&gt;The process:&lt;/h2&gt;\n&#39; +
+        &#39;&lt;p&gt;Build an image of a large tile, made up of &lt;code&gt;n&lt;/code&gt; rows of &lt;code&gt;n&lt;/code&gt; smaller tiles. So if &lt;code&gt;n = 3&lt;/code&gt;, you have a large square tile made up of 9 smaller tiles.&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;Then, print your large tile in 2 rows of 2...applying transformations to create symmetry.&lt;/p&gt;\n&#39; +
+        `&lt;p&gt;About symmetry: This is another concept I just stumbled across recently. There is more than one type of symmetry! (I suppose that&#39;s obvious, but I&#39;d never thought much about it) With these tiles, we can create designs that have either &lt;a href=&quot;https://en.wikipedia.org/wiki/Reflection_symmetry&quot;&gt;reflection symmetry&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Rotational_symmetry&quot;&gt;rotational symmetry&lt;/a&gt;.&lt;/p&gt;\n` +
+        &#39;&lt;p&gt;Here are two patterns built from the same 2x2 tile. The first uses reflection, the second uses rotation:&lt;/p&gt;\n&#39; +
+        &#39;&lt;div style=&quot;display: flex;&quot;&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;/div&gt;\n&#39; +
+        &#39;&lt;p&gt;I spent a few hours one Sunday morning writing code in p5.js to lay out the tiles, and setting up a few controls to adjust the number of tiles in the inner grid, to switch between rotation &amp;amp; reflection options, and to come up with random complementary color combinations.&lt;/p&gt;\n&#39; +
+        &#39;&lt;h2&gt;Some results&lt;/h2&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;h2&gt;Truchet Tile Resources&lt;/h2&gt;\n&#39; +
+        &#39;&lt;ul&gt;\n&#39; +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://dmackinnon1.github.io/truchet/&quot;&gt;pattern generator tool&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://questionsindataviz.com/2021/03/03/what-are-truchet-tiles/&quot;&gt;what are truchet tiles?&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        `&lt;li&gt;&lt;a href=&quot;http://arearugscarpet.blogspot.com/2014/04/the-curse-of-truchets-tiles.html&quot;&gt;the curse of truchet&#39;s tiles&lt;/a&gt;&lt;/li&gt;\n` +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://compform.net/tiles/&quot;&gt;comp form: tile maps&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        &#39;&lt;/ul&gt;\n&#39;
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./index.md&#39;,
+      fileSlug: &#39;&#39;,
+      filePathStem: &#39;/index&#39;,
+      data: [Object],
+      date: 2021-09-19T15:27:23.797Z,
+      outputPath: &#39;_site/index.html&#39;,
+      url: &#39;/&#39;,
+      templateContent: [Getter/Setter],
+      _templateContent: &#39;&lt;p&gt;this is a page!&lt;/p&gt;\n&#39;
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./blog/shaping-functions.md&#39;,
+      fileSlug: &#39;shaping-functions&#39;,
+      filePathStem: &#39;/blog/shaping-functions&#39;,
+      data: [Object],
+      date: 2021-10-24T00:00:00.000Z,
+      outputPath: &#39;_site/blog/shaping-functions/index.html&#39;,
+      url: &#39;/blog/shaping-functions/&#39;,
+      templateContent: [Getter/Setter],
+      _templateContent: `&lt;p&gt;I still haven&#39;t really figured out the mystery that is shaders, but this weekend I watched a &lt;a href=&quot;https://www.twitch.tv/videos/1184743691&quot;&gt;twitch stream&lt;/a&gt; from &lt;a href=&quot;https://www.curiouslyminded.xyz/&quot;&gt;curiouslyminded&lt;/a&gt; exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.&lt;/p&gt;\n` +
+        `&lt;p&gt;So, the &lt;a href=&quot;https://thebookofshaders.com/05/&quot;&gt;shaping function&lt;/a&gt; chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a &#39;toolbox&#39; of functions for various projects. This table of equations shows a bunch of ways to manipulate values between 0 and 1:&lt;/p&gt;\n` +
+        &#39;&lt;p&gt;&lt;a href=&quot;/public/images/shaders-shaping/shaders-kynd.png&quot;&gt;&lt;img src=&quot;/public/images/shaders-shaping/shaders-kynd.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;If you take a look at the top row of the image, you can see how the function is basically the same except that the exponent moves between 0.5 and 3.5. So I thought we could get some cool shapes by making that exponent into a variable that gradually shifts between two different values.&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;The first equation is &lt;code&gt;1.0 - pow(abs(x), 0.5)&lt;/code&gt;. I managed to figure out how to map this into a simple shader. At first I just did this in VSCode using the &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas&quot;&gt;GLSL Viewer&lt;/a&gt; extension, then I moved it into p5.js.&lt;/p&gt;\n&#39; +
+        `&lt;p&gt;Admittedly I still do not entirely understand how the setup works with these, and I generally have to start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this &lt;a href=&quot;https://itp-xstory.github.io/p5js-shaders/#/&quot;&gt;p5.js shaders guide&lt;/a&gt; (the code for the vertex shader was especially helpful since I definitely don&#39;t understand how that one works yet!).&lt;/p&gt;\n` +
+        &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;ifdef&lt;/span&gt; &lt;span class=&quot;token expression&quot;&gt;GL_ES&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;precision&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mediump&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;uniform&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; st &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gl_FragCoord&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    gl_FragColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
+        &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vTexCoord = aTexCoord;&lt;br&gt;    vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;    positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;    gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;    st -= vec2(1.0, 1.0);&lt;br&gt;    float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;    vec3 color = vec3(step(c, st.y));&lt;br&gt;    gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
+        &#39;&lt;/div&gt;\n&#39; +
+        &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the&quot;... 22041 more characters
+    }
+  ],
+  post: [
+    {
+      template: [Template],
+      inputPath: &#39;./blog/truchet-tiles.md&#39;,
+      fileSlug: &#39;truchet-tiles&#39;,
+      filePathStem: &#39;/blog/truchet-tiles&#39;,
+      data: [Object],
+      date: 2021-09-19T00:00:00.000Z,
+      outputPath: &#39;_site/blog/truchet-tiles/index.html&#39;,
+      url: &#39;/blog/truchet-tiles/&#39;,
+      templateContent: [Getter/Setter],
+      _templateContent: `&lt;p&gt;I recently learned about &lt;a href=&quot;https://en.wikipedia.org/wiki/Truchet_tiles&quot;&gt;truchet tiles&lt;/a&gt; and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn&#39;t create the most elegant results. I wanted to create symmetry out of the randomness in some way.&lt;/p&gt;\n` +
+        `&lt;p&gt;After playing awhile with  I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5&#39;s &lt;a href=&quot;https://p5js.org/reference/#/p5/createGraphics&quot;&gt;&lt;code&gt;createGraphics&lt;/code&gt;&lt;/a&gt; function, so this seemed like a good use for that as well!&lt;/p&gt;\n` +
+        &#39;&lt;h2&gt;The process:&lt;/h2&gt;\n&#39; +
+        &#39;&lt;p&gt;Build an image of a large tile, made up of &lt;code&gt;n&lt;/code&gt; rows of &lt;code&gt;n&lt;/code&gt; smaller tiles. So if &lt;code&gt;n = 3&lt;/code&gt;, you have a large square tile made up of 9 smaller tiles.&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;Then, print your large tile in 2 rows of 2...applying transformations to create symmetry.&lt;/p&gt;\n&#39; +
+        `&lt;p&gt;About symmetry: This is another concept I just stumbled across recently. There is more than one type of symmetry! (I suppose that&#39;s obvious, but I&#39;d never thought much about it) With these tiles, we can create designs that have either &lt;a href=&quot;https://en.wikipedia.org/wiki/Reflection_symmetry&quot;&gt;reflection symmetry&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Rotational_symmetry&quot;&gt;rotational symmetry&lt;/a&gt;.&lt;/p&gt;\n` +
+        &#39;&lt;p&gt;Here are two patterns built from the same 2x2 tile. The first uses reflection, the second uses rotation:&lt;/p&gt;\n&#39; +
+        &#39;&lt;div style=&quot;display: flex;&quot;&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;/div&gt;\n&#39; +
+        &#39;&lt;p&gt;I spent a few hours one Sunday morning writing code in p5.js to lay out the tiles, and setting up a few controls to adjust the number of tiles in the inner grid, to switch between rotation &amp;amp; reflection options, and to come up with random complementary color combinations.&lt;/p&gt;\n&#39; +
+        &#39;&lt;h2&gt;Some results&lt;/h2&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;h2&gt;Truchet Tile Resources&lt;/h2&gt;\n&#39; +
+        &#39;&lt;ul&gt;\n&#39; +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://dmackinnon1.github.io/truchet/&quot;&gt;pattern generator tool&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://questionsindataviz.com/2021/03/03/what-are-truchet-tiles/&quot;&gt;what are truchet tiles?&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        `&lt;li&gt;&lt;a href=&quot;http://arearugscarpet.blogspot.com/2014/04/the-curse-of-truchets-tiles.html&quot;&gt;the curse of truchet&#39;s tiles&lt;/a&gt;&lt;/li&gt;\n` +
+        &#39;&lt;li&gt;&lt;a href=&quot;https://compform.net/tiles/&quot;&gt;comp form: tile maps&lt;/a&gt;&lt;/li&gt;\n&#39; +
+        &#39;&lt;/ul&gt;\n&#39;
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./blog/shaping-functions.md&#39;,
+      fileSlug: &#39;shaping-functions&#39;,
+      filePathStem: &#39;/blog/shaping-functions&#39;,
+      data: [Object],
+      date: 2021-10-24T00:00:00.000Z,
+      outputPath: &#39;_site/blog/shaping-functions/index.html&#39;,
+      url: &#39;/blog/shaping-functions/&#39;,
+      templateContent: [Getter/Setter],
+      _templateContent: `&lt;p&gt;I still haven&#39;t really figured out the mystery that is shaders, but this weekend I watched a &lt;a href=&quot;https://www.twitch.tv/videos/1184743691&quot;&gt;twitch stream&lt;/a&gt; from &lt;a href=&quot;https://www.curiouslyminded.xyz/&quot;&gt;curiouslyminded&lt;/a&gt; exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.&lt;/p&gt;\n` +
+        `&lt;p&gt;So, the &lt;a href=&quot;https://thebookofshaders.com/05/&quot;&gt;shaping function&lt;/a&gt; chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a &#39;toolbox&#39; of functions for various projects. This table of equations shows a bunch of ways to manipulate values between 0 and 1:&lt;/p&gt;\n` +
+        &#39;&lt;p&gt;&lt;a href=&quot;/public/images/shaders-shaping/shaders-kynd.png&quot;&gt;&lt;img src=&quot;/public/images/shaders-shaping/shaders-kynd.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;If you take a look at the top row of the image, you can see how the function is basically the same except that the exponent moves between 0.5 and 3.5. So I thought we could get some cool shapes by making that exponent into a variable that gradually shifts between two different values.&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;The first equation is &lt;code&gt;1.0 - pow(abs(x), 0.5)&lt;/code&gt;. I managed to figure out how to map this into a simple shader. At first I just did this in VSCode using the &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas&quot;&gt;GLSL Viewer&lt;/a&gt; extension, then I moved it into p5.js.&lt;/p&gt;\n&#39; +
+        `&lt;p&gt;Admittedly I still do not entirely understand how the setup works with these, and I generally have to start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this &lt;a href=&quot;https://itp-xstory.github.io/p5js-shaders/#/&quot;&gt;p5.js shaders guide&lt;/a&gt; (the code for the vertex shader was especially helpful since I definitely don&#39;t understand how that one works yet!).&lt;/p&gt;\n` +
+        &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;ifdef&lt;/span&gt; &lt;span class=&quot;token expression&quot;&gt;GL_ES&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;precision&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mediump&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;uniform&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt; st &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gl_FragCoord&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;xy&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;u_resolution&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    st &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    gl_FragColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
+        &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vTexCoord = aTexCoord;&lt;br&gt;    vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;    positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;    gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;    vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;    st -= vec2(1.0, 1.0);&lt;br&gt;    float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;    vec3 color = vec3(step(c, st.y));&lt;br&gt;    gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
+        &#39;&lt;/div&gt;\n&#39; +
+        &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
+        &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the&quot;... 22041 more characters
+    }
+  ]
+}
+    </pre>
+
+</div>
+
+        </main>
+
+        <footer class="footer">
+        
+        </footer>
+    </body>
+
+</html>

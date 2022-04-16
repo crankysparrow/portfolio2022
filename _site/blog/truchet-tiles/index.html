@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Michelle Blog</title>
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/> 
+        <link rel="stylesheet" type="text/css" href="/_inlcudes/scss/style.css" />
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+
+    </head>
+
+    <body>
+    
+        <main id="main">
+        
+            
+
+<div class="content post">
+    <p>I recently learned about <a href="https://en.wikipedia.org/wiki/Truchet_tiles">truchet tiles</a> and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn't create the most elegant results. I wanted to create symmetry out of the randomness in some way.</p>
+<p>After playing awhile with  I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5's <a href="https://p5js.org/reference/#/p5/createGraphics"><code>createGraphics</code></a> function, so this seemed like a good use for that as well!</p>
+<h2>The process:</h2>
+<p>Build an image of a large tile, made up of <code>n</code> rows of <code>n</code> smaller tiles. So if <code>n = 3</code>, you have a large square tile made up of 9 smaller tiles.</p>
+<p>Then, print your large tile in 2 rows of 2...applying transformations to create symmetry.</p>
+<p>About symmetry: This is another concept I just stumbled across recently. There is more than one type of symmetry! (I suppose that's obvious, but I'd never thought much about it) With these tiles, we can create designs that have either <a href="https://en.wikipedia.org/wiki/Reflection_symmetry">reflection symmetry</a> or <a href="https://en.wikipedia.org/wiki/Rotational_symmetry">rotational symmetry</a>.</p>
+<p>Here are two patterns built from the same 2x2 tile. The first uses reflection, the second uses rotation:</p>
+<div style="display: flex;">
+<p><img src="/public/images/truchet/truchet-04.jpg" alt="reflection"></p>
+<p><img src="/public/images/truchet/truchet-05.jpg" alt="rotation"></p>
+</div>
+<p>I spent a few hours one Sunday morning writing code in p5.js to lay out the tiles, and setting up a few controls to adjust the number of tiles in the inner grid, to switch between rotation &amp; reflection options, and to come up with random complementary color combinations.</p>
+<h2>Some results</h2>
+<p><img src="/public/images/truchet/truchet-01.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-02.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-03.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-06.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-07.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-08.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-09.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-10.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-11.jpeg" alt=""></p>
+<p><img src="/public/images/truchet/truchet-12.jpeg" alt=""></p>
+<h2>Truchet Tile Resources</h2>
+<ul>
+<li><a href="https://dmackinnon1.github.io/truchet/">pattern generator tool</a></li>
+<li><a href="https://questionsindataviz.com/2021/03/03/what-are-truchet-tiles/">what are truchet tiles?</a></li>
+<li><a href="http://arearugscarpet.blogspot.com/2014/04/the-curse-of-truchets-tiles.html">the curse of truchet's tiles</a></li>
+<li><a href="https://compform.net/tiles/">comp form: tile maps</a></li>
+</ul>
+
+</div>
+
+        </main>
+
+        <footer class="footer">
+        
+        </footer>
+    </body>
+
+</html>
