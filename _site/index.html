@@ -7,7 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Michelle Blog</title>
         
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap' type='text/css' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Fraunces:wght@400;600;800&display=swap' type='text/css' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Merriweather:wght@300;400;700&display=swap' type='text/css' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Vollkorn:wght@400;500;600;700;800&display=swap' type='text/css' />
         <link rel="stylesheet" type="text/css" href="/styles/style.css" />
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
@@ -15,37 +17,46 @@
     </head>
 
     <body>
+
+        <a class="screen-reader-text" href="#main">skip to content</a>
+
+        <header>
+            <nav class="nav">
+    <a aria-label="home" class="home-link" href="/">me</a>
+    <ul class="nav-list">
+        <li>
+            <a href="/blog">blog</a>
+        </li>
+        <li>
+            <a href="/about">about</a>
+        </li>
+    </ul>
+</nav>
+
+        </header>
     
         <main id="main">
         
             
 <div class="wrapper home">
+	<header class="header">
+		<h1>michelle enos</h1>
+	</header>
 
-    <header class="header">
-        <h1>michelle enos</h1>
-    </header>
+	<div class="content">
+		<h2>List of posts</h2>
 
-    <nav class="nav">
-        <a href="/blog">blog</a>
-        <a href="#">generative art experiments</a>
-        <a href="#">another linko</a>
-    </nav>
+		<ul>
+			<li>
+				<a href="/blog/truchet-tiles/">Generative Art Experiments - Truchet Tiles</a>
+			</li>
+			<li>
+				<a href="/blog/shaping-functions/">shaders &amp; shapes</a>
+			</li>
+		</ul>
+	</div>
 
-    <div class="content">
-        <h2>List of posts</h2>
-    </div>
-
-    <ul>
-        <li>
-            <a href="/blog/truchet-tiles/">Generative Art Experiments - Truchet Tiles</a>
-        </li>
-        <li>
-            <a href="/blog/shaping-functions/">shaders &amp; shapes</a>
-        </li>
-
-    </ul>
-
-    <pre>
+	<pre>
         {
   all: [
     {
@@ -67,21 +78,21 @@
         `&lt;p&gt;About symmetry: This is another concept I just stumbled across recently. There is more than one type of symmetry! (I suppose that&#39;s obvious, but I&#39;d never thought much about it) With these tiles, we can create designs that have either &lt;a href=&quot;https://en.wikipedia.org/wiki/Reflection_symmetry&quot;&gt;reflection symmetry&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Rotational_symmetry&quot;&gt;rotational symmetry&lt;/a&gt;.&lt;/p&gt;\n` +
         &#39;&lt;p&gt;Here are two patterns built from the same 2x2 tile. The first uses reflection, the second uses rotation:&lt;/p&gt;\n&#39; +
         &#39;&lt;div style=&quot;display: flex;&quot;&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;I spent a few hours one Sunday morning writing code in p5.js to lay out the tiles, and setting up a few controls to adjust the number of tiles in the inner grid, to switch between rotation &amp;amp; reflection options, and to come up with random complementary color combinations.&lt;/p&gt;\n&#39; +
         &#39;&lt;h2&gt;Some results&lt;/h2&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
         &#39;&lt;h2&gt;Truchet Tile Resources&lt;/h2&gt;\n&#39; +
         &#39;&lt;ul&gt;\n&#39; +
         &#39;&lt;li&gt;&lt;a href=&quot;https://dmackinnon1.github.io/truchet/&quot;&gt;pattern generator tool&lt;/a&gt;&lt;/li&gt;\n&#39; +
@@ -136,11 +147,11 @@
         &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
         &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vTexCoord = aTexCoord;&lt;br&gt;vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;st -= vec2(1.0, 1.0);&lt;br&gt;float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;vec3 color = vec3(step(c, st.y));&lt;br&gt;gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
+        &#39;&lt;img src=&quot;/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more anot&quot;... 21972 more characters
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more another day&quot;... 21902 more characters
     },
     {
       template: [Template],
@@ -153,26 +164,395 @@
       url: &#39;/styles/style.css&#39;,
       checkTemplateContent: true,
       templateContent: [Getter/Setter],
-      _templateContent: &#39;html {\n&#39; +
-        &#39;  font-size: 16px;\n&#39; +
-        &#39;  line-height: 1.6;\n&#39; +
+      _templateContent: &#39;/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n&#39; +
+        &#39;/* Document\n&#39; +
+        &#39;   ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39; * 1. Correct the line height in all browsers.\n&#39; +
+        &#39; * 2. Prevent adjustments of font size after orientation changes in iOS.\n&#39; +
+        &#39; */\n&#39; +
+        &#39;html {\n&#39; +
+        &#39;  line-height: 1.15;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  -webkit-text-size-adjust: 100%;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
+        &#39;/* Sections\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the margin in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;body {\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Render the `main` element consistently in IE.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;main {\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Correct the font size and margin on `h1` elements within `section` and\n&#39; +
+        &#39;   * `article` contexts in Chrome, Firefox, and Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;h1 {\n&#39; +
+        &#39;  font-size: 2em;\n&#39; +
+        &#39;  margin: 0.67em 0;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Grouping content\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Add the correct box sizing in Firefox.\n&#39; +
+        &#39;   * 2. Show the overflow in Edge and IE.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;hr {\n&#39; +
+        &#39;  box-sizing: content-box;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  height: 0;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  overflow: visible;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Correct the inheritance and scaling of font size in all browsers.\n&#39; +
+        &#39;   * 2. Correct the odd `em` font sizing in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;pre {\n&#39; +
+        &#39;  font-family: monospace, monospace;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  font-size: 1em;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Text-level semantics\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the gray background on active links in IE 10.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;a {\n&#39; +
+        &#39;  background-color: transparent;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Remove the bottom border in Chrome 57-\n&#39; +
+        &#39;   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;abbr[title] {\n&#39; +
+        &#39;  border-bottom: none;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  text-decoration: underline;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;  text-decoration: underline dotted;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Add the correct font weight in Chrome, Edge, and Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;b,\n&#39; +
+        &#39;strong {\n&#39; +
+        &#39;  font-weight: bolder;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Correct the inheritance and scaling of font size in all browsers.\n&#39; +
+        &#39;   * 2. Correct the odd `em` font sizing in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;code,\n&#39; +
+        &#39;kbd,\n&#39; +
+        &#39;samp {\n&#39; +
+        &#39;  font-family: monospace, monospace;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  font-size: 1em;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Add the correct font size in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;small {\n&#39; +
+        &#39;  font-size: 80%;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Prevent `sub` and `sup` elements from affecting the line height in\n&#39; +
+        &#39;   * all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;sub,\n&#39; +
+        &#39;sup {\n&#39; +
+        &#39;  font-size: 75%;\n&#39; +
+        &#39;  line-height: 0;\n&#39; +
+        &#39;  position: relative;\n&#39; +
+        &#39;  vertical-align: baseline;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;sub {\n&#39; +
+        &#39;  bottom: -0.25em;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;sup {\n&#39; +
+        &#39;  top: -0.5em;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Embedded content\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the border on images inside links in IE 10.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;img {\n&#39; +
+        &#39;  border-style: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Forms\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Change the font styles in all browsers.\n&#39; +
+        &#39;   * 2. Remove the margin in Firefox and Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button,\n&#39; +
+        &#39;input,\n&#39; +
+        &#39;optgroup,\n&#39; +
+        &#39;select,\n&#39; +
+        &#39;textarea {\n&#39; +
+        &#39;  font-family: inherit;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  font-size: 100%;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  line-height: 1.15;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Show the overflow in IE.\n&#39; +
+        &#39;   * 1. Show the overflow in Edge.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button,\n&#39; +
+        &#39;input {\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  overflow: visible;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the inheritance of text transform in Edge, Firefox, and IE.\n&#39; +
+        &#39;   * 1. Remove the inheritance of text transform in Firefox.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button,\n&#39; +
+        &#39;select {\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  text-transform: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Correct the inability to style clickable types in iOS and Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button,\n&#39; +
+        &#39;[type=button],\n&#39; +
+        &#39;[type=reset],\n&#39; +
+        &#39;[type=submit] {\n&#39; +
+        &#39;  -webkit-appearance: button;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the inner border and padding in Firefox.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button::-moz-focus-inner,\n&#39; +
+        &#39;[type=button]::-moz-focus-inner,\n&#39; +
+        &#39;[type=reset]::-moz-focus-inner,\n&#39; +
+        &#39;[type=submit]::-moz-focus-inner {\n&#39; +
+        &#39;  border-style: none;\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Restore the focus styles unset by the previous rule.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;button:-moz-focusring,\n&#39; +
+        &#39;[type=button]:-moz-focusring,\n&#39; +
+        &#39;[type=reset]:-moz-focusring,\n&#39; +
+        &#39;[type=submit]:-moz-focusring {\n&#39; +
+        &#39;  outline: 1px dotted ButtonText;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Correct the padding in Firefox.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;fieldset {\n&#39; +
+        &#39;  padding: 0.35em 0.75em 0.625em;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Correct the text wrapping in Edge and IE.\n&#39; +
+        &#39;   * 2. Correct the color inheritance from `fieldset` elements in IE.\n&#39; +
+        &#39;   * 3. Remove the padding so developers are not caught out when they zero out\n&#39; +
+        &#39;   *    `fieldset` elements in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;legend {\n&#39; +
+        &#39;  box-sizing: border-box;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  color: inherit;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;  display: table;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  max-width: 100%;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;  /* 3 */\n&#39; +
+        &#39;  white-space: normal;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;progress {\n&#39; +
+        &#39;  vertical-align: baseline;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the default vertical scrollbar in IE 10+.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;textarea {\n&#39; +
+        &#39;  overflow: auto;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Add the correct box sizing in IE 10.\n&#39; +
+        &#39;   * 2. Remove the padding in IE 10.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;[type=checkbox],\n&#39; +
+        &#39;[type=radio] {\n&#39; +
+        &#39;  box-sizing: border-box;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Correct the cursor style of increment and decrement buttons in Chrome.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;[type=number]::-webkit-inner-spin-button,\n&#39; +
+        &#39;[type=number]::-webkit-outer-spin-button {\n&#39; +
+        &#39;  height: auto;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Correct the odd appearance in Chrome and Safari.\n&#39; +
+        &#39;   * 2. Correct the outline style in Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;[type=search] {\n&#39; +
+        &#39;  -webkit-appearance: textfield;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  outline-offset: -2px;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Remove the inner padding in Chrome and Safari on macOS.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;[type=search]::-webkit-search-decoration {\n&#39; +
+        &#39;  -webkit-appearance: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * 1. Correct the inability to style clickable types in iOS and Safari.\n&#39; +
+        &#39;   * 2. Change font properties to `inherit` in Safari.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;::-webkit-file-upload-button {\n&#39; +
+        &#39;  -webkit-appearance: button;\n&#39; +
+        &#39;  /* 1 */\n&#39; +
+        &#39;  font: inherit;\n&#39; +
+        &#39;  /* 2 */\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Interactive\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/*\n&#39; +
+        &#39;   * Add the correct display in Edge, IE 10+, and Firefox.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;details {\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/*\n&#39; +
+        &#39;   * Add the correct display in all browsers.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;summary {\n&#39; +
+        &#39;  display: list-item;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/* Misc\n&#39; +
+        &#39;     ========================================================================== */\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Add the correct display in IE 10+.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;template {\n&#39; +
+        &#39;  display: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;/**\n&#39; +
+        &#39;   * Add the correct display in IE 10.\n&#39; +
+        &#39;   */\n&#39; +
+        &#39;[hidden] {\n&#39; +
+        &#39;  display: none;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;.screen-reader-text {\n&#39; +
+        &#39;  clip: rect(1px, 1px, 1px, 1px);\n&#39; +
+        &#39;  clip-path: inset(50%);\n&#39; +
+        &#39;  height: 1px;\n&#39; +
+        &#39;  width: 1px;\n&#39; +
+        &#39;  margin: -1px;\n&#39; +
+        &#39;  overflow: hidden;\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;  position: absolute;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;.screen-reader-text:focus {\n&#39; +
+        &#39;  background-color: #eee;\n&#39; +
+        &#39;  clip: auto;\n&#39; +
+        &#39;  clip-path: none;\n&#39; +
+        &#39;  color: #222;\n&#39; +
+        &#39;  height: auto;\n&#39; +
+        &#39;  width: auto;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  z-index: 999999;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;@font-face {\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  font-weight: 400;\n&#39; +
+        &#39;  src: url(&quot;/fonts/JetBrainsMono-Regular.woff2&quot;) format(&quot;woff2&quot;);\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@font-face {\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  src: url(&quot;/fonts/JetBrainsMono-Medium.woff2&quot;) format(&quot;woff2&quot;);\n&#39; +
+        &#39;  font-weight: 500;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@font-face {\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  src: url(&quot;/fonts/JetBrainsMono-SemiBold.woff2&quot;) format(&quot;woff2&quot;);\n&#39; +
+        &#39;  font-weight: 600;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;@font-face {\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  src: url(&quot;/fonts/JetBrainsMono-Bold.woff2&quot;) format(&quot;woff2&quot;);\n&#39; +
+        &#39;  font-weight: 700;\n&#39; +
+        &#39;}\n&#39; +
         &#39;body {\n&#39; +
         &#39;  font-family: &quot;Exo&quot;;\n&#39; +
         &#39;  font-weight: 300;\n&#39; +
-        &#39;  color: #020402;\n&#39; +
-        &#39;  padding: 20px;\n&#39; +
-        &#39;  margin: 0;\n&#39; +
-        &#39;  box-sizing: border-box;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;body *, body:before, body:after {\n&#39; +
-        &#39;  box-sizing: inherit;\n&#39; +
+        &#39;  color: #2e294e;\n&#39; +
+        &#39;  line-height: 1.6;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
         &#39;h1 {\n&#39; +
         &#39;  font-size: 3rem;\n&#39; +
-        &#39;  font-weight: 700;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
         &#39;h2 {\n&#39; +
@@ -185,15 +565,16 @@
         &#39;h4,\n&#39; +
         &#39;h5 {\n&#39; +
         &#39;  margin-bottom: 1rem;\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  font-weight: 700;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
         &#39;a {\n&#39; +
-        &#39;  color: #227c9d;\n&#39; +
+        &#39;  color: #dd3608;\n&#39; +
         &#39;  text-decoration: none;\n&#39; +
         &#39;  position: relative;\n&#39; +
         &#39;  transition: 200ms linear;\n&#39; +
-        &#39;  --h: 2px;\n&#39; +
-        &#39;  background: linear-gradient(0deg, #fb8b24 0, #fb8b24 100%);\n&#39; +
+        &#39;  background: linear-gradient(0deg, #ff521b 0, #ff521b 100%);\n&#39; +
         &#39;  background-size: 100% 2px;\n&#39; +
         &#39;  background-repeat: no-repeat;\n&#39; +
         &#39;  background-position: bottom;\n&#39; +
@@ -205,20 +586,49 @@
         &#39;  display: block;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
+        &#39;.post pre,\n&#39; +
+        &#39;.post pre[class*=language-],\n&#39; +
+        &#39;.post code,\n&#39; +
+        &#39;.post code[class*=language-] {\n&#39; +
+        &#39;  font-size: 0.9rem;\n&#39; +
+        &#39;  line-height: 1.4;\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;html {\n&#39; +
+        &#39;  font-size: 16px;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
+        &#39;body {\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  box-sizing: border-box;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;body *, body:before, body:after {\n&#39; +
+        &#39;  box-sizing: inherit;\n&#39; +
+        &#39;}\n&#39; +
+        &#39;\n&#39; +
         &#39;nav {\n&#39; +
         &#39;  display: flex;\n&#39; +
         &#39;  font-size: 1.7rem;\n&#39; +
+        &#39;  display: flex;\n&#39; +
         &#39;}\n&#39; +
-        &#39;nav a {\n&#39; +
-        &#39;  margin: 0 2rem;\n&#39; +
+        &#39;nav a.home-link {\n&#39; +
         &#39;  display: block;\n&#39; +
-        &#39;  position: relative;\n&#39; +
+        &#39;  background: none;\n&#39; +
+        &#39;  font-weight: 700;\n&#39; +
+        &#39;  font-family: &quot;JetBrains Mono&quot;;\n&#39; +
+        &#39;  text-transform: uppercase;\n&#39; +
         &#39;}\n&#39; +
-        &#39;nav a:first-child {\n&#39; +
-        &#39;  margin-left: 0;\n&#39; +
+        &#39;nav ul {\n&#39; +
+        &#39;  padding: 0;\n&#39; +
+        &#39;  margin: 0;\n&#39; +
+        &#39;  list-style: none;\n&#39; +
+        &#39;  display: flex;\n&#39; +
         &#39;}\n&#39; +
-        &#39;nav a:first-child:after {\n&#39; +
-        &#39;  content: none;\n&#39; +
+        &#39;nav ul a {\n&#39; +
+        &#39;  display: block;\n&#39; +
+        &#39;  margin: 0 1rem;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
         &#39;.content.post {\n&#39; +
@@ -233,12 +643,10 @@
         &#39;.content.post pre[class*=language-] {\n&#39; +
         &#39;  margin: 0;\n&#39; +
         &#39;  padding: 1rem 10px;\n&#39; +
-        &#39;  font-size: 0.8rem;\n&#39; +
         &#39;  width: 100%;\n&#39; +
         &#39;  max-width: 100%;\n&#39; +
         &#39;}\n&#39; +
         &#39;.content.post pre[class*=language-] code {\n&#39; +
-        &#39;  font-size: 0.8rem;\n&#39; +
         &#39;  width: 100%;\n&#39; +
         &#39;  max-width: 100%;\n&#39; +
         &#39;}\n&#39; +
@@ -254,14 +662,6 @@
         &#39;  height: auto;\n&#39; +
         &#39;  margin: 0 auto;\n&#39; +
         &#39;  display: inline-block;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;\n&#39; +
-        &#39;.post pre,\n&#39; +
-        &#39;.post pre[class*=language-],\n&#39; +
-        &#39;.post code,\n&#39; +
-        &#39;.post code[class*=language-] {\n&#39; +
-        &#39;  font-size: 0.9rem;\n&#39; +
-        &#39;  line-height: 1.4;\n&#39; +
         &#39;}\n&#39; +
         &#39;\n&#39; +
         &#39;code {\n&#39; +
@@ -320,57 +720,46 @@
         &#39;\n&#39; +
         &#39;.code-img {\n&#39; +
         &#39;  position: relative;\n&#39; +
-        &#39;  background: #f5f2f0;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;.code-img img {\n&#39; +
-        &#39;  max-width: 300px;\n&#39; +
-        &#39;  display: block;\n&#39; +
-        &#39;  margin-top: 5px;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;.code-img pre[class*=language-] {\n&#39; +
-        &#39;  border-bottom: 1px solid gray;\n&#39; +
-        &#39;  margin: 0;\n&#39; +
-        &#39;  padding: 1rem 10px;\n&#39; +
-        &#39;  font-size: 0.8rem;\n&#39; +
-        &#39;  width: 100%;\n&#39; +
-        &#39;  max-width: 100%;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;.code-img pre[class*=language-] code {\n&#39; +
-        &#39;  font-size: 0.8rem;\n&#39; +
-        &#39;  width: 100%;\n&#39; +
-        &#39;  max-width: 100%;\n&#39; +
-        &#39;}\n&#39; +
-        &#39;@media (min-width: 990px) {\n&#39; +
-        &#39;  .code-img {\n&#39; +
-        &#39;    display: flex;\n&#39; +
-        &#39;    margin-right: -200px;\n&#39; +
-        &#39;    margin-bottom: 30px;\n&#39; +
-        &#39;  }\n&#39; +
-        &#39;  .code-img pre[class*=language-] {\n&#39; +
-        &#39;    border-bottom: none;\n&#39; +
-        &#39;  }\n&#39; +
-        &#39;  .code-img img {\n&#39; +
-        &#39;    flex: 0 0 250px;\n&#39; +
-        &#39;    max-width: 250px;\n&#39; +
-        &#39;    align-self: flex-start;\n&#39; +
-        &#39;    position: sticky;\n&#39; +
-        &#39;    top: 0;\n&#39; +
-        &#39;    margin: 0;\n&#39; +
-        &#39;  }\n&#39; +
-        &#39;}\n&#39; +
-        &#39;@media (min-width: 1280px) {\n&#39; +
-        &#39;  .code-img {\n&#39; +
-        &#39;    margin-right: -250px;\n&#39; +
-        &#39;  }\n&#39; +
-        &#39;  .code-img img {\n&#39; +
-        &#39;    flex: 0 0 250px;\n&#39; +
-        &#39;    max-width: 250px;\n&#39; +
-        &#39;  }\n&#39; +
-        &#39;}\n&#39; +
-        &#39;.code-img pre[class*=language-] {\n&#39; +
-        &#39;  margin: 0;\n&#39; +
-        &#39;  flex-grow: 1;\n&#39; +
-        &#39;}&#39;
+        &#39;  back&#39;... 878 more characters
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./src/styles/_accessibility.scss&#39;,
+      fileSlug: &#39;_accessibility&#39;,
+      filePathStem: &#39;/styles/_accessibility&#39;,
+      data: [Object],
+      date: 2022-04-16T22:34:40.123Z,
+      outputPath: &#39;_site/styles/_accessibility.css&#39;,
+      url: &#39;/styles/_accessibility.css&#39;,
+      checkTemplateContent: false,
+      templateContent: [Getter/Setter],
+      _templateContent: undefined
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./src/styles/_fonts.scss&#39;,
+      fileSlug: &#39;_fonts&#39;,
+      filePathStem: &#39;/styles/_fonts&#39;,
+      data: [Object],
+      date: 2022-04-16T23:54:43.675Z,
+      outputPath: &#39;_site/styles/_fonts.css&#39;,
+      url: &#39;/styles/_fonts.css&#39;,
+      checkTemplateContent: false,
+      templateContent: [Getter/Setter],
+      _templateContent: undefined
+    },
+    {
+      template: [Template],
+      inputPath: &#39;./src/styles/_helpers.scss&#39;,
+      fileSlug: &#39;_helpers&#39;,
+      filePathStem: &#39;/styles/_helpers&#39;,
+      data: [Object],
+      date: 2022-04-16T23:55:20.166Z,
+      outputPath: &#39;_site/styles/_helpers.css&#39;,
+      url: &#39;/styles/_helpers.css&#39;,
+      checkTemplateContent: false,
+      templateContent: [Getter/Setter],
+      _templateContent: undefined
     }
   ],
   post: [
@@ -393,21 +782,21 @@
         `&lt;p&gt;About symmetry: This is another concept I just stumbled across recently. There is more than one type of symmetry! (I suppose that&#39;s obvious, but I&#39;d never thought much about it) With these tiles, we can create designs that have either &lt;a href=&quot;https://en.wikipedia.org/wiki/Reflection_symmetry&quot;&gt;reflection symmetry&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Rotational_symmetry&quot;&gt;rotational symmetry&lt;/a&gt;.&lt;/p&gt;\n` +
         &#39;&lt;p&gt;Here are two patterns built from the same 2x2 tile. The first uses reflection, the second uses rotation:&lt;/p&gt;\n&#39; +
         &#39;&lt;div style=&quot;display: flex;&quot;&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-04.jpg&quot; alt=&quot;reflection&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-05.jpg&quot; alt=&quot;rotation&quot;&gt;&lt;/p&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;I spent a few hours one Sunday morning writing code in p5.js to lay out the tiles, and setting up a few controls to adjust the number of tiles in the inner grid, to switch between rotation &amp;amp; reflection options, and to come up with random complementary color combinations.&lt;/p&gt;\n&#39; +
         &#39;&lt;h2&gt;Some results&lt;/h2&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
-        &#39;&lt;p&gt;&lt;img src=&quot;/public/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-01.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-02.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-03.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-06.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-07.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-08.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-09.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-10.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-11.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
+        &#39;&lt;p&gt;&lt;img src=&quot;/images/truchet/truchet-12.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;\n&#39; +
         &#39;&lt;h2&gt;Truchet Tile Resources&lt;/h2&gt;\n&#39; +
         &#39;&lt;ul&gt;\n&#39; +
         &#39;&lt;li&gt;&lt;a href=&quot;https://dmackinnon1.github.io/truchet/&quot;&gt;pattern generator tool&lt;/a&gt;&lt;/li&gt;\n&#39; +
@@ -437,17 +826,17 @@
         &#39;&lt;p&gt;Then I moved it into p5.js:&lt;/p&gt;\n&#39; +
         &#39;&lt;div class=&quot;code-img&quot;&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; vShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;attribute vec3 aPosition;&lt;br&gt;attribute vec2 aTexCoord;&lt;br&gt;varying vec2 vTexCoord;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vTexCoord = aTexCoord;&lt;br&gt;vec4 positionVec4 = vec4(aPosition, 1.0);&lt;br&gt;positionVec4.xy = positionVec4.xy \\* 2.0 - 1.0;&lt;br&gt;gl_Position = positionVec4;&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fShader &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&lt;br&gt;precision mediump float;&lt;br&gt;uniform vec2 resolution;&lt;br&gt;&lt;br&gt;void main() {&lt;br&gt;vec2 st = gl_FragCoord.xy / resolution.xy;&lt;br&gt;st -= vec2(1.0, 1.0);&lt;br&gt;float c = 1.0 - pow(abs(st.x), 0.5);&lt;br&gt;vec3 color = vec3(step(c, st.y));&lt;br&gt;gl_FragColor = vec4(color, 1.0);&lt;br&gt;}&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;createCanvas&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEBGL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;noStroke&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vShader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fShader&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;shader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;shd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUniform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\&#39;resolution\&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &#39;&lt;img src=&quot;/public/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
+        &#39;&lt;img src=&quot;/images/shaders-shaping/shader1.png&quot; alt=&quot;two white curves, mirror images of each other, on black background&quot;  /&gt;\n&#39; +
         &#39;&lt;/div&gt;\n&#39; +
         &#39;&lt;p&gt;Okay, leaving aside all the uniforms and positioning bits, the important part in each bit of code is these couple of lines:&lt;/p&gt;\n&#39; +
         &#39;&lt;pre class=&quot;language-glsl&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; st&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;\n&#39; +
-        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more anot&quot;... 21972 more characters
+        &quot;&lt;p&gt;Using a smoothstep function instead of step lets us make the shape into a line. I got this code from The Book of Shaders, although I still can&#39;t quite get my brain to wrap around the way it works, I might need to dig into that a bit more another day&quot;... 21902 more characters
     }
   ]
 }
     </pre>
-
 </div>
+
 
         </main>
 

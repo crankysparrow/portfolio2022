@@ -3,33 +3,23 @@ layout: base.njk
 ---
 
 <div class="wrapper home">
+	<header class="header">
+		<h1>michelle enos</h1>
+	</header>
 
-    <header class="header">
-        <h1>michelle enos</h1>
-    </header>
+	<div class="content">
+		<h2>List of posts</h2>
 
-    <nav class="nav">
-        <a href="/blog">blog</a>
-        <a href="#">generative art experiments</a>
-        <a href="#">another linko</a>
-    </nav>
+		<ul>
+			{%- for post in collections.post %}
+			<li>
+				<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+			</li>
+			{%- endfor %}
+		</ul>
+	</div>
 
-    <div class="content">
-        <h2>List of posts</h2>
-    </div>
-
-    <ul>
-
-    {%- for post in collections.post %}
-        <li>
-            <a href="{{ post.url | url }}">{{ post.data.title  }}</a>
-        </li>
-    {%- endfor %}
-
-    </ul>
-
-    <pre>
+	<pre>
         {{ collections | console }}
     </pre>
-
 </div>

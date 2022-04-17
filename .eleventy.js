@@ -12,14 +12,21 @@ module.exports = function (eleventyConfig) {
 			let parsed = path.parse(inputPath)
 			if (parsed.name.startsWith('_')) return
 
-			let result = sass.compile(inputPath)
+			console.log('🔮 compiling scss...', inputPath)
+
 			return (data) => {
+				let includesPaths = [this.config.dir.includes]
+				let result = sass.compile(inputPath, { includesPaths })
+
 				return result.css
 			}
 		},
 	})
 
-	eleventyConfig.addPassthroughCopy('src/images')
+	eleventyConfig.addWatchTarget('./src/styles')
+
+	eleventyConfig.addPassthroughCopy('./src/images')
+	eleventyConfig.addPassthroughCopy('./src/fonts')
 	// eleventyConfig.addPassthroughCopy('css')
 
 	eleventyConfig.addPlugin(syntaxHighlight)
@@ -39,7 +46,8 @@ module.exports = function (eleventyConfig) {
 		dir: {
 			input: 'src',
 			output: '_site',
-			layouts: 'layouts',
+			layouts: 'views/layouts',
+			includes: 'views',
 		},
 	}
 }

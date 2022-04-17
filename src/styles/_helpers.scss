@@ -1,0 +1,52 @@
+$green: #a5e1ad;
+$light: #f1f2f6;
+$space: #2e294e;
+$orange: #ff521b; // good on black, on white large
+$orangedark: #dd3608;
+
+$bluepurple: #aeb8fe;
+$bluey: #2e7f85;
+$cerulean: #6e9cc2;
+$peach: #f8dda4;
+$nyanza: #eeffdb;
+$turquoise: #9aeade;
+$champagne: #ffcf99;
+
+$v: 'Vollkorn', serif;
+$jb: 'JetBrains Mono';
+
+@mixin md {
+	@media (min-width: 990px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: 1280px) {
+		@content;
+	}
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-weight: 400;
+	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+	font-weight: 700;
+}

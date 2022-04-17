@@ -81,7 +81,7 @@ rect(0, 0, width, height)
 }
 {% endhighlight %}
 
-<img src="/public/images/shaders-shaping/shader1.png" alt="two white curves, mirror images of each other, on black background"  />
+<img src="/images/shaders-shaping/shader1.png" alt="two white curves, mirror images of each other, on black background"  />
 
 </div>
 
@@ -101,7 +101,7 @@ float c = 1.0 - pow(abs(st.x), 0.5);
 vec3 color = vec3(smoothstep(c - 0.02, c, st.y) - smoothstep(c, c + 0.02, st.y));
 {% endhighlight %}
 
-<img src="/public/images/shaders-shaping/shader2.png"   />
+<img src="/images/shaders-shaping/shader2.png"   />
 
 </div>
 
@@ -113,7 +113,7 @@ Then if we adjust the exponent, we can manipulate the shape:
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 1.0);
 {% endhighlight %}
-<img src="/public/images/shaders-shaping/shader3.png" />
+<img src="/images/shaders-shaping/shader3.png" />
 
 </div>
 
@@ -121,7 +121,7 @@ float c = 1.0 - pow(abs(st.x), 1.0);
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 1.5);
 {% endhighlight %}
-<img src="/public/images/shaders-shaping/shader4.png" />
+<img src="/images/shaders-shaping/shader4.png" />
 
 </div>
 
@@ -129,7 +129,7 @@ float c = 1.0 - pow(abs(st.x), 1.5);
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 2.0);
 {% endhighlight %}
-<img src="/public/images/shaders-shaping/shader5.png" />
+<img src="/images/shaders-shaping/shader5.png" />
 </div>
 
 </div>
@@ -162,7 +162,7 @@ st -= vec2(1.0, 1.0);
 }
 {% endhighlight %}
 
-<img src="/public/images/shaders-shaping/shader-reflect1.png"  />
+<img src="/images/shaders-shaping/shader-reflect1.png"  />
 
 </div>
 
@@ -176,7 +176,7 @@ return pow(abs(x), power) - 1.0;
 }
 {% endhighlight %}
 
-<img src="/public/images/shaders-shaping/shader-reflect2.png"  />
+<img src="/images/shaders-shaping/shader-reflect2.png"  />
 
 </div>
 
@@ -192,14 +192,14 @@ for (float i = -1.0; i < 1.0; i += 0.1) {
 }
 {%endhighlight %}
 
-<img src="/public/images/shaders-shaping/shader-loop.png"  />
+<img src="/images/shaders-shaping/shader-loop.png"  />
 </div>
 
 Sometime after that, I added in a uniform for time - basically just a variable that increments each time p5's draw function runs, and gets passed to the shader. Aaaaand after experimenting a lot ended up with something that I think looks pretty dang cool!
 
 Final product:
 
-![](/public/images/shaders-shaping/final-linear.gif)
+![](/images/shaders-shaping/final-linear.gif)
 
 Here's the final code in the main fragment shader:
 
@@ -230,4 +230,4 @@ A couple notes on this last bit of code:
 
 Here's a version using sine function for timing instead of linear:
 
-![](/public/images/shaders-shaping/final-sine.gif)
+![](/images/shaders-shaping/final-sine.gif)

@@ -21,9 +21,9 @@ Here are two patterns built from the same 2x2 tile. The first uses reflection, t
 
 <div style="display: flex;">
 
-![reflection](/public/images/truchet/truchet-04.jpg)
+![reflection](/images/truchet/truchet-04.jpg)
 
-![rotation](/public/images/truchet/truchet-05.jpg)
+![rotation](/images/truchet/truchet-05.jpg)
 
 </div>
 
@@ -31,25 +31,25 @@ I spent a few hours one Sunday morning writing code in p5.js to lay out the tile
 
 ## Some results
 
-![](/public/images/truchet/truchet-01.jpeg)
+![](/images/truchet/truchet-01.jpeg)
 
-![](/public/images/truchet/truchet-02.jpeg)
+![](/images/truchet/truchet-02.jpeg)
 
-![](/public/images/truchet/truchet-03.jpeg)
+![](/images/truchet/truchet-03.jpeg)
 
-![](/public/images/truchet/truchet-06.jpeg)
+![](/images/truchet/truchet-06.jpeg)
 
-![](/public/images/truchet/truchet-07.jpeg)
+![](/images/truchet/truchet-07.jpeg)
 
-![](/public/images/truchet/truchet-08.jpeg)
+![](/images/truchet/truchet-08.jpeg)
 
-![](/public/images/truchet/truchet-09.jpeg)
+![](/images/truchet/truchet-09.jpeg)
 
-![](/public/images/truchet/truchet-10.jpeg)
+![](/images/truchet/truchet-10.jpeg)
 
-![](/public/images/truchet/truchet-11.jpeg)
+![](/images/truchet/truchet-11.jpeg)
 
-![](/public/images/truchet/truchet-12.jpeg)
+![](/images/truchet/truchet-12.jpeg)
 
 ## Truchet Tile Resources
 
