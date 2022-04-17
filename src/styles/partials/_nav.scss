@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+nav {
+	display: flex;
+	font-size: 1.7rem;
+	display: flex;
+	a.home-link {
+		display: block;
+		background: none;
+		font-weight: 700;
+		font-family: $jb;
+		text-transform: uppercase;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		a {
+			display: block;
+			margin: 0 1rem;
+		}
+	}
+}

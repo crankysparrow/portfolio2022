@@ -1,19 +1,17 @@
-$green: #a5e1ad;
-$light: #f1f2f6;
 $space: #2e294e;
 $orange: #ff521b; // good on black, on white large
 $orangedark: #dd3608;
+$magenta: #b81365; // works on white, peach, nyanza, turquoise, mint
+$blue: #0197f6;
 
-$bluepurple: #aeb8fe;
-$bluey: #2e7f85;
-$cerulean: #6e9cc2;
+$light: #f1f2f6;
+$mint: #acfcd9; // works on space
 $peach: #f8dda4;
 $nyanza: #eeffdb;
 $turquoise: #9aeade;
-$champagne: #ffcf99;
 
 $v: 'Vollkorn', serif;
-$jb: 'JetBrains Mono';
+$jb: 'JetBrains Mono', monospace;
 
 @mixin md {
 	@media (min-width: 990px) {
@@ -27,26 +25,5 @@ $jb: 'JetBrains Mono';
 	}
 }
 
-@font-face {
-	font-family: 'JetBrains Mono';
-	font-weight: 400;
-	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'JetBrains Mono';
-	src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: 'JetBrains Mono';
-	src: url('/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
-	font-weight: 600;
-}
-
-@font-face {
-	font-family: 'JetBrains Mono';
-	src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
-	font-weight: 700;
-}
+// 184, 19,  101
+// 255, 255, 255

@@ -1,4 +1,4 @@
-@use './helpers' as *;
+@use '../helpers' as *;
 
 body {
 	font-family: 'Exo';
@@ -25,7 +25,7 @@ h5 {
 }
 
 a {
-	color: $orangedark;
+	color: $magenta;
 	text-decoration: none;
 	position: relative;
 	transition: 200ms linear;
@@ -41,16 +41,5 @@ a {
 
 	img {
 		display: block;
-	}
-}
-
-.post {
-	pre,
-	pre[class*='language-'],
-	code,
-	code[class*='language-'] {
-		font-size: 0.9rem;
-		line-height: 1.4;
-		font-family: $jb;
 	}
 }

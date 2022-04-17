@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+.content.post {
+	max-width: 680px;
+	margin: 1rem;
+
+	@include lg {
+		max-width: 720px;
+	}
+
+	p img {
+		max-width: 90%;
+		height: auto;
+		margin: 0 auto;
+		display: block;
+	}
+}

@@ -1,72 +1,14 @@
-@use './normalize';
-@use './accessibility';
 @use './helpers' as *;
-@use './fonts';
 
-html {
-	font-size: 16px;
-}
+@use './base/font-face';
+@use './base/normalize';
+@use './base/accessibility';
+@use './base/fonts';
+@use './base/base';
 
-body {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	*,
-	&:before,
-	&:after {
-		box-sizing: inherit;
-	}
-}
-
-nav {
-	display: flex;
-	font-size: 1.7rem;
-	display: flex;
-	a.home-link {
-		display: block;
-		background: none;
-		font-weight: 700;
-		font-family: $jb;
-		text-transform: uppercase;
-	}
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-		display: flex;
-		a {
-			display: block;
-			margin: 0 1rem;
-		}
-	}
-}
-
-.content.post {
-	max-width: 680px;
-	margin: 1rem;
-
-	@include lg {
-		max-width: 720px;
-	}
-
-	pre[class*='language-'] {
-		margin: 0;
-		padding: 1rem 10px;
-		width: 100%;
-		max-width: 100%;
-		code {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-
-	p img {
-		max-width: 90%;
-		height: auto;
-		margin: 0 auto;
-		display: block;
-	}
-}
+@use './partials/nav';
+@use './partials/code-imgs';
+@use './partials/posts';
 
 img {
 	max-width: 90%;
@@ -77,107 +19,11 @@ img {
 
 code {
 	background-color: #efdfef;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: $jb;
 	padding-left: 3px;
 	padding-right: 3px;
 }
 
-.code-imgs-columns {
-	.column {
-		position: relative;
-		max-width: 300px;
-		margin: 0 auto 20px;
-		pre[class*='language-'] {
-			margin: 0;
-			padding: 12px 10px 16px 8px;
-			font-size: 0.8rem;
-			width: 100%;
-			max-width: 100%;
-			code {
-				font-size: 0.8rem;
-				width: 100%;
-				max-width: 100%;
-			}
-		}
-		img {
-			max-width: 100%;
-			display: block;
-			margin: 0;
-			width: 100%;
-		}
-	}
-	@include md {
-		display: flex;
-		justify-content: space-between;
-		margin-right: -200px;
-		.column {
-			flex: 0 0 32%;
-			max-width: 32%;
-			margin: 0;
-		}
-	}
-
-	@include lg {
-		margin-right: -250px;
-		justify-content: flex-start;
-		.column {
-			flex: 0 0 250px;
-			max-width: 250px;
-			margin-right: 20px;
-		}
-	}
-}
-
-.code-img {
-	position: relative;
-	background: #f5f2f0;
-
-	img {
-		max-width: 300px;
-		display: block;
-		margin-top: 5px;
-	}
-	pre[class*='language-'] {
-		border-bottom: 1px solid gray;
-		margin: 0;
-		padding: 1rem 10px;
-		font-size: 0.8rem;
-		width: 100%;
-		max-width: 100%;
-		code {
-			font-size: 0.8rem;
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-
-	@include md {
-		display: flex;
-		margin-right: -200px;
-		margin-bottom: 30px;
-		pre[class*='language-'] {
-			border-bottom: none;
-		}
-		img {
-			flex: 0 0 250px;
-			max-width: 250px;
-			align-self: flex-start;
-			position: sticky;
-			top: 0;
-			margin: 0;
-		}
-	}
-
-	@include lg {
-		margin-right: -250px;
-		img {
-			flex: 0 0 250px;
-			max-width: 250px;
-		}
-	}
-
-	pre[class*='language-'] {
-		margin: 0;
-		flex-grow: 1;
-	}
+body.page-home {
+	background-color: $nyanza;
 }

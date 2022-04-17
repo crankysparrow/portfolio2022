@@ -1,25 +1,34 @@
 ---
 layout: base.njk
+title: home
 ---
 
 <div class="wrapper home">
-	<header class="header">
-		<h1>michelle enos</h1>
-	</header>
+	<div class="title-wrap">
+		<h1 class="home-h1">hi, i'm michelle</h1>
 
-	<div class="content">
-		<h2>List of posts</h2>
-
-		<ul>
-			{%- for post in collections.post %}
-			<li>
-				<a href="{{ post.url | url }}">{{ post.data.title }}</a>
-			</li>
-			{%- endfor %}
-		</ul>
+		<div class="description callout">web developer</div>
 	</div>
 
-	<pre>
-        {{ collections | console }}
-    </pre>
+	<div class="content">
+		<h2>recent posts</h2>
+
+		<div class='post-list'>
+			{%- for post in collections.post %}
+			<div class='post-card'>
+				<div class='date'>{{ post.data.page.date }} </div>
+				<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+				{# {% if post.data.img %}
+					<img src="{{post.data.img | url }}" />
+				{% endif %} #}
+				<div class='excerpt'>{{ post.data.excerpt }}</div>
+
+				{# <pre>
+					{{ post | console }}
+				</pre> #}
+			</div>
+			{%- endfor %}
+		</div>
+	</div>
+
 </div>

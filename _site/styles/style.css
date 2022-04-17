@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 400;
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -358,26 +378,6 @@ template {
   z-index: 999999;
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  font-weight: 400;
-  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
-  font-weight: 700;
-}
 body {
   font-family: "Exo";
   font-weight: 300;
@@ -399,12 +399,12 @@ h3,
 h4,
 h5 {
   margin-bottom: 1rem;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", monospace;
   font-weight: 700;
 }
 
 a {
-  color: #dd3608;
+  color: #b81365;
   text-decoration: none;
   position: relative;
   transition: 200ms linear;
@@ -418,15 +418,6 @@ a:hover, a:focus {
 }
 a img {
   display: block;
-}
-
-.post pre,
-.post pre[class*=language-],
-.post code,
-.post code[class*=language-] {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-family: "JetBrains Mono";
 }
 
 html {
@@ -451,7 +442,7 @@ nav a.home-link {
   display: block;
   background: none;
   font-weight: 700;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
 }
 nav ul {
@@ -465,44 +456,21 @@ nav ul a {
   margin: 0 1rem;
 }
 
-.content.post {
-  max-width: 680px;
-  margin: 1rem;
-}
-@media (min-width: 1280px) {
-  .content.post {
-    max-width: 720px;
-  }
-}
-.content.post pre[class*=language-] {
+pre,
+pre[class*=language-] {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-family: "JetBrains Mono", monospace;
   margin: 0;
   padding: 1rem 10px;
   width: 100%;
   max-width: 100%;
 }
-.content.post pre[class*=language-] code {
+pre code,
+pre[class*=language-] code {
   width: 100%;
   max-width: 100%;
-}
-.content.post p img {
-  max-width: 90%;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-
-img {
-  max-width: 90%;
-  height: auto;
-  margin: 0 auto;
-  display: inline-block;
-}
-
-code {
-  background-color: #efdfef;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding: 0;
 }
 
 .code-imgs-columns .column {
@@ -518,6 +486,7 @@ code {
   max-width: 100%;
 }
 .code-imgs-columns .column pre[class*=language-] code {
+  white-space: pre-wrap;
   font-size: 0.8rem;
   width: 100%;
   max-width: 100%;
@@ -604,4 +573,38 @@ code {
 .code-img pre[class*=language-] {
   margin: 0;
   flex-grow: 1;
+}
+
+.content.post {
+  max-width: 680px;
+  margin: 1rem;
+}
+@media (min-width: 1280px) {
+  .content.post {
+    max-width: 720px;
+  }
+}
+.content.post p img {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+code {
+  background-color: #efdfef;
+  font-family: "JetBrains Mono", monospace;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+body.page-home {
+  background-color: #eeffdb;
 }

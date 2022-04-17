@@ -3,6 +3,8 @@ title: Generative Art Experiments - Truchet Tiles
 date: 2021-09-19
 layout: post.njk
 tags: post
+excerpt: 'exploring principles of symmetry with truchet tile patterns'
+img: '/images/truchet/truchet-01.jpeg'
 ---
 
 I recently learned about [truchet tiles](https://en.wikipedia.org/wiki/Truchet_tiles) and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn't create the most elegant results. I wanted to create symmetry out of the randomness in some way.
