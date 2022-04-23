@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $space: #2e294e;
 $orange: #ff521b; // good on black, on white large
 $orangedark: #dd3608;
@@ -25,5 +27,175 @@ $jb: 'JetBrains Mono', monospace;
 	}
 }
 
-// 184, 19,  101
-// 255, 255, 255
+@function size($val: 16px) {
+	@return math.div($val, 16) * 1rem;
+}
+
+@mixin fluid($prop, $min_vw, $max_vw, $min_val, $max_val) {
+	$slope: math.div(($max_val - $min_val), ($max_vw - $min_vw));
+	$yInt: size(-$min_vw * $slope + $min_val);
+
+	$min: $min_vw + 'px';
+	$max: $max_vw + 'px';
+
+	@media (min-width: $min) {
+		#{$prop}: size($min_val);
+		#{$prop}: clamp(#{size($min_val)}, #{$yInt} + (#{$slope} * 100vw), #{size($max_val)});
+	}
+
+	@media (min-width: $max) {
+		#{$prop}: size($max_val);
+	}
+}
+
+$space_dark: (
+	#2e294e,
+	#292546,
+	#25213e,
+	#201d37,
+	#1c192f,
+	#171527,
+	#12101f,
+	#0e0c17,
+	#090810,
+	#050408
+);
+
+$space_light: (
+	#2e294e,
+	#433e60,
+	#585471,
+	#6d6983,
+	#827f95,
+	#9794a7,
+	#aba9b8,
+	#c0bfca,
+	#d5d4dc,
+	#eaeaed,
+	#ffffff
+);
+
+$orange_dark: (
+	#ff521b,
+	#e64a18,
+	#cc4216,
+	#b33913,
+	#993110,
+	#80290e,
+	#66210b,
+	#4c1908,
+	#331005,
+	#190803
+);
+$orange_light: (
+	#ff521b,
+	#ff6332,
+	#ff7549,
+	#ff865f,
+	#ff9776,
+	#ffa98d,
+	#ffbaa4,
+	#ffcbbb,
+	#ffdcd1,
+	#ffeee8
+);
+
+$pink_dark: (
+	#b81365,
+	#a6115b,
+	#930f51,
+	#810d47,
+	#6e0b3d,
+	#5c0a33,
+	#4a0828,
+	#37061e,
+	#250414,
+	#12020a
+);
+$pink_light: (
+	#b81365,
+	#bf2b74,
+	#c64284,
+	#cd5a93,
+	#d471a3,
+	#dc89b2,
+	#e3a1c1,
+	#eab8d1,
+	#f1d0e0,
+	#f8e7f0
+);
+
+$blue_dark: (
+	#0197f6,
+	#0188dd,
+	#0179c5,
+	#016aac,
+	#015b94,
+	#014c7b,
+	#003c62,
+	#002d4a,
+	#001e31,
+	#000f19
+);
+$blue_light: (
+	#0197f6,
+	#1aa1f7,
+	#34acf8,
+	#4db6f9,
+	#67c1fa,
+	#80cbfb,
+	#99d5fb,
+	#b3e0fc,
+	#cceafd,
+	#e6f5fe
+);
+
+$turquoise_dark: (
+	#9aeade,
+	#8bd3c8,
+	#7bbbb2,
+	#6ca49b,
+	#5c8c85,
+	#4d756f,
+	#3e5e59,
+	#2e4643,
+	#1f2f2c,
+	#0f1716
+);
+$turquoise_light: (
+	#9aeade,
+	#a4ece1,
+	#aeeee5,
+	#b8f0e8,
+	#c2f2eb,
+	#cdf5ef,
+	#d7f7f2,
+	#e1f9f5,
+	#ebfbf8,
+	#f5fdfc
+);
+
+$mint_dark: (
+	#acfcd9,
+	#9be3c3,
+	#8acaae,
+	#78b098,
+	#679782,
+	#567e6d,
+	#456557,
+	#344c41,
+	#22322b,
+	#111916
+);
+$mint_light: (
+	#acfcd9,
+	#b4fcdd,
+	#bdfde1,
+	#c5fde4,
+	#cdfde8,
+	#d6feec,
+	#defef0,
+	#e6fef4,
+	#eefef7,
+	#f7fffb
+);

@@ -5,10 +5,13 @@
 @use './base/accessibility';
 @use './base/fonts';
 @use './base/base';
+@use './base/page-layout';
 
 @use './partials/nav';
 @use './partials/code-imgs';
 @use './partials/posts';
+@use './partials/post-list';
+@use './partials/about';
 
 img {
 	max-width: 90%;
@@ -25,5 +28,5 @@ code {
 }
 
 body.page-home {
-	background-color: $nyanza;
+	// background-color: $light;
 }

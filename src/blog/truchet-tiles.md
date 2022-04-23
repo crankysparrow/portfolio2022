@@ -1,8 +1,8 @@
 ---
-title: Generative Art Experiments - Truchet Tiles
+title: generating symmetry
 date: 2021-09-19
 layout: post.njk
-tags: post
+tags: ['generative art', 'javascript', 'p5js']
 excerpt: 'exploring principles of symmetry with truchet tile patterns'
 img: '/images/truchet/truchet-01.jpeg'
 ---

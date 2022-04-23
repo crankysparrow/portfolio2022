@@ -6,9 +6,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Michelle Blog</title>
-        {# <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/>  #}
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Fraunces:wght@400;600;800&display=swap' type='text/css' />
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Merriweather:wght@300;400;700&display=swap' type='text/css' />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Vollkorn:wght@400;500;600;700;800&display=swap' type='text/css' />
         <link rel="stylesheet" type="text/css" href="{{ '/styles/style.css' | url }}" />
         {# <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" /> #}
@@ -18,10 +15,9 @@
 
     <body class="page-{{title}}">
 
-
         <a class="screen-reader-text" href="#main">skip to content</a>
 
-        <header>
+        <header class='header'>
             {% include 'partials/nav.njk' %}
         </header>
     

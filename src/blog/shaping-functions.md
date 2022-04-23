@@ -2,8 +2,11 @@
 title: shaders & shapes
 date: 2021-10-24
 layout: post.njk
-tags: post
+tags: ['generative art', 'shaders']
+excerpt: 'notes on creating an animated gif from a simple shaping function'
 ---
+
+Confession: I still don't really understand shaders. I've been slowly learning in snatches of free time, but pretty much sticking to the basics: Draw a circle. Draw a rectangle. Draw a rectangle but moved over by so many pixels. Draw the same rectangle in 4 quarters of the screen. Draw a rectangle with another rectangle inside of it. That's where I'm at. So this is by no means a tutorial of any kind, just some notes on some recent experiments.
 
 I still haven't really figured out the mystery that is shaders, but this weekend I watched a [twitch stream](https://www.twitch.tv/videos/1184743691) from [curiouslyminded](https://www.curiouslyminded.xyz/) exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.
 

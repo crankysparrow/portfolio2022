@@ -5,9 +5,9 @@ title: home
 
 <div class="wrapper home">
 	<div class="title-wrap">
-		<h1 class="home-h1">hi, i'm michelle</h1>
+		<h1 class="home-h1">michelle enos</h1>
 
-		<div class="description callout">web developer</div>
+		<div class="description callout">front-end developer & web accessibility specialist</div>
 	</div>
 
 	<div class="content">
@@ -15,18 +15,16 @@ title: home
 
 		<div class='post-list'>
 			{%- for post in collections.post %}
-			<div class='post-card'>
-				<div class='date'>{{ post.data.page.date }} </div>
-				<a href="{{ post.url | url }}">{{ post.data.title }}</a>
-				{# {% if post.data.img %}
-					<img src="{{post.data.img | url }}" />
-				{% endif %} #}
-				<div class='excerpt'>{{ post.data.excerpt }}</div>
 
-				{# <pre>
-					{{ post | console }}
-				</pre> #}
-			</div>
+				<a href="{{ post.url | url }}" class='post-card block'>
+					<div class='date caps'>{{ (post.data.page.date) | dateString }} </div>
+					<h3 class='post-title h4'>{{ post.data.title }}</h3>
+					{# {% if post.data.img %}
+						<img src="{{post.data.img | url }}" />
+					{% endif %} #}
+					<div class='excerpt'>{{ post.data.excerpt }}</div>
+				</a>
+
 			{%- endfor %}
 		</div>
 	</div>

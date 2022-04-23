@@ -2,8 +2,10 @@
 
 nav {
 	display: flex;
+	justify-content: space-between;
 	font-size: 1.7rem;
-	display: flex;
+	width: 100%;
+
 	a.home-link {
 		display: block;
 		background: none;

@@ -1,0 +1,74 @@
+@use '../helpers' as *;
+@use 'sass:list';
+
+.post-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&:after {
+		content: '';
+	}
+
+	a.post-card,
+	&:after {
+		flex: 0 0 100%;
+		@include md {
+			flex: 0 0 48%;
+		}
+		@include lg {
+			flex: 0 0 32%;
+		}
+	}
+}
+
+a.post-card {
+	display: block;
+	// border-bottom: 4px solid list.nth($space_light, 5);
+	background-color: list.nth($turquoise_light, 8);
+	padding: 1.2rem 1rem 1.5rem;
+	margin-bottom: 3rem;
+	color: $space;
+	transition: box-shadow 500ms ease-in-out, background-position 500ms ease-in-out;
+
+	//prettier-ignore
+	--box-shadow-1: 		
+		2px 1px 4px #{transparentize(list.nth($turquoise_dark, 7), 0.9)}, 
+		-11px 7px 24px #{transparentize(list.nth($turquoise_dark, 7), 0.8)},
+		25px 20px 40px -20px #{transparentize(list.nth($turquoise_dark, 7), 0.5)};
+	--box-shadow-2: 15px 10px 20px -10px #{transparentize(list.nth($turquoise_dark, 7), 0.8)};
+
+	box-shadow: var(--box-shadow-2);
+
+	background-image: linear-gradient(
+		90deg,
+		#{list.nth($space_light, 5)} 0,
+		#{list.nth($space_light, 5)} 50%,
+		#{$orange} 50%,
+		#{$orange} 100%
+	);
+	background-size: 200% 6px;
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+
+	&:hover,
+	&:focus {
+		background-position: 100% 100%;
+		box-shadow: var(--box-shadow-1);
+	}
+	.date {
+		color: list.nth($space_light, 2);
+		margin-bottom: 0.5rem;
+	}
+
+	.post-title {
+		margin-bottom: 0.5rem;
+		color: $magenta;
+	}
+
+	@include md {
+		padding: 2rem 1.5rem;
+		.post-title {
+			margin-bottom: 0.8rem;
+		}
+	}
+}

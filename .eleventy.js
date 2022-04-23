@@ -33,6 +33,9 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter('console', function (value) {
 		return util.inspect(value)
+	})``
+	eleventyConfig.addFilter('dateString', function (d) {
+		return d.toLocaleDateString('en-US', { dateStyle: 'medium' })
 	})
 
 	let markdownIt = require('markdown-it')
