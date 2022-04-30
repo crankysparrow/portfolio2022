@@ -1,0 +1,22 @@
+---
+permalink: /tags/
+layout: page.njk
+title: Tags
+---
+
+<div class="wrapper tags-list-wrapper">
+    <div class="title-wrap">
+        <h1>Tags</h1>
+    </div>
+
+    <div class="tags-list">
+
+        {% for tag in collections.tagList %}
+
+            {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+            <a class='caps' href="{{ tagUrl | url }}">{{ tag }}</a>
+
+        {% endfor %}
+        
+    </div>
+</div>

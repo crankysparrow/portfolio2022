@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+
+<a class="screen-reader-text" href="#main">skip to content</a>
+
+<header class='header'>
+    {% include 'partials/nav.njk' %}
+</header>
+
+<main id="main">
+
+    <div class="wrapper">
+
+        {{ content | safe }}
+
+    </div>
+
+</main>
+
+<footer class="footer">
+
+</footer>

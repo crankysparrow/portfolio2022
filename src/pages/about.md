@@ -1,5 +1,5 @@
 ---
-title: About
+title: about me
 tags: page
 permalink: /about/
 layout: about.njk

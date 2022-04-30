@@ -12,9 +12,11 @@
 @use './partials/posts';
 @use './partials/post-list';
 @use './partials/about';
+@use './partials/home';
+@use './partials/tags';
 
 img {
-	max-width: 90%;
+	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
 	display: inline-block;

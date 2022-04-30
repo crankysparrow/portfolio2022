@@ -1,0 +1,8 @@
+@use '../helpers' as *;
+
+.page-home {
+	.title-wrap {
+		min-height: 100vh;
+		padding-top: 20%;
+	}
+}

@@ -3,9 +3,17 @@
 header.header {
 	margin-left: 7%;
 	margin-right: 7%;
+	position: relative;
+	z-index: 9;
 }
 
 .wrapper {
 	margin-left: 7%;
 	margin-right: 7%;
+	padding-bottom: 150px;
+}
+
+.title-wrap {
+	padding-bottom: 150px;
+	padding-top: clamp(100px, 10%, 170px);
 }

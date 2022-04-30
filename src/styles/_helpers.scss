@@ -15,6 +15,12 @@ $turquoise: #9aeade;
 $v: 'Vollkorn', serif;
 $jb: 'JetBrains Mono', monospace;
 
+@mixin sm {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
 @mixin md {
 	@media (min-width: 990px) {
 		@content;

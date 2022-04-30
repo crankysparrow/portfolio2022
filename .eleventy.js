@@ -24,18 +24,36 @@ module.exports = function (eleventyConfig) {
 	})
 
 	eleventyConfig.addWatchTarget('./src/styles')
+	eleventyConfig.addWatchTarget('./src/scripts')
 
 	eleventyConfig.addPassthroughCopy('./src/images')
 	eleventyConfig.addPassthroughCopy('./src/fonts')
-	// eleventyConfig.addPassthroughCopy('css')
+	eleventyConfig.addPassthroughCopy('./src/scripts')
+
+	eleventyConfig.addFilter('filterTags', function (tags) {
+		return (tags || []).filter((tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1)
+	})
+
+	eleventyConfig.addCollection('tagList', function (collections) {
+		let tagSet = new Set()
+		let filter = ['all', 'post', 'page']
+		collections.getAll().forEach((item) => {
+			;(item.data.tags || []).forEach((tag) => {
+				if (!filter.some((item) => item == tag)) tagSet.add(tag)
+			})
+		})
+
+		return [...tagSet]
+	})
 
 	eleventyConfig.addPlugin(syntaxHighlight)
 
 	eleventyConfig.addFilter('console', function (value) {
 		return util.inspect(value)
-	})``
+	})
+
 	eleventyConfig.addFilter('dateString', function (d) {
-		return d.toLocaleDateString('en-US', { dateStyle: 'medium' })
+		return d?.toLocaleDateString('en-US', { dateStyle: 'medium' })
 	})
 
 	let markdownIt = require('markdown-it')

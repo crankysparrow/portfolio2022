@@ -5,6 +5,7 @@ layout: post.njk
 tags: ['generative art', 'javascript', 'p5js']
 excerpt: 'exploring principles of symmetry with truchet tile patterns'
 img: '/images/truchet/truchet-01.jpeg'
+imgAlt: 'Tiled pattern of purple triangles and squares, which form various other polygons when mixed together.The four quarters of the pattern are symmetrical with each other.'
 ---
 
 I recently learned about [truchet tiles](https://en.wikipedia.org/wiki/Truchet_tiles) and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn't create the most elegant results. I wanted to create symmetry out of the randomness in some way.

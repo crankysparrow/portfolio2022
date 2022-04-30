@@ -1,0 +1,21 @@
+---
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter: 
+        - all
+        - post
+        - page
+permalink: /tags/{{ tag | slugify }}/
+layout: page.njk
+eleventyComputed: 
+  title: 'Tagged: “{{ tag }}”'
+---
+
+<div class='title-wrap'>
+<h1>Tagged: "{{ tag }}"</h1>
+</div>
+
+{% set currentCollection = collections[tag] %}
+{% include 'partials/post-list-imgs.njk' %}

@@ -1,0 +1,7 @@
+<a href="{{ post.url | url }}" class='post-card block'>
+    <div class='post-info'>
+        <div class='date caps'>{{ (post.data.page.date) | dateString }} </div>
+        <h3 class='post-title h4'>{{ post.data.title }}</h3>
+        <div class='excerpt'>{{ post.data.excerpt }}</div>
+    </div>
+</a>
