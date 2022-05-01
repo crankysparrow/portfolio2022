@@ -1,4 +1,5 @@
 @use '../helpers' as *;
+@use 'sass:list';
 
 // https://utopia.fyi/type/calculator/?c=320,0.3,1.2,1280,0.5,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
 :root {
@@ -49,6 +50,7 @@ h4,
 .h4 {
 	font-size: var(--step-2);
 	letter-spacing: size(-1.5);
+	font-weight: 500;
 }
 
 h5,

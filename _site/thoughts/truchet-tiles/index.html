@@ -8,16 +8,55 @@
         <title>Michelle Blog</title>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Vollkorn:wght@400;500;600;700;800&display=swap' type='text/css' />
         <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+        
+        
 
     </head>
 
     <body class="page-generating-symmetry">
+        <a class="screen-reader-text" href="#main">skip to content</a>
 
-        
+        <div class='page-wrap'>
+            <header class='header'>
+                <nav class="nav">
+    <a aria-label="home" class="home-link" href="/">me</a>
+    <ul class="nav-list">
+        <li>
+            <a href="/thoughts">thoughts</a>
+        </li>
+        <li>
+            <a href="/about">about</a>
+        </li>
+    </ul>
+</nav>
 
-<div class="content post">
-    <p>I recently learned about <a href="https://en.wikipedia.org/wiki/Truchet_tiles">truchet tiles</a> and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn't create the most elegant results. I wanted to create symmetry out of the randomness in some way.</p>
+            </header>
+
+            
+<main id='main'>
+    <div class='wrapper'>
+
+        <div class='title-wrap post-title-wrap'>
+            <h1>generating symmetry</h1>
+
+            <div class='tags-list'>
+                <span class='caps'>Tags:</span>
+                
+                    
+                    <a class='tag caps' href="/tags/generative-art/">#generative art</a>
+                
+                    
+                    <a class='tag caps' href="/tags/javascript/">#javascript</a>
+                
+                    
+                    <a class='tag caps' href="/tags/p5js/">#p5js</a>
+                
+            </div>    
+
+        </div>
+
+        <div class="content post">
+            <p>I recently learned about <a href="https://en.wikipedia.org/wiki/Truchet_tiles">truchet tiles</a> and decided to play around with creating patterns with them. I wanted to use some degree of randomness, but just looping through an array and setting all the tiles at random doesn't create the most elegant results. I wanted to create symmetry out of the randomness in some way.</p>
 <p>After playing awhile with I wanted to try creating symmetry out of the randomness in some way. I also just discovered p5's <a href="https://p5js.org/reference/#/p5/createGraphics"><code>createGraphics</code></a> function, so this seemed like a good use for that as well!</p>
 <h2>The process:</h2>
 <p>Build an image of a large tile, made up of <code>n</code> rows of <code>n</code> smaller tiles. So if <code>n = 3</code>, you have a large square tile made up of 9 smaller tiles.</p>
@@ -48,7 +87,23 @@
 <li><a href="https://compform.net/tiles/">comp form: tile maps</a></li>
 </ul>
 
-</div>
+            <div class='back'>
+                <a href='/thoughts'> ← all thoughts</a>
+            </div>
+        </div>
+
+    </div>
+</main>   
+
+            <footer class="footer">
+
+    <div class='footer-inner wrapper'>
+    
+        <a href='/credits'>Credits</a>. <a href='/accessibility'>Accessibility</a>.
+    </div>
+
+</footer>     
+        </div>
 
         
     </body>

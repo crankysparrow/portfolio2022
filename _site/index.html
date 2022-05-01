@@ -8,21 +8,21 @@
         <title>Michelle Blog</title>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Vollkorn:wght@400;500;600;700;800&display=swap' type='text/css' />
         <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+        
+        
 
     </head>
 
     <body class="page-home">
+        <a class="screen-reader-text" href="#main">skip to content</a>
 
-        
-<a class="screen-reader-text" href="#main">skip to content</a>
-
-<header class='header'>
-    <nav class="nav">
+        <div class='page-wrap'>
+            <header class='header'>
+                <nav class="nav">
     <a aria-label="home" class="home-link" href="/">me</a>
     <ul class="nav-list">
         <li>
-            <a href="/posts">posts</a>
+            <a href="/thoughts">thoughts</a>
         </li>
         <li>
             <a href="/about">about</a>
@@ -30,80 +30,77 @@
     </ul>
 </nav>
 
-</header>
+            </header>
 
-<main id="main">
+            
+<main id='main'>
+	<div id='sketch'></div>
 
-    <div class="wrapper">
+	<div class='wrapper'>
+		<div class='title-wrap'>
+			<h1 class="home-h1">michelle enos</h1>
+			<div class="description callout">front-end developer & web accessibility specialist</div>
+		</div>
 
-        
-<div id='sketch'></div>
+		<div class="content">
+			<h2>recent posts</h2>
 
-<div class='title-wrap'>
-	<h1 class="home-h1">michelle enos</h1>
-	<div class="description callout">front-end developer & web accessibility specialist</div>
-</div>
-
-<div class="content">
-	<h2>recent posts</h2>
-
-	<div class='post-list'>
+			<div class='post-list'>
     
-        <div class='post-card block'>
+        <a class='post-card block' href="/thoughts/shaping-functions/">
             <div class='post-info'>
                 <div class='date caps'>Oct 23, 2021 </div>
                 <div class='tags-list'>
                     
-                        
-                        <a class='tag caps' href="/tags/generative-art/">#generative art</a>
+                        <div class='tag caps'>#generative art</div>
                     
-                        
-                        <a class='tag caps' href="/tags/shaders/">#shaders</a>
+                        <div class='tag caps'>#shaders</div>
                     
                 </div>
-                <a class='post-title h4' href="/blog/shaping-functions/">
+                <div class='post-title h4'>
                     shaders &amp; shapes
-                </a>
+                </div>
                 <div class='excerpt'>notes on creating an animated gif from a simple shaping function</div>
             </div>
-        </div>
+        </a>
 
     
-        <div class='post-card block'>
+        <a class='post-card block' href="/thoughts/truchet-tiles/">
             <div class='post-info'>
                 <div class='date caps'>Sep 18, 2021 </div>
                 <div class='tags-list'>
                     
-                        
-                        <a class='tag caps' href="/tags/generative-art/">#generative art</a>
+                        <div class='tag caps'>#generative art</div>
                     
-                        
-                        <a class='tag caps' href="/tags/javascript/">#javascript</a>
+                        <div class='tag caps'>#javascript</div>
                     
-                        
-                        <a class='tag caps' href="/tags/p5js/">#p5js</a>
+                        <div class='tag caps'>#p5js</div>
                     
                 </div>
-                <a class='post-title h4' href="/blog/truchet-tiles/">
+                <div class='post-title h4'>
                     generating symmetry
-                </a>
+                </div>
                 <div class='excerpt'>exploring principles of symmetry with truchet tile patterns</div>
             </div>
-        </div>
+        </a>
 
     
 </div>
 
-</div>
+		</div>
+	</div>
 
+</main>   
 
+            <footer class="footer">
+
+    <div class='footer-inner wrapper'>
+    
+        <a href='/credits'>Credits</a>. <a href='/accessibility'>Accessibility</a>.
     </div>
 
-</main>
-
-<footer class="footer">
-
-</footer>
+</footer>     
+        </div>
 
         
             <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>

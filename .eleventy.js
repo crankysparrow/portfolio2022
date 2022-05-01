@@ -46,6 +46,13 @@ module.exports = function (eleventyConfig) {
 		return [...tagSet]
 	})
 
+	eleventyConfig.addCollection('work', function (collections) {
+		let work = collections.getFilteredByTag('work')
+		return work.sort(function (a, b) {
+			return b.data.order - a.data.order
+		})
+	})
+
 	eleventyConfig.addPlugin(syntaxHighlight)
 
 	eleventyConfig.addFilter('console', function (value) {

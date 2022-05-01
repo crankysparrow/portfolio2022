@@ -1,22 +1,27 @@
 ---
 title: home
-layout: page.njk
+layout: base.njk
 footerScripts: 
 - https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js
 - '/scripts/main.js'
 script: {{ /scripts/main.js | url }}
 ---
 
-<div id='sketch'></div>
+<main id='main'>
+	<div id='sketch'></div>
 
-<div class='title-wrap'>
-	<h1 class="home-h1">michelle enos</h1>
-	<div class="description callout">front-end developer & web accessibility specialist</div>
-</div>
+	<div class='wrapper'>
+		<div class='title-wrap'>
+			<h1 class="home-h1">michelle enos</h1>
+			<div class="description callout">front-end developer & web accessibility specialist</div>
+		</div>
 
-<div class="content">
-	<h2>recent posts</h2>
+		<div class="content">
+			<h2>recent posts</h2>
 
-	{% include 'partials/post-list.njk' %}
+			{% include 'partials/post-list-links.njk' %}
 
-</div>
+		</div>
+	</div>
+
+</main>

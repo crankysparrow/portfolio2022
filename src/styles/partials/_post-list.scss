@@ -1,6 +1,13 @@
 @use '../helpers' as *;
 @use 'sass:list';
 
+.content.post {
+	.back {
+		text-align: right;
+		margin-top: 3rem;
+	}
+}
+
 .post-list {
 	display: flex;
 	flex-wrap: wrap;

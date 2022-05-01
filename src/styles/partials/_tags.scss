@@ -11,6 +11,9 @@
 }
 
 a.tag {
+	&:after {
+		content: none;
+	}
 	&:hover,
 	&:focus {
 		background: $space;

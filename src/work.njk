@@ -1,0 +1,30 @@
+--- 
+title: Work 
+layout: page.njk 
+tags: page 
+---
+
+<div class="work-list">
+    {% for item in collections.work %}
+        <div class='work-item'>
+            <div class='img'>
+                <div class='img-inner'>
+                    <img src='{{ item.data.image | url }}' alt="{{ item.data.imageAlt }}"/>
+                </div>
+            </div>
+
+            <h2 class='h4 work-title'>{{ item.data.title }}</h2>
+
+            <div class='tags-list tech-tags'>
+                {% for tech in item.data.tech %}
+                    <div class='tag caps'>{{ tech }}</div>
+                {% endfor %}
+            </div>
+
+            <div class='work-item-content'>
+                {{ item.templateContent | safe }}
+            </div>
+
+        </div>
+    {% endfor %}
+</div>

@@ -86,7 +86,10 @@ rect(0, 0, width, height)
 }
 {% endhighlight %}
 
+<div class='img-col'>
+<em>result: </em>
 <img src="/images/shaders-shaping/shader1.png" alt="two white curves, mirror images of each other, on black background"  />
+</div>
 
 </div>
 
@@ -106,8 +109,10 @@ float c = 1.0 - pow(abs(st.x), 0.5);
 vec3 color = vec3(smoothstep(c - 0.02, c, st.y) - smoothstep(c, c + 0.02, st.y));
 {% endhighlight %}
 
+<div class='img-col'>
+<em>result: </em>
 <img src="/images/shaders-shaping/shader2.png"   />
-
+</div>
 </div>
 
 Then if we adjust the exponent, we can manipulate the shape:
@@ -148,7 +153,7 @@ float shape(float power, float x) {
 }
 
 float shapeTwo(float power, float x) {
-return pow(abs(x), power);
+    return pow(abs(x), power);
 }
 
 void main() {
@@ -166,9 +171,10 @@ st -= vec2(1.0, 1.0);
 
 }
 {% endhighlight %}
-
+<div class='img-col'>
+<em>result</em>
 <img src="/images/shaders-shaping/shader-reflect1.png"  />
-
+</div>
 </div>
 
 It turned out that to get the effect I was imagining I needed to move the second shape down:
@@ -177,12 +183,13 @@ It turned out that to get the effect I was imagining I needed to move the second
 
 {% highlight glsl %}
 float shapeTwo(float power, float x) {
-return pow(abs(x), power) - 1.0;
+    return pow(abs(x), power) - 1.0;
 }
 {% endhighlight %}
-
+<div class='img-col'>
+<em>result: </em>
 <img src="/images/shaders-shaping/shader-reflect2.png"  />
-
+</div>
 </div>
 
 Then I added a for loop to basically do the same thing a bunch of times, adjusting the exponent slightly on each iteration of the loop:
@@ -196,11 +203,13 @@ for (float i = -1.0; i < 1.0; i += 0.1) {
     color += smoothstep(c2-0.02, c2, st.y) - smoothstep(c2, c2+0.02, st.y);
 }
 {%endhighlight %}
-
+<div class='img-col'>
+<em>result: </em>
 <img src="/images/shaders-shaping/shader-loop.png"  />
 </div>
+</div>
 
-Sometime after that, I added in a uniform for time - basically just a variable that increments each time p5's draw function runs, and gets passed to the shader. Aaaaand after experimenting a lot ended up with something that I think looks pretty dang cool!
+Sometime after that, I added in a uniform for time - basically just a variable that increments each time p5's draw function runs, and gets passed to the shader. Aaaaand after some experimentation ended up with this one: 
 
 Final product:
 

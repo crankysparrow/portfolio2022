@@ -2,7 +2,28 @@
 layout: base.njk
 ---
 
+<main id='main'>
+    <div class='wrapper'>
 
-<div class="content post">
-    {{ content | safe }}
-</div>
+        <div class='title-wrap post-title-wrap'>
+            <h1>{{ title }}</h1>
+
+            <div class='tags-list'>
+                <span class='caps'>Tags:</span>
+                {% for tag in tags | filterTags %}
+                    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                    <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                {% endfor %}
+            </div>    
+
+        </div>
+
+        <div class="content post">
+            {{ content | safe }}
+            <div class='back'>
+                <a href='/thoughts'> ← all thoughts</a>
+            </div>
+        </div>
+
+    </div>
+</main>

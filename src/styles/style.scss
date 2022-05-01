@@ -14,19 +14,16 @@
 @use './partials/about';
 @use './partials/home';
 @use './partials/tags';
+@use './partials/footer';
+@use './partials/work-list';
+
+@use './vendor/prism-a11ydark';
 
 img {
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
 	display: inline-block;
-}
-
-code {
-	background-color: #efdfef;
-	font-family: $jb;
-	padding-left: 3px;
-	padding-right: 3px;
 }
 
 body.page-home {

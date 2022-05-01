@@ -7,6 +7,11 @@ header.header {
 	z-index: 9;
 }
 
+main#main {
+	z-index: 1;
+	position: relative;
+}
+
 .wrapper {
 	margin-left: 7%;
 	margin-right: 7%;
@@ -16,4 +21,19 @@ header.header {
 .title-wrap {
 	padding-bottom: 150px;
 	padding-top: clamp(100px, 10%, 170px);
+}
+
+.page-wrap {
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	min-height: 100vh;
+	header {
+		grid-row: 1;
+	}
+	main {
+		grid-row: 2;
+	}
+	footer {
+		grid-row: 3;
+	}
 }

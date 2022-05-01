@@ -13,7 +13,19 @@ $nyanza: #eeffdb;
 $turquoise: #9aeade;
 
 $v: 'Vollkorn', serif;
-$jb: 'JetBrains Mono', monospace;
+$jb: 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+@mixin xs-down {
+	@media (max-width: 634px) {
+		@content;
+	}
+}
+
+@mixin xs {
+	@media (min-width: 635px) {
+		@content;
+	}
+}
 
 @mixin sm {
 	@media (min-width: 768px) {

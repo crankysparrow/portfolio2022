@@ -1,6 +1,6 @@
 <div class='post-list post-list-imgs'>
     {% for post in currentCollection | default(collections.post) %}
-    <a href="{{ post.url | url }}" class='post-card block post-card-images'>
+    <div class='post-card block post-card-images'>
         <div class='img-wrap'>
             {% if post.data.img %}
                 <img src="{{post.data.img | url }}" class='post-img' alt='{{ post.data.imgAlt }}' />
@@ -10,10 +10,16 @@
             {% if post.data.page.date %}
                 <div class='date caps'>{{ (post.data.page.date) | dateString }} </div>
             {% endif %}
-            <h3 class='post-title h4'>{{ post.data.title }}</h3>
+            <div class='tags-list'>
+                {% for tag in post.data.tags | filterTags %}
+                    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                    <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                {% endfor %}
+            </div>
+            <a class='post-title h4'  href="{{ post.url | url }}">{{ post.data.title }}</a>
             <div class='excerpt'>{{ post.data.excerpt }}</div>
         </div>
-    </a>
+    </div>
 
     {% endfor %}
 </div>

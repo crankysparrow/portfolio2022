@@ -1,0 +1,11 @@
+@use '../helpers' as *;
+
+footer.footer {
+	background: #fff;
+	padding: 10px 0;
+	position: relative;
+	z-index: 2;
+	.footer-inner {
+		padding-bottom: 0;
+	}
+}
