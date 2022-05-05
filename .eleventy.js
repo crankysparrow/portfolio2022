@@ -12,18 +12,21 @@ module.exports = function (eleventyConfig) {
 			let parsed = path.parse(inputPath)
 			if (parsed.name.startsWith('_')) return
 
-			console.log('🔮 compiling scss...', inputPath)
-
 			return (data) => {
-				let includesPaths = [this.config.dir.includes]
-				let result = sass.compile(inputPath, { includesPaths })
+				console.log('🔮 compiling scss...', inputPath)
+				let result = sass.compile(inputPath)
 
 				return result.css
 			}
 		},
 	})
 
-	eleventyConfig.addWatchTarget('./src/styles')
+	// eleventyConfig.setBrowserSyncConfig({
+	// 	files: './_site/styles/*.css',
+	// 	injectChanges: true,
+	// })
+
+	// eleventyConfig.addWatchTarget('./src/styles')
 	eleventyConfig.addWatchTarget('./src/scripts')
 
 	eleventyConfig.addPassthroughCopy('./src/images')

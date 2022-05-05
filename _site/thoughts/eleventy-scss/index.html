@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Michelle Blog</title>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Vollkorn:wght@400;500;600;700;800&display=swap' type='text/css'/>
+        <link rel="stylesheet" type="text/css" href="/styles/style.css"/>
+        
+        
+
+    </head>
+
+    <body class="page-compiling-scss-with-eleventy">
+        <a class="screen-reader-text" href="#main">skip to content</a>
+
+        <div class='page-wrap'>
+            <header class='header'>
+                <nav class="nav">
+    <a aria-label="home" class="home-link" href="/">me</a>
+    <ul class="nav-list">
+        <li>
+            <a href="/thoughts">notes</a>
+        </li>
+        <li>
+            <a href="/about">about</a>
+        </li>
+        <li>
+            <a href="/work">work</a>
+        </li>
+    </ul>
+</nav>
+            </header>
+
+            
+<main id='main'>
+    <div class='wrapper'>
+
+        <div class='title-wrap post-title-wrap'>
+            <h1>compiling scss with eleventy</h1>
+
+            <div class='tags-list'>
+                <span class='caps'>Tags:</span>
+                
+                    
+                    <a class='tag caps' href="/tags/eleventy/">#eleventy</a>
+                
+                    
+                    <a class='tag caps' href="/tags/scss/">#scss</a>
+                
+            </div>    
+
+        </div>
+
+        <div class="content post">
+            <p>Just noting for myself the code &amp; process to set up scss as a custom templating language for <a href="https://www.11ty.dev/">Eleventy</a>.</p>
+<p>Eleventy added <a href="https://www.11ty.dev/docs/languages/custom/">custom templating languages</a> in a recent update. So we're going to add scss as a new template language and tell eleventy how to process it.</p>
+<p>The file structure for my project looks something like this:</p>
+<pre><code>.eleventy.js
+📂_site 
+    (compiled files from eleventy)
+📂src
+    index.njk
+    📂views
+    📂layouts
+    📂styles 
+        style.scss
+        _fonts.scss
+        _variables.scss
+</code></pre>
+<p>and the very basics of my eleventy config (in <strong>.eleventy.js</strong> file):</p>
+<pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br><br>    <span class="token keyword">return</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>			<span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">'src'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">'_site'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">layouts</span><span class="token operator">:</span> <span class="token string">'views/layouts'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">includes</span><span class="token operator">:</span> <span class="token string">'views'</span><span class="token punctuation">,</span><br>		<span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>updated .eleventy.js</h2>
+<p>ok! So to start compiling that <code>style.scss</code> file, we need to first run <code>npm install sass</code>.</p>
+<p>Then we can adjust our eleventy config.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> sass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'sass'</span><span class="token punctuation">)</span><br><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><br><br>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	eleventyConfig<span class="token punctuation">.</span><span class="token function">addTemplateFormats</span><span class="token punctuation">(</span><span class="token string">'scss'</span><span class="token punctuation">)</span><br>	eleventyConfig<span class="token punctuation">.</span><span class="token function">addExtension</span><span class="token punctuation">(</span><span class="token string">'scss'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>		<span class="token literal-property property">outputFileExtension</span><span class="token operator">:</span> <span class="token string">'css'</span><span class="token punctuation">,</span><br>		<span class="token function">compile</span><span class="token punctuation">(</span><span class="token parameter">content<span class="token punctuation">,</span> inputPath</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>			<span class="token keyword">let</span> parsed <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>inputPath<span class="token punctuation">)</span><br>			<span class="token keyword">if</span> <span class="token punctuation">(</span>parsed<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><br><br>			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'🔮 compiling scss...'</span><span class="token punctuation">,</span> inputPath<span class="token punctuation">)</span><br><br>			<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>				<span class="token keyword">let</span> result <span class="token operator">=</span> sass<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span>inputPath<span class="token punctuation">)</span><br>				<span class="token keyword">return</span> result<span class="token punctuation">.</span>css<br>			<span class="token punctuation">}</span><br>		<span class="token punctuation">}</span><span class="token punctuation">,</span><br>	<span class="token punctuation">}</span><span class="token punctuation">)</span><br><br>    <span class="token keyword">return</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>			<span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">'src'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">'_site'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">layouts</span><span class="token operator">:</span> <span class="token string">'views/layouts'</span><span class="token punctuation">,</span><br>			<span class="token literal-property property">includes</span><span class="token operator">:</span> <span class="token string">'views'</span><span class="token punctuation">,</span><br>		<span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Here's what's going on:</h2>
+<ul>
+<li>we import the <strong>sass</strong> module we installed + npm's <strong>path</strong> module, which is just to help us figure out the names of each file</li>
+<li><code>eleventyConfig.addTemplateFormats('scss')</code> tells eleventy to look for scss files in our source folder</li>
+<li><code>eleventyConfig.addExtension('scss', ...)</code> then tells eleventy how it'll process files with the extension scss</li>
+<li><code>outputFileExtension</code> tells eleventy that the compiled output should have the extension .css instead of .scss</li>
+<li>the <code>parsed</code> bit checks if the file starts with <strong>_</strong>, and if it does, simply returns the function so eleventy doesn't try to compile those files individually. Any scss file starting with an underscore is used by or imported into the main <strong>style.scss</strong> file, so we don't actually want separate css files for each one.</li>
+<li>the returned function within <code>compile</code> uses the sass module to compile our scss file and return the compiled css!
+** the <code>data</code> in the returned function is all the data's about eleventy's collections etc etc... we don't really need it here, though</li>
+</ul>
+<h2>alternatives</h2>
+<ul>
+<li>the <a href="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy">example on 11ty.dev</a> uses an async function instead</li>
+<li><a href="https://github.com/MWDelaney/ZeroPoint/blob/master/src/config/templateLanguages.js">ZeroPoint</a> starter theme uses <code>sass.renderSync</code></li>
+</ul>
+<h2>issues</h2>
+<p>Using eleventy's custom template option this way means that, when using the dev server, eleventy watches all the scss files and rebuilds every time there's a change to one of them. The browserSync server used for the dev server has the ability to simply inject updated CSS into the page, rather than reloading the page entirely.</p>
+<p>So if you were updating &amp; compiling your CSS some other way, without eleventy being aware of it, you could add something like this to <strong>eleventy.js</strong>:</p>
+<pre class="language-js"><code class="language-js">eleventyConfig<span class="token punctuation">.</span><span class="token function">setBrowserSyncConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>    <span class="token literal-property property">files</span><span class="token operator">:</span> <span class="token string">'./_site/styles/*.css'</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">injectChanges</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>But when eleventy is watching the scss files and rebuilding them itself, it will just reload the page every time the CSS is updated. There doesn't seem to be a way to use browserSync to inject the styles instead of reloading the page. This is not THAT big of a deal, but it annoys me. I'm not sure if there's some way to configure the server differently that I just can't find.</p>
+
+            <div class='back'>
+                <a href='/thoughts'> ← all thoughts</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+            <footer class="footer">
+
+    <div class='footer-inner wrapper'>
+    
+        <a href='/credits'>Credits</a>. <a href='/accessibility'>Accessibility</a>.
+    </div>
+
+</footer>     
+        </div>
+
+        
+    </body>
+
+</html>

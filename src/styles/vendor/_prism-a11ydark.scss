@@ -7,7 +7,8 @@
  */
 
 code[class*='language-'],
-pre[class*='language-'] {
+pre[class*='language-'],
+pre {
 	color: #f8f8f2;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -31,22 +32,26 @@ pre[class*='language-'] {
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*='language-'],
+pre {
 	padding: 1rem;
-	margin: 0.5em 0;
+	margin: 1rem 0;
 	overflow: auto;
 	border-radius: 0;
 }
 
 :not(pre) > code[class*='language-'],
+pre,
 pre[class*='language-'] {
 	background: #2b2b2b;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*='language-'],
+:not(pre) > code {
 	padding: 0.1em;
 	white-space: normal;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 
 .token.comment,
