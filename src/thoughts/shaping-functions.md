@@ -1,5 +1,5 @@
 ---
-title: shaders & shapes
+title: shader practice
 date: 2021-10-24
 layout: post.njk
 tags: ['generative art', 'shaders']
@@ -8,19 +8,25 @@ img: '/images/shaders-shaping/final-linear.jpg'
 imgAlt: 'white lines on black, in a curved diamond-like shape'
 ---
 
-Confession: I still don't really understand shaders. I've been slowly learning in snatches of free time, but pretty much sticking to the basics: Draw a circle. Draw a rectangle. Draw a rectangle but moved over by so many pixels. Draw the same rectangle in 4 quarters of the screen. Draw a rectangle with another rectangle inside of it. That's where I'm at. So this is by no means a tutorial of any kind, just some notes on some recent experiments.
+Let me admit that I don't understand shaders. 
 
-I still haven't really figured out the mystery that is shaders, but this weekend I watched a [twitch stream](https://www.twitch.tv/videos/1184743691) from [curiouslyminded](https://www.curiouslyminded.xyz/) exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.
+I've been slowly learning in snatches of free time, but pretty much __sticking to the basics: Draw a circle. Draw a rectangle. Draw a rectangle but moved over by so many pixels. Draw the same rectangle in 4 quarters of the screen. Draw a rectangle with another rectangle inside of it.__
 
-So, the [shaping function](https://thebookofshaders.com/05/) chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a 'toolbox' of functions for various projects. This [graphic](http://www.kynd.info/) shows a bunch of ways to manipulate values between 0 and 1:
+That's where I'm at. So this is by no means a tutorial of any kind, just some notes on some recent experiments.
+
+This weekend I watched a [twitch stream](https://www.twitch.tv/videos/1184743691) from [curiouslyminded](https://www.curiouslyminded.xyz/) exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.
+
+The [shaping function](https://thebookofshaders.com/05/) chapter of The Book of Shaders ends with suggestions of equations to play with to start building up a 'toolbox' of functions for various projects. 
+
+This [graphic](http://www.kynd.info/) shows a bunch of ways to manipulate values between 0 and 1:
 
 [![chart showing functions that move a point between -1 and 1 on the x-axis and 0 and 1 on the y-axis.](/images/shaders-shaping/shaders-kynd.png)](/images/shaders-shaping/shaders-kynd.png){img-link}
 
-If you take a look at the top row of the image, you can see how the function is basically the same except that the exponent moves between 0.5 and 3.5. So I thought we could get some cool shapes by making that exponent into a variable that gradually shifts between two different values.
+If you take a look at the top row of the image, you can see how __the function is basically the same except that the exponent moves between 0.5 and 3.5.__ So I thought we could get some cool shapes by making that exponent into a variable that gradually shifts between two different values.
 
-The first equation is `1.0 - pow(abs(x), 0.5)`. I managed to figure out how to map this into a simple shader. At first I just did this in VSCode using the [GLSL Viewer](https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas) extension, then I moved it into p5.js.
+The first equation is __`1.0 - pow(abs(x), 0.5)`__. I managed to figure out how to map this into a simple shader. At first I just did this in VSCode using the [GLSL Viewer](https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas) extension, then I moved it into p5.js.
 
-Admittedly I still do not entirely understand how the setup works with these, and I generally have to start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this [p5.js shaders guide](https://itp-xstory.github.io/p5js-shaders/#/).
+I still do not entirely understand how the setup works with these... I generally start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this [p5.js shaders guide](https://itp-xstory.github.io/p5js-shaders/#/).
 
 ```glsl
 #ifdef GL_ES
@@ -209,9 +215,9 @@ for (float i = -1.0; i < 1.0; i += 0.1) {
 </div>
 </div>
 
-Sometime after that, I added in a uniform for time - basically just a variable that increments each time p5's draw function runs, and gets passed to the shader. Aaaaand after some experimentation ended up with this one: 
+Sometime after that, I added in a uniform for time - basically just a variable that increments each time p5's draw function runs, and gets passed to the shader. 
 
-Final product:
+Aaaaand after some experimentation ended up with this final product:
 
 ![](/images/shaders-shaping/final-linear.gif)
 

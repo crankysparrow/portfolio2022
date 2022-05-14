@@ -7,13 +7,15 @@ tags: page
 <div class="work-list items-list">
     {% for item in collections.work %}
         <div class='work-item item'>
-            <div class='img img-color'>
+            <a class='img img-color' href='{{ item.data.link }}'>
                 <div class='img-inner'>
                     <img src='{{ item.data.image | url }}' alt="{{ item.data.imageAlt }}"/>
                 </div>
-            </div>
+            </a>
 
-            <h2 class='h4 work-title'>{{ item.data.title }}</h2>
+            <a class='title-link' href='{{ item.data.link }}'>
+                <h2 class='h4 work-title'>{{ item.data.title }}</h2>
+            </a>
 
             <div class='tags-list tech-tags'>
                 {% for tech in item.data.tech %}
