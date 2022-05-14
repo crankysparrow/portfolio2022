@@ -2,7 +2,44 @@
 
 .page-home {
 	.title-wrap {
+		position: relative;
 		min-height: 100vh;
-		padding-top: 20%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+
+	.animation-btn {
+		position: absolute;
+		right: -1rem;
+		bottom: 75px;
+		button {
+			display: block;
+			outline: none;
+			padding: 0.2rem;
+			text-align: right;
+			font-size: 0.8rem;
+			font-family: $jb;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			background-color: transparent;
+			transition: all 200ms;
+			&:hover {
+				background-color: $space;
+				color: #fff;
+			}
+			&:focus {
+				outline: 2px solid $orange;
+			}
+			&:focus:not(:focus-visible) {
+				outline: none;
+			}
+			&:focus-visible {
+				outline: 2px solid $orange;
+			}
+		}
 	}
 }

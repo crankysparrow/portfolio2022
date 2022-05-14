@@ -14,13 +14,28 @@
     </head>
 
     <body class="page-tagged-javascript">
-        <a class="screen-reader-text" href="#main">skip to content</a>
+        <a class="sr-text" href="#main">skip to content</a>
 
         <div class='page-wrap'>
             <header class='header'>
                 <nav class="nav">
-    <a aria-label="home" class="home-link" href="/">me</a>
-    <ul class="nav-list">
+    <a aria-label="home" class="home-link" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 83">
+            <g fill-rule="evenodd">
+                <path class='m-shape' fill-rule="nonzero" d="M55.57 4v75H43V20.65l-7.47 26.09H24.36l-7.3-24.73V79H5V4h15.16l7.18 23.84A85.3 85.3 0 0 1 30 38.73a82.47 82.47 0 0 1 2.44-10.18l.22-.71L39.73 4h15.84Z"/>
+                <path class='rect-shape' d="M54.67 68.16H87V79H54.67z"/>
+                <path class='rect-shape' d="M54.67 4H87v10.84H54.67z"/>
+                <path class='rect-shape' d="M54.67 34.72h26v10.84h-26z"/>
+            </g>
+        </svg>
+    </a>
+
+    <button class='ham' id='nav-open' aria-expanded='false'>
+        <span class='btn-text'>menu</span>
+        <span class='btn-inner'></span>
+    </button>
+
+    <ul class="nav-list" aria-hidden='true'>
         <li>
             <a href="/thoughts">notes</a>
         </li>
@@ -31,6 +46,7 @@
             <a href="/work">work</a>
         </li>
     </ul>
+
 </nav>
             </header>
 
@@ -48,36 +64,40 @@
         
 
 <div class='post-list post-list-imgs'>
-    
-        <div class='post-card block post-card-images'>
-            <div class='img-wrap'>
-                
-                    <img src="/images/truchet/truchet-01.jpeg" class='post-img' alt='Tiled pattern of purple triangles and squares, which form various other polygons when mixed together.The four quarters of the pattern are symmetrical with each other.'/>
-                
-            </div>
-            <div class='post-info'>
-                
-                    <div class='date caps'>Sep 18, 2021
+    <div class='post-list-inner'>
+        
+            <div class='post-card block post-card-images'>
+                <div class='img-wrap img img-color'>
+                    <div class='img-inner'>
+                        
+                            <img src="/images/truchet/truchet-01.jpeg" class='post-img' alt='Tiled pattern of purple triangles and squares, which form various other polygons when mixed together.The four quarters of the pattern are symmetrical with each other.'/>
+                        
                     </div>
-                
-                <div class='tags-list'>
-                    
-                        
-                        <a class='tag caps' href="/tags/generative-art/">#generative art</a>
-                    
-                        
-                        <a class='tag caps' href="/tags/javascript/">#javascript</a>
-                    
-                        
-                        <a class='tag caps' href="/tags/p5js/">#p5js</a>
-                    
                 </div>
-                <a class='post-title h4'  href="/thoughts/truchet-tiles/">generating symmetry</a>
-                <div class='excerpt'>exploring principles of symmetry with truchet tile patterns</div>
+                <div class='post-info'>
+                    
+                        <div class='date caps'>Sep 18, 2021
+                        </div>
+                    
+                    <div class='tags-list'>
+                        
+                            
+                            <a class='tag caps' href="/tags/generative-art/">#generative art</a>
+                        
+                            
+                            <a class='tag caps' href="/tags/javascript/">#javascript</a>
+                        
+                            
+                            <a class='tag caps' href="/tags/p5js/">#p5js</a>
+                        
+                    </div>
+                    <a class='post-title h4'  href="/thoughts/truchet-tiles/">generating symmetry</a>
+                    <div class='excerpt'>exploring principles of symmetry with truchet tile patterns</div>
+                </div>
             </div>
-        </div>
+        
 
-    
+    </div>
 </div>
 
 
@@ -88,14 +108,20 @@
             <footer class="footer">
 
     <div class='footer-inner wrapper'>
-    
-        <a href='/credits'>Credits</a>. <a href='/accessibility'>Accessibility</a>.
+        <div class='footer-item'>
+            <a href='/credits'>Credits</a>
+        </div>
+        <div class='footer-item'>
+            <a href='/accessibility'>Accessibility</a>
+        </div>
     </div>
 
-</footer>     
+</footer>
         </div>
 
         
+        <script src="/scripts/nav.js"></script>
+
     </body>
 
 </html>

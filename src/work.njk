@@ -4,10 +4,10 @@ layout: page.njk
 tags: page 
 ---
 
-<div class="work-list">
+<div class="work-list items-list">
     {% for item in collections.work %}
-        <div class='work-item'>
-            <div class='img'>
+        <div class='work-item item'>
+            <div class='img img-color'>
                 <div class='img-inner'>
                     <img src='{{ item.data.image | url }}' alt="{{ item.data.imageAlt }}"/>
                 </div>

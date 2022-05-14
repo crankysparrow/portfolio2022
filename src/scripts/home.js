@@ -1,8 +1,30 @@
+const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+let still = mediaQuery.matches ? true : false
 let space, blue, mint, turquoise, orange
 let shape1
 let m
 let addNoise = 0
 let seed = 1
+
+function playPauseButton() {
+	let btn = document.querySelector('#animate-toggle')
+	if (still) {
+		btn.innerHTML = 'play <br/>animation'
+	}
+
+	btn.addEventListener('click', function () {
+		if (still) {
+			still = false
+			btn.innerHTML = 'pause<br/>animation'
+			loop()
+		} else {
+			still = true
+			noLoop()
+			btn.innerHTML = 'play <br/>animation'
+		}
+	})
+}
 
 function setup() {
 	m = min(window.innerWidth, window.innerHeight)
@@ -22,6 +44,10 @@ function setup() {
 	canvas.parent('#sketch')
 
 	shape1 = new LinesCircle(m * 0.7, 0.8)
+
+	if (still) {
+		noLoop()
+	}
 }
 
 function draw() {
@@ -96,6 +122,9 @@ class LinesCircle {
 function mousePressed() {
 	seed++
 	noiseSeed(seed)
+	if (still) {
+		redraw()
+	}
 }
 
 function windowResized() {

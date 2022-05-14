@@ -14,13 +14,28 @@
     </head>
 
     <body class="page-home">
-        <a class="screen-reader-text" href="#main">skip to content</a>
+        <a class="sr-text" href="#main">skip to content</a>
 
         <div class='page-wrap'>
             <header class='header'>
                 <nav class="nav">
-    <a aria-label="home" class="home-link" href="/">me</a>
-    <ul class="nav-list">
+    <a aria-label="home" class="home-link" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 83">
+            <g fill-rule="evenodd">
+                <path class='m-shape' fill-rule="nonzero" d="M55.57 4v75H43V20.65l-7.47 26.09H24.36l-7.3-24.73V79H5V4h15.16l7.18 23.84A85.3 85.3 0 0 1 30 38.73a82.47 82.47 0 0 1 2.44-10.18l.22-.71L39.73 4h15.84Z"/>
+                <path class='rect-shape' d="M54.67 68.16H87V79H54.67z"/>
+                <path class='rect-shape' d="M54.67 4H87v10.84H54.67z"/>
+                <path class='rect-shape' d="M54.67 34.72h26v10.84h-26z"/>
+            </g>
+        </svg>
+    </a>
+
+    <button class='ham' id='nav-open' aria-expanded='false'>
+        <span class='btn-text'>menu</span>
+        <span class='btn-inner'></span>
+    </button>
+
+    <ul class="nav-list" aria-hidden='true'>
         <li>
             <a href="/thoughts">notes</a>
         </li>
@@ -31,6 +46,7 @@
             <a href="/work">work</a>
         </li>
     </ul>
+
 </nav>
             </header>
 
@@ -42,69 +58,75 @@
 		<div class='title-wrap'>
 			<h1 class="home-h1">michelle enos</h1>
 			<div class="description callout">front-end developer & web accessibility specialist</div>
+			<div class='animation-btn'>
+				<button id='animate-toggle'>
+					pause <br/> animation</button>
+			</div>
 		</div>
 
 		<div class="content">
 			<h2>recent posts</h2>
 
-			<div class='post-list'>
-    
-        <a class='post-card block' href="/thoughts/eleventy-scss/">
-            <div class='post-info'>
-                <div class='date caps'>Jan 29, 2022 </div>
-                <div class='tags-list'>
-                    
-                        <div class='tag caps'>#eleventy</div>
-                    
-                        <div class='tag caps'>#scss</div>
-                    
+			<div class='post-list post-list-no-imgs'>
+    <div class='post-list-inner'>
+        
+            <a class='post-card block' href="/thoughts/eleventy-scss/">
+                <div class='post-info'>
+                    <div class='date caps'>Jan 29, 2022
+                    </div>
+                    <div class='tags-list'>
+                        
+                            <div class='tag caps'>#eleventy</div>
+                        
+                            <div class='tag caps'>#scss</div>
+                        
+                    </div>
+                    <div class='post-title h4'>
+                        compiling scss with eleventy
+                    </div>
+                    <div class='excerpt'>notes on setting up scss as a custom template language with eleventy</div>
                 </div>
-                <div class='post-title h4'>
-                    compiling scss with eleventy
+            </a>
+        
+            <a class='post-card block' href="/thoughts/shaping-functions/">
+                <div class='post-info'>
+                    <div class='date caps'>Oct 23, 2021
+                    </div>
+                    <div class='tags-list'>
+                        
+                            <div class='tag caps'>#generative art</div>
+                        
+                            <div class='tag caps'>#shaders</div>
+                        
+                    </div>
+                    <div class='post-title h4'>
+                        shaders &amp; shapes
+                    </div>
+                    <div class='excerpt'>notes on creating an animated gif from a simple shaping function</div>
                 </div>
-                <div class='excerpt'>notes on setting up scss as a custom template language with eleventy</div>
-            </div>
-        </a>
-
-    
-        <a class='post-card block' href="/thoughts/shaping-functions/">
-            <div class='post-info'>
-                <div class='date caps'>Oct 23, 2021 </div>
-                <div class='tags-list'>
-                    
-                        <div class='tag caps'>#generative art</div>
-                    
-                        <div class='tag caps'>#shaders</div>
-                    
+            </a>
+        
+            <a class='post-card block' href="/thoughts/truchet-tiles/">
+                <div class='post-info'>
+                    <div class='date caps'>Sep 18, 2021
+                    </div>
+                    <div class='tags-list'>
+                        
+                            <div class='tag caps'>#generative art</div>
+                        
+                            <div class='tag caps'>#javascript</div>
+                        
+                            <div class='tag caps'>#p5js</div>
+                        
+                    </div>
+                    <div class='post-title h4'>
+                        generating symmetry
+                    </div>
+                    <div class='excerpt'>exploring principles of symmetry with truchet tile patterns</div>
                 </div>
-                <div class='post-title h4'>
-                    shaders &amp; shapes
-                </div>
-                <div class='excerpt'>notes on creating an animated gif from a simple shaping function</div>
-            </div>
-        </a>
-
-    
-        <a class='post-card block' href="/thoughts/truchet-tiles/">
-            <div class='post-info'>
-                <div class='date caps'>Sep 18, 2021 </div>
-                <div class='tags-list'>
-                    
-                        <div class='tag caps'>#generative art</div>
-                    
-                        <div class='tag caps'>#javascript</div>
-                    
-                        <div class='tag caps'>#p5js</div>
-                    
-                </div>
-                <div class='post-title h4'>
-                    generating symmetry
-                </div>
-                <div class='excerpt'>exploring principles of symmetry with truchet tile patterns</div>
-            </div>
-        </a>
-
-    
+            </a>
+        
+    </div>
 </div>
 
 		</div>
@@ -115,18 +137,24 @@
             <footer class="footer">
 
     <div class='footer-inner wrapper'>
-    
-        <a href='/credits'>Credits</a>. <a href='/accessibility'>Accessibility</a>.
+        <div class='footer-item'>
+            <a href='/credits'>Credits</a>
+        </div>
+        <div class='footer-item'>
+            <a href='/accessibility'>Accessibility</a>
+        </div>
     </div>
 
-</footer>     
+</footer>
         </div>
 
         
             <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
         
-            <script src=/scripts/main.js></script>
+            <script src=/scripts/home.js></script>
         
+        <script src="/scripts/nav.js"></script>
+
     </body>
 
 </html>

@@ -3,8 +3,8 @@ title: home
 layout: base.njk
 footerScripts: 
 - https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js
-- '/scripts/main.js'
-script: {{ /scripts/main.js | url }}
+- '/scripts/home.js'
+
 ---
 
 <main id='main'>
@@ -14,6 +14,10 @@ script: {{ /scripts/main.js | url }}
 		<div class='title-wrap'>
 			<h1 class="home-h1">michelle enos</h1>
 			<div class="description callout">front-end developer & web accessibility specialist</div>
+			<div class='animation-btn'>
+				<button id='animate-toggle'>
+					pause <br/> animation</button>
+			</div>
 		</div>
 
 		<div class="content">

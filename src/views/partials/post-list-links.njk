@@ -1,19 +1,21 @@
-<div class='post-list'>
-    {% for post in currentCollection | default(collections.post) | reverse %}
-        <a class='post-card block' href="{{ post.url | url }}">
-            <div class='post-info'>
-                <div class='date caps'>{{ (post.data.page.date) | dateString }} </div>
-                <div class='tags-list'>
-                    {% for tag in post.data.tags | filterTags %}
-                        <div class='tag caps'>#{{ tag }}</div>
-                    {% endfor %}
+<div class='post-list post-list-no-imgs'>
+    <div class='post-list-inner'>
+        {% for post in currentCollection | default(collections.post) | reverse %}
+            <a class='post-card block' href="{{ post.url | url }}">
+                <div class='post-info'>
+                    <div class='date caps'>{{ (post.data.page.date) | dateString }}
+                    </div>
+                    <div class='tags-list'>
+                        {% for tag in post.data.tags | filterTags %}
+                            <div class='tag caps'>#{{ tag }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class='post-title h4'>
+                        {{ post.data.title }}
+                    </div>
+                    <div class='excerpt'>{{ post.data.excerpt }}</div>
                 </div>
-                <div class='post-title h4'>
-                    {{ post.data.title }}
-                </div>
-                <div class='excerpt'>{{ post.data.excerpt }}</div>
-            </div>
-        </a>
-
-    {% endfor %}
+            </a>
+        {% endfor %}
+    </div>
 </div>

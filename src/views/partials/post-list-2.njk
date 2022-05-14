@@ -1,0 +1,40 @@
+<div class='post-list-new'>
+    {% for post in currentCollection | default(collections.post) | reverse %}
+
+        <div class='item'>
+            {% if post.data.img %}
+                <div class='img img-color'>
+                    <div class='img-inner'>
+                        <img src="{{post.data.img | url }}" class='post-img' alt='{{ post.data.imgAlt }}'/>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class='item-info'>
+
+                <h2 class='h3 post-title work-title'>
+                    <a  href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </h2>
+
+                <div class='tags-list'>
+                    {% for tag in post.data.tags | filterTags %}
+                        {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                        <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                    {% endfor %}
+                </div>
+
+                <div class='work-item-content'>
+                    {% if post.data.page.date %}
+                        <div class='date caps'>{{ (post.data.page.date) | dateString }}</div>
+                    {% endif %}
+                    <div class='excerpt'>
+                        {{ post.data.excerpt }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    {% endfor %}
+
+</div>

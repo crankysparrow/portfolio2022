@@ -15,6 +15,8 @@ $turquoise: #9aeade;
 $v: 'Vollkorn', serif;
 $jb: 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
+$easein_sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+
 @mixin xs-down {
 	@media (max-width: 634px) {
 		@content;
@@ -29,6 +31,12 @@ $jb: 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
 
 @mixin sm {
 	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin sm-down {
+	@media (max-width: 767px) {
 		@content;
 	}
 }

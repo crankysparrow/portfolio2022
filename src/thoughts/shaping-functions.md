@@ -12,15 +12,15 @@ Confession: I still don't really understand shaders. I've been slowly learning i
 
 I still haven't really figured out the mystery that is shaders, but this weekend I watched a [twitch stream](https://www.twitch.tv/videos/1184743691) from [curiouslyminded](https://www.curiouslyminded.xyz/) exploring shaders, and got inspired to go back to The Book of Shaders and take a look at some basic exercises/ideas.
 
-So, the [shaping function](https://thebookofshaders.com/05/) chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a 'toolbox' of functions for various projects. This table of equations shows a bunch of ways to manipulate values between 0 and 1:
+So, the [shaping function](https://thebookofshaders.com/05/) chapter of The Book of Shaders ends with a bunch of suggestions of equations to play with to start building up a 'toolbox' of functions for various projects. This [graphic](http://www.kynd.info/) shows a bunch of ways to manipulate values between 0 and 1:
 
-[![](/public/images/shaders-shaping/shaders-kynd.png)](/public/images/shaders-shaping/shaders-kynd.png)
+[![chart showing functions that move a point between -1 and 1 on the x-axis and 0 and 1 on the y-axis.](/images/shaders-shaping/shaders-kynd.png)](/images/shaders-shaping/shaders-kynd.png){img-link}
 
 If you take a look at the top row of the image, you can see how the function is basically the same except that the exponent moves between 0.5 and 3.5. So I thought we could get some cool shapes by making that exponent into a variable that gradually shifts between two different values.
 
 The first equation is `1.0 - pow(abs(x), 0.5)`. I managed to figure out how to map this into a simple shader. At first I just did this in VSCode using the [GLSL Viewer](https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas) extension, then I moved it into p5.js.
 
-Admittedly I still do not entirely understand how the setup works with these, and I generally have to start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this [p5.js shaders guide](https://itp-xstory.github.io/p5js-shaders/#/) (the code for the vertex shader was especially helpful since I definitely don't understand how that one works yet!).
+Admittedly I still do not entirely understand how the setup works with these, and I generally have to start out by grabbing the uniform/attribute names and the scripts to position the shader correctly from an external resource. The Book of Shaders helped with the first version; in the second, I used language from this [p5.js shaders guide](https://itp-xstory.github.io/p5js-shaders/#/).
 
 ```glsl
 #ifdef GL_ES
@@ -111,7 +111,7 @@ vec3 color = vec3(smoothstep(c - 0.02, c, st.y) - smoothstep(c, c + 0.02, st.y))
 
 <div class='img-col'>
 <em>result: </em>
-<img src="/images/shaders-shaping/shader2.png"   />
+<img src="/images/shaders-shaping/shader2.png" alt="" />
 </div>
 </div>
 
@@ -123,7 +123,7 @@ Then if we adjust the exponent, we can manipulate the shape:
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 1.0);
 {% endhighlight %}
-<img src="/images/shaders-shaping/shader3.png" />
+<img src="/images/shaders-shaping/shader3.png" alt="" />
 
 </div>
 
@@ -131,7 +131,7 @@ float c = 1.0 - pow(abs(st.x), 1.0);
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 1.5);
 {% endhighlight %}
-<img src="/images/shaders-shaping/shader4.png" />
+<img src="/images/shaders-shaping/shader4.png" alt="" />
 
 </div>
 
@@ -139,7 +139,7 @@ float c = 1.0 - pow(abs(st.x), 1.5);
 {% highlight glsl %}
 float c = 1.0 - pow(abs(st.x), 2.0);
 {% endhighlight %}
-<img src="/images/shaders-shaping/shader5.png" />
+<img src="/images/shaders-shaping/shader5.png" alt="" />
 </div>
 
 </div>
@@ -173,7 +173,7 @@ st -= vec2(1.0, 1.0);
 {% endhighlight %}
 <div class='img-col'>
 <em>result</em>
-<img src="/images/shaders-shaping/shader-reflect1.png"  />
+<img src="/images/shaders-shaping/shader-reflect1.png" alt="" />
 </div>
 </div>
 
@@ -188,7 +188,7 @@ float shapeTwo(float power, float x) {
 {% endhighlight %}
 <div class='img-col'>
 <em>result: </em>
-<img src="/images/shaders-shaping/shader-reflect2.png"  />
+<img src="/images/shaders-shaping/shader-reflect2.png" alt="" />
 </div>
 </div>
 
@@ -240,7 +240,7 @@ void main() {
 A couple notes on this last bit of code:
 
 -   At some point, I adjusted the code in the beginning of this function that positions the `st` variable. The `st *= vec2(1.0, 2.0);` line stretches out the x-axis.
--   The line that adjusts the power function according to the time is pretty weird. I originally was using a sine function, but I didn't actually like the natural easing that added into the effect. I wanted the value to move from -1 up to 1 at a constant speed, then change direction and go back to -1, and keep going back and forth without an easing effect. I am pretty sure there's a much easier way to do this, and it's probably something really obvious I'm just missing. But what I ended up finally doing to make this happen was mapping out two functions on [graphtoy.com](https://graphtoy.com), which is a pretty neat visual editor. If you follow [this link](<https://graphtoy.com/?f1(x,t)=fract(x*0.5)*-4.0+1.0&v1=false&f2(x,t)=fract(x*0.5)*4.0-3.0&v2=false&f3(x,t)=max(f1(x),f2(x))&v3=true&f4(x,t)=&v4=false&f5(x,t)=&v5=false&f6(x,t)=&v6=false&grid=true&coords=0,0,4.205926793776717>) you should be able to see exactly what those functions were and how they are combined (click on the labels next to each of the functions to toggle their visibility).
+-   The line that adjusts the power function according to the time is pretty weird... I was trying to just have it move linearly up & down rather than use a sine function for timing. I fiddled with [graphtoy.com](https://graphtoy.com) until I found the function combination I liked. If you follow [this link](<https://graphtoy.com/?f1(x,t)=fract(x*0.5)*-4.0+1.0&v1=false&f2(x,t)=fract(x*0.5)*4.0-3.0&v2=false&f3(x,t)=max(f1(x),f2(x))&v3=true&f4(x,t)=&v4=false&f5(x,t)=&v5=false&f6(x,t)=&v6=false&grid=true&coords=0,0,4.205926793776717>) you should be able to see exactly what those functions were and how they are combined (click on the labels next to each of the functions to toggle their visibility).
 
 Here's a version using sine function for timing instead of linear:
 

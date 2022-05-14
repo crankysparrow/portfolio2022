@@ -14,7 +14,7 @@
     </head>
 
     <body class="page-{{title | slugify}}">
-        <a class="screen-reader-text" href="#main">skip to content</a>
+        <a class="sr-text" href="#main">skip to content</a>
 
         <div class='page-wrap'>
             <header class='header'>
@@ -29,6 +29,8 @@
         {% for script in footerScripts %}
             <script src={{ script | url }}></script>
         {% endfor %}
+        <script src="/scripts/nav.js"></script>
+
     </body>
 
 </html>

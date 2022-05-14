@@ -1,8 +1,6 @@
 @use '../helpers' as *;
 
 header.header {
-	margin-left: 7%;
-	margin-right: 7%;
 	position: relative;
 	z-index: 9;
 }
@@ -17,12 +15,30 @@ main#main {
 	margin-right: 7%;
 	padding-bottom: 150px;
 	position: relative;
-	width: 86%;
+	// width: 86%;
+
+	@include lg {
+		margin-left: 10%;
+		margin-right: 10%;
+		// margin-right: 25%;
+		// width: auto;
+	}
+
+	.page-thoughts & {
+		@include md {
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+		@include lg {
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+	}
 }
 
 .title-wrap {
 	padding-bottom: 150px;
-	padding-top: clamp(100px, 10%, 170px);
+	padding-top: clamp(150px, 20%, 200px);
 }
 
 .page-wrap {
@@ -30,6 +46,7 @@ main#main {
 	grid-template-rows: min-content 1fr min-content;
 	min-height: 100vh;
 	grid-template-columns: 100%;
+	overflow: hidden;
 	header {
 		grid-row: 1;
 	}
