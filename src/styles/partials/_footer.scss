@@ -8,15 +8,14 @@ footer.footer {
 	.footer-inner {
 		text-align: center;
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		align-items: center;
 		padding-bottom: 0;
-		a {
-			margin-right: 1rem;
-		}
+
 		.footer-socials {
+			margin-top: 1rem;
 			a {
-				margin-left: 1.5rem;
-				margin-right: 0;
+				margin: 0 1rem;
 				&:hover,
 				&:focus {
 					color: $space;
@@ -26,14 +25,22 @@ footer.footer {
 				}
 			}
 		}
-		.footer-item {
-			padding: 0 1rem;
-			// border-right: 1px solid transparentize($space, 0.7);
-			// &:last-child {
-			// 	border-right: none;
-			// }
-			a {
-				display: block;
+		.footer-links a {
+			margin: 0 0.7rem;
+		}
+
+		@include sm {
+			flex-direction: row;
+			justify-content: space-between;
+			.footer-socials {
+				margin-top: 0;
+				a {
+					margin-left: 1.5rem;
+					margin-right: 0;
+				}
+			}
+			.footer-links a {
+				margin: 0 1rem 0;
 			}
 		}
 	}

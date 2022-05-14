@@ -3,6 +3,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const sass = require('sass')
 const del = require('del')
 const path = require('path')
+const faviconPlugin = require('eleventy-favicon')
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats('scss')
@@ -21,12 +22,6 @@ module.exports = function (eleventyConfig) {
 		},
 	})
 
-	// eleventyConfig.setBrowserSyncConfig({
-	// 	files: './_site/styles/*.css',
-	// 	injectChanges: true,
-	// })
-
-	// eleventyConfig.addWatchTarget('./src/styles')
 	eleventyConfig.addWatchTarget('./src/scripts')
 
 	eleventyConfig.addPassthroughCopy('./src/images')
@@ -57,6 +52,8 @@ module.exports = function (eleventyConfig) {
 	})
 
 	eleventyConfig.addPlugin(syntaxHighlight)
+
+	eleventyConfig.addPlugin(faviconPlugin)
 
 	eleventyConfig.addFilter('console', function (value) {
 		return util.inspect(value)
