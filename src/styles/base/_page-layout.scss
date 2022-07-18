@@ -24,7 +24,8 @@ main#main {
 		// width: auto;
 	}
 
-	.page-thoughts & {
+	.page-thoughts &,
+	&.wrapper-sm {
 		@include md {
 			margin-left: 10%;
 			margin-right: 10%;
