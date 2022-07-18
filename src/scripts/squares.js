@@ -12,9 +12,7 @@ function setup() {
 
 	space = color(248, 32, 24)
 	blue = color(203, 99, 48)
-	// turquoise = color(171, 66, 76)
 	turquoise = color(171, 66, 50)
-	// turquoise.setAlpha(0.5)
 
 	let canvas = createCanvas(window.innerWidth, window.innerHeight)
 	canvas.parent('#sketch')
@@ -32,7 +30,6 @@ function draw() {
 	stroke(turquoise)
 	noFill()
 
-	// translate(width / 2, height / 2)
 	let mousePointX = map(mouseX - (width - m) / 2, 0, m, -m / 2, m / 2)
 	let mousePointY = map(mouseY - (height - m) / 2, 0, m, -m / 2, m / 2)
 
@@ -61,31 +58,4 @@ function draw() {
 		}
 		x += stepSize
 	}
-
-	// for (let yStep = -numTiles / 2; yStep <= numTiles / 2; yStep++) {
-	// 	for (let xStep = -numTiles / 2; xStep <= numTiles / 2; xStep++) {
-	// 		let x = tileSize * xStep
-	// 		let y = tileSize * yStep
-	// 		let d = dist(mousePointX, mousePointY, x, y)
-	// 		let dx = mousePointX - x
-	// 		let dy = mousePointY - y
-	// 		let xOff = (dx / m) * tileSize
-	// 		let yOff = (dy / m) * tileSize
-
-	// 		push()
-	// 		translate(x, y)
-
-	// 		let s = map(d, 0, m, tileSize * 1.5, tileSize * 0.5) * shapeSize
-	// 		// rotate(map(d, -m / 2, m / 2, 0, PI))
-	// 		// translate(xOff, yOff)
-	// 		var col = lerpColor(turquoise, blue, d / m)
-	// 		col.setAlpha(alphaVal)
-	// 		noFill()
-	// 		stroke(col)
-	// 		strokeWeight(3)
-	// 		rect(0, 0, tileSize)
-
-	// 		pop()
-	// 	}
-	// }
 }

@@ -119,11 +119,28 @@ class LinesCircle {
 	}
 }
 
-function mousePressed() {
-	seed++
-	noiseSeed(seed)
-	if (still) {
-		redraw()
+const btn = document.querySelector('#animate-toggle')
+if (still) btn.innerHTML = 'play<br/>animation'
+
+function mousePressed(e) {
+	if (e.target.matches('#animate-toggle')) {
+		if (still) {
+			still = false
+			btn.innerHTML = 'pause<br />animation'
+			loop()
+		} else {
+			still = true
+			noLoop()
+			btn.innerHTML = 'play <br/>animation'
+		}
+
+		return
+	} else {
+		seed++
+		noiseSeed(seed)
+		if (still) {
+			redraw()
+		}
 	}
 }
 
