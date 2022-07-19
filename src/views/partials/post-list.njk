@@ -3,9 +3,6 @@
 		{% for post in currentCollection | default(collections.post) | reverse %}
 			<div class='post-card post-card-fw block'>
 				<div class='post-info'>
-					{# <div class='date caps'>
-											{{ (post.data.page.date) | dateString }}
-									</div> #}
 					<a class='post-title h4' href="{{ post.url | url }}">
 						{{ post.data.title }}
 					</a>

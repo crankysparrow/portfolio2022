@@ -14,7 +14,11 @@ layout: base.njk
                     {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                     <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
                 {% endfor %}
-            </div>    
+            </div>
+
+            <div class='date'>
+                <strong>Last updated: </strong>{{ dateUpdated | dateString }}
+            </div>
 
         </div>
 
