@@ -10,10 +10,10 @@
                     </div>
                 </div>
                 <div class='post-info'>
-                    {% if post.data.page.date %}
+                    {# {% if post.data.page.date %}
                         <div class='date caps'>{{ (post.data.page.date) | dateString }}
-                        </div>
-                    {% endif %}
+                        </div> #}
+                    {# {% endif %} #}
                     <div class='tags-list'>
                         {% for tag in post.data.tags | filterTags %}
                             {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}

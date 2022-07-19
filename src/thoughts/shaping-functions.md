@@ -1,6 +1,7 @@
 ---
 title: shader practice
 date: 2021-10-24
+dateUpdated: 2021-10-28
 layout: post.njk
 tags: ['generative art', 'shaders']
 excerpt: 'notes on creating an animated gif from a simple shaping function'

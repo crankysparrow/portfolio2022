@@ -1,42 +1,14 @@
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-
 let still = mediaQuery.matches ? true : false
-let space, blue, mint, turquoise, orange
-let shape1
-let m
+
+let turquoise, shape1, m
 let addNoise = 0
 let seed = 1
-
-function playPauseButton() {
-	let btn = document.querySelector('#animate-toggle')
-	if (still) {
-		btn.innerHTML = 'play <br/>animation'
-	}
-
-	btn.addEventListener('click', function () {
-		if (still) {
-			still = false
-			btn.innerHTML = 'pause<br/>animation'
-			loop()
-		} else {
-			still = true
-			noLoop()
-			btn.innerHTML = 'play <br/>animation'
-		}
-	})
-}
 
 function setup() {
 	m = min(window.innerWidth, window.innerHeight)
 	colorMode(HSL)
 
-	space = color(248, 32, 24)
-	blue = color(203, 99, 48)
-	blue.setAlpha(0.2)
-
-	// orange = color(14, 100, 55)
-	// orange.setAlpha(0.3)
-	// turquoise = color(171, 66, 76)
 	turquoise = color(171, 66, 50)
 	turquoise.setAlpha(0.5)
 
@@ -60,7 +32,6 @@ function draw() {
 	let w = mouseX / width
 	let h = mouseY / height
 
-	// shape1.noiseOffset = lerp(shape1.noiseOffset, shape1.noiseOffset + addNoise, 0.01)
 	shape1.noiseOffset += 0.005
 
 	let ms = map(mouseX, 0, width, m * 0.6, m * 1.1)
@@ -108,9 +79,6 @@ class LinesCircle {
 		let i = 0
 		while (a < PI * 2) {
 			stroke(turquoise)
-			// if (i % 3 === 0) {
-			// 	stroke(orange)
-			// }
 			this.drawLine(a)
 			a += this.inc
 			i++

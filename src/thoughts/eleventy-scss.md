@@ -1,6 +1,7 @@
 ---
 title: compiling scss with eleventy
 date: 2022-01-30
+dateUpdated: 2022-01-30
 layout: post.njk
 tags: ['eleventy', 'scss']
 img: '/images/eleventypossums.jpg'

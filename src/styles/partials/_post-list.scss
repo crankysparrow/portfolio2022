@@ -18,7 +18,7 @@
 		}
 
 		.page-home & {
-			max-width: none;
+			// max-width: none;
 		}
 
 		.post-card,
@@ -45,11 +45,11 @@
 .post-card {
 	display: block;
 	position: relative;
-	// border-bottom: 4px solid list.nth($space_light, 5);
 	background-color: list.nth($turquoise_light, 8);
 	margin-bottom: 3rem;
 	color: $space;
-	transition: box-shadow 500ms ease-in-out, background-position 500ms ease-in-out;
+	transition: box-shadow 500ms ease-in-out,
+		background-position 500ms ease-in-out;
 
 	a {
 		&:after {
@@ -61,7 +61,10 @@
 		2px 1px 4px #{transparentize(list.nth($turquoise_dark, 7), 0.9)}, 
 		-11px 7px 24px #{transparentize(list.nth($turquoise_dark, 7), 0.8)},
 		25px 20px 40px -20px #{transparentize(list.nth($turquoise_dark, 7), 0.5)};
-	--box-shadow-2: 15px 10px 20px -10px #{transparentize(list.nth($turquoise_dark, 7), 0.8)};
+	--box-shadow-2: 15px 10px 20px -10px #{transparentize(
+			list.nth($turquoise_dark, 7),
+			0.8
+		)};
 
 	box-shadow: var(--box-shadow-2);
 
@@ -139,16 +142,20 @@
 		@include md {
 			margin-bottom: 4rem;
 		}
-		// img.post-img {
-		// 	display: block;
-		// 	margin-left: -1rem;
-		// 	margin-right: -1rem;
-		// 	max-width: calc(100% + 2rem);
-		// 	@include sm {
-		// 		margin-left: -1.5rem;
-		// 		margin-right: -1.5rem;
-		// 		max-width: calc(100% + 3rem);
-		// 	}
-		// }
+	}
+}
+
+.post-card-fw {
+	.tags-list {
+		margin-top: 0.3rem;
+		text-align: right;
+		.tag {
+			font-size: var(--step--2);
+			padding: 3px 10px 2px;
+		}
+	}
+	@include sm {
+		// padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 }

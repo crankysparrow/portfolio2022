@@ -1,23 +1,21 @@
-<div class='post-list'>
-    <div class='post-list-inner'>
-        {% for post in currentCollection | default(collections.post) | reverse %}
-            <div class='post-card block'>
-                <div class='post-info'>
-                    <div class='date caps'>
-                        {{ (post.data.page.date) | dateString }}
-                    </div>
-                    <div class='tags-list'>
-                        {% for tag in post.data.tags | filterTags %}
-                            {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                            <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                    <a class='post-title h4' href="{{ post.url | url }}">
-                        {{ post.data.title }}
-                    </a>
-                    <div class='excerpt'>{{ post.data.excerpt }}</div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+<div class='post-list-fw'>
+	<div class='post-list-inner'>
+		{% for post in currentCollection | default(collections.post) | reverse %}
+			<div class='post-card post-card-fw block'>
+				<div class='post-info'>
+					<a class='post-title h4' href="{{ post.url | url }}">
+						{{ post.data.title }}
+					</a>
+					<div class='excerpt'>{{ post.data.excerpt }}</div>
+					<div class='tags-list'>
+						{% for tag in post.data.tags | filterTags %}
+							{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+							<a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+						{% endfor %}
+					</div>
+
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </div>
