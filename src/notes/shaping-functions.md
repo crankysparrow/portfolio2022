@@ -4,9 +4,10 @@ date: 2021-10-24
 dateUpdated: 2021-10-28
 layout: post.njk
 tags: ['generative art', 'shaders']
-excerpt: 'notes on creating an animated gif from a simple shaping function'
+excerpt: 'learning shaders, creating an animated gif from a simple shaping function'
 img: '/images/shaders-shaping/final-linear.jpg'
 imgAlt: 'white lines on black, in a curved diamond-like shape'
+order: 9
 ---
 
 Let me admit that I don't understand shaders. 

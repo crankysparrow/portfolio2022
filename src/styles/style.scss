@@ -17,6 +17,7 @@
 @use './partials/tags';
 @use './partials/footer';
 @use './partials/work-list';
+@use './partials/img-colorify';
 
 @use './vendor/prism-a11ydark';
 
@@ -25,8 +26,4 @@ img {
 	height: auto;
 	margin: 0 auto;
 	display: inline-block;
-}
-
-body.page-home {
-	// background-color: $light;
 }

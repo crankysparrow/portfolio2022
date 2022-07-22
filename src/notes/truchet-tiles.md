@@ -2,6 +2,7 @@
 title: generating symmetry
 date: 2021-09-19
 dateUpdated: 2021-12-01
+order: 8
 layout: post.njk
 tags: ['generative art', 'javascript', 'p5js']
 excerpt: 'exploring principles of symmetry with truchet tile patterns'

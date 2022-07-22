@@ -29,7 +29,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./src/scripts')
 
 	eleventyConfig.addFilter('filterTags', function (tags) {
-		return (tags || []).filter((tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1)
+		return (tags || []).filter(
+			(tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
+		)
 	})
 
 	eleventyConfig.addCollection('tagList', function (collections) {
@@ -51,12 +53,19 @@ module.exports = function (eleventyConfig) {
 		})
 	})
 
+	eleventyConfig.addCollection('post', function (collections) {
+		let notes = collections.getFilteredByTag('post')
+		return notes.sort(function (a, b) {
+			return b.data.order - a.data.order
+		})
+	})
+
 	eleventyConfig.addPlugin(syntaxHighlight)
 
 	eleventyConfig.addPlugin(faviconPlugin)
 
-	eleventyConfig.addFilter('console', function (value) {
-		return util.inspect(value)
+	eleventyConfig.addFilter('console', function (value, level = 2) {
+		return util.inspect(value, { depth: level })
 	})
 
 	eleventyConfig.addFilter('dateString', function (d) {

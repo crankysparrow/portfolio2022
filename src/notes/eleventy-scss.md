@@ -3,9 +3,10 @@ title: compiling scss with eleventy
 date: 2022-01-30
 dateUpdated: 2022-01-30
 layout: post.njk
+order: 6
 tags: ['eleventy', 'scss']
 img: '/images/eleventypossums.jpg'
-excerpt: 'notes on setting up scss as a custom template language with eleventy'
+excerpt: "use eleventy's custom templating language feature to compile scss alongisde the rest of your eleventy build"
 imgAlt: 'three possums hanging by their tails from a red balloon'
 ---
 

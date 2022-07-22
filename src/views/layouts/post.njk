@@ -8,6 +8,8 @@ layout: base.njk
         <div class='title-wrap post-title-wrap'>
             <h1>{{ title }}</h1>
 
+            <div class='subtitle step-2'>{{ excerpt }}</div>
+
             <div class='tags-list'>
                 <span class='caps'>Tags:</span>
                 {% for tag in tags | filterTags %}

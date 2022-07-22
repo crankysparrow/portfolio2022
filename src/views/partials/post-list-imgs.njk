@@ -1,27 +1,23 @@
 <div class='post-list post-list-imgs'>
     <div class='post-list-inner'>
-        {% for post in currentCollection | default(collections.post) | reverse %}
-            <div class='post-card block post-card-images'>
-                <div class='img-wrap img img-color'>
-                    <div class='img-inner'>
-                        {% if post.data.img %}
+        {% for post in currentCollection | default(collections.post) %}
+            <div class='post-card post-card-images {% if post.data.img %}has-img{% else %}no-img{% endif %}'>
+                {% if post.data.img %}
+                    <div class='img-wrap img img-color'>
+                        <div class='img-inner'>
                             <img src="{{post.data.img | url }}" class='post-img' alt='{{ post.data.imgAlt }}'/>
-                        {% endif %}
+                        </div>
                     </div>
-                </div>
+                {% endif %}
                 <div class='post-info'>
-                    {# {% if post.data.page.date %}
-                        <div class='date caps'>{{ (post.data.page.date) | dateString }}
-                        </div> #}
-                    {# {% endif %} #}
+                    <a class='post-title h4 reset'  href="{{ post.url | url }}">{{ post.data.title }}</a>
+                    <div class='excerpt'>{{ post.data.excerpt }}</div>
                     <div class='tags-list'>
                         {% for tag in post.data.tags | filterTags %}
                             {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                            <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                            <a class='tag reset caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
                         {% endfor %}
                     </div>
-                    <a class='post-title h4'  href="{{ post.url | url }}">{{ post.data.title }}</a>
-                    <div class='excerpt'>{{ post.data.excerpt }}</div>
                 </div>
             </div>
         {% endfor %}

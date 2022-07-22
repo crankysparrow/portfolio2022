@@ -1,7 +1,11 @@
 @use '../helpers' as *;
+@use 'sass:list';
 
 .post-title-wrap.title-wrap {
 	.date {
+		margin-top: 1rem;
+	}
+	.tags-list {
 		margin-top: 2rem;
 	}
 }
@@ -10,8 +14,9 @@
 	max-width: 800px;
 	margin-right: auto;
 
-	@include lg {
-		// max-width: 850px;
+	p.caption {
+		text-align: center;
+		font-size: var(--step--1);
 	}
 
 	p img {
@@ -32,5 +37,29 @@
 				margin-bottom: 0.5rem;
 			}
 		}
+	}
+}
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	td,
+	th {
+		padding: 0.3rem 0.5rem;
+	}
+	th {
+		// background-color: rgba(0, 0, 0, 0.1);
+	}
+	tr {
+		&:nth-child(2n-1) {
+			background-color: list.nth($turquoise_light, 7);
+		}
+		&:nth-child(2n) {
+			background-color: list.nth($turquoise_light, 9);
+		}
+	}
+	th {
+		background-color: list.nth($turquoise_light, 3);
 	}
 }

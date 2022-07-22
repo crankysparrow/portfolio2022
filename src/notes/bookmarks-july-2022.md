@@ -1,12 +1,11 @@
 ---
-title: links & things - july 2022
+title: bookmarks july 2022
 date: 2022-07-18
 dateUpdated: 2022-07-18
 layout: post.njk
-tags: ['links']
-# img: '/images/eleventypossums.jpg'
-# imgAlt: 'three possums hanging by their tails from a red balloon'
-excerpt: 'just neat stuff i found recently'
+excerpt: "things i've saved recently"
+tags: ['bookmarks']
+order: 10
 ---
 
 * [pink, soft, glittering developers](https://maggieappleton.com/glitter-devs) - note in maggie appleton's digital garden on __femme dev__, which she uses to refer to the trend of pastel-shaded, cute, intentionally feminine-styled developer things. In a field hugely dominated by men-identifying people, I'm into this.

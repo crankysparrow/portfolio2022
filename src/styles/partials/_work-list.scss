@@ -41,7 +41,6 @@
 			margin-left: auto;
 			&:hover,
 			&:focus {
-				// color: list.nth($blue_dark, 7);
 				color: $space;
 			}
 			h2.h4 {
@@ -74,7 +73,10 @@
 			border-radius: 5px;
 			grid-row: 3 / 5;
 			grid-column: 1 / 3;
-			box-shadow: 15px 10px 20px -10px #{transparentize(list.nth($turquoise_dark, 7), 0.8)};
+			box-shadow: 15px 10px 20px -10px #{transparentize(
+					list.nth($turquoise_dark, 7),
+					0.8
+				)};
 			width: calc(100% - var(--sideCol));
 			margin-left: auto;
 		}
@@ -155,102 +157,6 @@
 					grid-column: 1 / 3;
 				}
 			}
-		}
-	}
-}
-
-.img.img-color {
-	width: 100%;
-	position: relative;
-	background-color: list.nth($turquoise_light, 3);
-	z-index: -2;
-	overflow: hidden;
-
-	.img-inner {
-		position: relative;
-		padding-bottom: 67%;
-		width: 100%;
-		height: 0;
-		filter: grayscale(100%);
-		mix-blend-mode: multiply;
-	}
-	img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		transition: all 500ms #{$easein_sine};
-	}
-	&:after {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		content: '';
-		transform: none;
-		background: list.nth($blue_light, 5);
-		background-image: linear-gradient(
-			45deg,
-			#{list.nth($blue_light, 5)},
-			#{list.nth($pink_light, 1)}
-		);
-		background-image: linear-gradient(45deg, #34acf8 25%, #3927e3, #aa1ccd, #b81365);
-		background-size: 200% 150%;
-		background-position: 0% 100%;
-		background-repeat: no-repeat;
-		mix-blend-mode: soft-light;
-		transition: all 500ms #{$easein_sine};
-	}
-
-	&:hover,
-	&:focus {
-		img {
-			transform: scale(1.05);
-		}
-		&:after {
-			background-position: 100% 100%;
-		}
-	}
-}
-
-.post-list-new {
-	.item {
-		display: flex;
-		background-color: transparentize(list.nth($turquoise_light, 9), 0.1);
-		box-shadow: 15px 10px 20px -10px #{transparentize(list.nth($turquoise_dark, 7), 0.8)};
-		border-radius: 5px;
-		top: 0;
-		padding-top: 0;
-		margin-bottom: 5rem;
-
-		.item-info {
-			flex: 0 0 65%;
-			padding: 1rem 2rem;
-			.title-link {
-				text-align: left;
-				margin-left: 0;
-			}
-			.tags-list {
-				text-align: left;
-				grid-column: 2;
-				width: 100%;
-			}
-			.work-item-content {
-				grid-column: 2;
-				width: 100%;
-				background-color: transparent;
-				box-shadow: none;
-			}
-		}
-
-		.img {
-			border: none;
-			z-index: 1;
 		}
 	}
 }
