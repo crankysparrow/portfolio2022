@@ -1,0 +1,39 @@
+---
+pagination: 
+    data: sketches
+    size: 1
+    alias: sketch
+permalink: '/sketches/{{ sketch.title | slug }}/'
+eleventyExcludeFromCollections: true
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <style>
+            body {
+                margin: 0;
+            }
+            canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+        <script src="https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js"></script>
+        <script src="../scripts/{{ sketch.script }}"></script>
+
+    </body>
+
+</html>

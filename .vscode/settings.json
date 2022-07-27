@@ -1,3 +1,6 @@
 {
-	"prettier.tabWidth": 2
+	"[nunjucks]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
+	}
 }

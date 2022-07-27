@@ -1,0 +1,10 @@
+[
+	{
+		"title": "basic-cross",
+		"script": "squares-corners/basic-cross.js"
+	},
+	{
+		"title": "pattern",
+		"script": "squares-corners/pattern.js"
+	}
+]
