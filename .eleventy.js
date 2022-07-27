@@ -55,6 +55,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addCollection('post', function (collections) {
 		let notes = collections.getFilteredByTag('post')
+		notes = notes.filter((note) => !note.data.draft)
 		return notes.sort(function (a, b) {
 			return b.data.order - a.data.order
 		})
