@@ -6,6 +6,11 @@ layout: page.njk
 subtitle: Updates I've made to this site
 ---
 
+### July 27, 2022 
+* setting up for pagination, though not using it yet 
+* display only 2 recent notes on homepage 
+* messing around with including iframes in notes pages (for p5.js examples atm)
+* fix "back to all notes" link on single note pages 
 
 ### July 21, 2022
 * switch main font to open sans + adjust font sizes

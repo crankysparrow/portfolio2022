@@ -6,5 +6,17 @@
 	{
 		"title": "pattern",
 		"script": "squares-corners/pattern.js"
+	},
+	{
+		"title": "coolexample1",
+		"script": "squares-corners/coolexample1.js"
+	},
+	{
+		"title": "coolexample2",
+		"script": "squares-corners/coolexample2.js"
+	},
+	{
+		"title": "basic-cross-corners",
+		"script": "squares-corners/basic-cross-corners.js"
 	}
 ]

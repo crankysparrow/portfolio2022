@@ -1,10 +1,6 @@
 @use '../helpers' as *;
+@use '../vendor/reasonable-colors' as *;
 @use 'sass:list';
-
-code,
-pre {
-	font-family: $jb;
-}
 
 .code-imgs-columns {
 	.column {
@@ -54,44 +50,83 @@ pre {
 
 .code-img {
 	position: relative;
-	background: hsl(0, 0%, 25%);
+	// background: hsl(0, 0%, 25%);
+	background: lighten($color-teal-1, 5%);
+	margin-bottom: 1.5rem;
 
-	img {
+	.img-col {
+		border-top: 1px solid $color-gray-2;
+	}
+
+	img,
+	canvas {
 		max-width: 300px;
 		display: block;
 		margin-top: 5px;
 	}
-	pre[class*='language-'] {
-		border-bottom: 1px solid gray;
+
+	&.width-sm {
+		@include md {
+			--height: auto;
+			--img-col: 250px;
+			background: transparent;
+			display: grid;
+			grid-template-columns: 1fr var(--img-col);
+			margin-right: 0;
+			grid-column-gap: 20px;
+			margin-bottom: 1.5rem;
+			height: var(--height);
+			pre[class*='language-'] {
+				border-bottom: none;
+				height: var(--height);
+				width: 100%;
+				overflow-y: auto;
+			}
+			.img-col {
+				border-top: none;
+				max-width: 100%;
+				position: sticky;
+				top: 1rem;
+				margin: 0;
+				align-self: start;
+				justify-self: end;
+				img,
+				canvas {
+					max-width: 100%;
+				}
+			}
+		}
 	}
 
 	@include lg {
+		--height: auto;
+		--img-col: 250px;
 		background: transparent;
 		display: grid;
-		grid-template-columns: 1fr 250px;
-		margin-right: -270px;
+		grid-template-columns: 1fr var(--img-col);
+		margin-right: calc(var(--img-col) * -1 - 20px);
 		grid-column-gap: 20px;
 		margin-bottom: 1.5rem;
+		height: var(--height);
 		pre[class*='language-'] {
 			border-bottom: none;
+			height: var(--height);
 			width: 100%;
+			overflow-y: auto;
 		}
 		.img-col {
+			border-top: none;
 			max-width: 100%;
 			position: sticky;
 			top: 1rem;
 			margin: 0;
 			align-self: start;
 			justify-self: end;
-			img {
+			img,
+			canvas {
 				max-width: 100%;
 			}
 		}
-	}
-
-	@include lg {
-		// margin-left: -50px;
-		// margin-right: -50px;
 	}
 
 	pre[class*='language-'] {

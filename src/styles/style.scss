@@ -20,11 +20,12 @@
 @use './partials/img-colorify';
 @use './partials/frame';
 
-@use './vendor/prism-a11ydark';
+// @use './vendor/prism-a11ydark';
+@use './vendor/prism-a11ylight';
 
 img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: inline-block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	display: inline-block;
 }

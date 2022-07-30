@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
 		},
 	})
 
+	eleventyConfig.addWatchTarget('./src/styles/**/*.scss')
 	eleventyConfig.addWatchTarget('./src/scripts')
 	eleventyConfig.addWatchTarget('./src/sketches/scripts/**/*.js')
 
@@ -73,6 +74,18 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter('dateString', function (d) {
 		return d?.toLocaleDateString('en-US', { dateStyle: 'medium' })
+	})
+
+	// https://github.com/11ty/eleventy-base-blog/blob/main/.eleventy.js
+	eleventyConfig.addFilter('head', (array, n) => {
+		if (!Array.isArray(array) || array.length === 0) {
+			return []
+		}
+		if (n < 0) {
+			return array.slice(n)
+		}
+
+		return array.slice(0, n)
 	})
 
 	let markdownIt = require('markdown-it')

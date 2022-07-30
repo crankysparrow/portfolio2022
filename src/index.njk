@@ -23,8 +23,13 @@ footerScripts:
 
 	<div class="content wrapper wrapper-sm">
 		<h2>recent notes</h2>
+		{% set currentCollection = collections.post | head(2) %}
 
 		{% include 'partials/post-list.njk' %}
+
+		<div class='align-right'>
+			<a href='/notes' >more notes →</a>
+		</div>
 
 	</div>
 

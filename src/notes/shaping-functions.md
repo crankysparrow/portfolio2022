@@ -4,7 +4,7 @@ date: 2021-10-24
 dateUpdated: 2021-10-28
 layout: post.njk
 tags: ['generative art', 'shaders']
-excerpt: 'learning shaders, creating an animated gif from a simple shaping function'
+excerpt: 'experimenting with shaders & a simple shaping function to create a looping animation'
 img: '/images/shaders-shaping/final-linear.jpg'
 imgAlt: 'white lines on black, in a curved diamond-like shape'
 order: 9

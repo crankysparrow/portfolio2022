@@ -1,6 +1,7 @@
 @use '../helpers' as *;
 @use 'sass:map';
 @use 'sass:list';
+@use '../../../node_modules/reasonable-colors/reasonable-colors.scss' as *;
 
 html {
 	font-size: 16px;
@@ -10,11 +11,13 @@ body {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	background: list.nth($turquoise_light, 6);
+	// background: list.nth($turquoise_light, 6);
+	// background: #d7fff7;
+	background: $color-teal-1;
 	max-width: 100vw;
 	*,
-	&:before,
-	&:after {
+	*:before,
+	*:after {
 		box-sizing: inherit;
 	}
 }

@@ -1,4 +1,5 @@
 @use '../helpers' as *;
+@use '../vendor/reasonable-colors' as *;
 @use 'sass:list';
 
 .content.post {
@@ -24,9 +25,10 @@
 .post-card {
 	display: block;
 	position: relative;
-	background-color: list.nth($turquoise_light, 8);
+	// background-color: list.nth($turquoise_light, 8);
+	background-color: lighten($color-teal-1, 5%);
 	margin-bottom: 3rem;
-	color: $space;
+	color: $color-indigo-6;
 	transition: box-shadow 400ms ease-in-out,
 		background-position 400ms ease-in-out;
 	display: flex;

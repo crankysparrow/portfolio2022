@@ -1,6 +1,17 @@
 function setup() {
-	createCanvas(800, 200)
+	// createCanvas(800, 200)
+	let w = min(window.innerWidth, 800)
+	let h = w * 0.25
+	createCanvas(w, h)
+
 	noLoop()
+}
+
+function windowResized() {
+	let w = min(window.innerWidth, 800)
+	let h = w * 0.25
+	resizeCanvas(w, h)
+	redraw()
 }
 
 function draw() {
@@ -8,20 +19,18 @@ function draw() {
 	clear()
 	background(240)
 
-	doStep(50, 50, 100, 0)
-	writeText('0', 50, 20)
+	let stepDist = width * 0.1875
+	let stepStart = width * 0.0625
+	let sqSize = height / 2
+	let i = 0
 
-	doStep(200, 50, 100, 0.25)
-	writeText('0.25', 200, 20)
-
-	doStep(350, 50, 100, 0.5)
-	writeText('0.5', 350, 20)
-
-	doStep(500, 50, 100, 0.75)
-	writeText('0.75', 500, 20)
-
-	doStep(650, 50, 100, 1)
-	writeText('1', 650, 20)
+	while (i < 5) {
+		let progress = 0.25 * i
+		let pos = stepStart + stepDist * i
+		doStep(pos, sqSize / 2, sqSize, progress)
+		writeText(progress, pos, 20)
+		i++
+	}
 }
 
 function writeText(content, x, y) {
@@ -43,10 +52,10 @@ function doStep(x, y, size, p) {
 	pop()
 }
 
-function shapeShape(size, p, inclCorners) {
+function shapeShape(size, progress) {
 	let c1 = size * 0.25
 	let c2 = size - c1
-	let e1 = size * p
+	let e1 = size * progress
 	let e2 = size - e1
 
 	beginShape()
@@ -67,7 +76,10 @@ function shapeShape(size, p, inclCorners) {
 
 	endShape()
 
-	if (inclCorners) {
-		// corners(cx1, cx2, cy1, cy2, ts, r)
-	}
+	noStroke()
+	fill(100, 0, 255)
+	circle(c1, c1, 5)
+	circle(c2, c1, 5)
+	circle(c2, c2, 5)
+	circle(c1, c2, 5)
 }
