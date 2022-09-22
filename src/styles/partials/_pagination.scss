@@ -1,0 +1,7 @@
+@use '../vendor/reasonable-colors' as *;
+
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.3rem;
+}

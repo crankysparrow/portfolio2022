@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 @use 'sass:list';
 
-nav {
+nav.nav {
 	--right-gap: 0.5rem;
 	display: grid;
 	grid-template-columns: min-content 3.5rem 3.5rem;

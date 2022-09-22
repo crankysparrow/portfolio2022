@@ -2,12 +2,37 @@
 layout: page.njk
 title: notes
 subtitle: "things i make, things i like. reminders to myself. not a blog, not in chronological order, and nothing is final or even particularly polished."
-pagination: 
+pagination:
     data: collections.post
-    size: 6
+    size: 7
     alias: notes
 permalink: "notes{% if pagination.pageNumber>0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/"
 ---
 
 {% set currentCollection = notes %}
 {% include 'partials/post-list-imgs.njk' %}
+
+<div class='pagination'>
+    {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}">Previous</a>
+    {% else %}
+        <div class='prev-empty'></div>
+    {% endif %}
+    {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}">Next</a>
+    {% endif %}
+</div>
+
+{# {% if pagination.pages.length > 1 %}
+    <nav class='pagination'>
+        <ul>
+            {% for i in range(pagination.pages.length) %}
+                <li>
+                    <a href="{{ '/notes/page/' + (i+1) }}">
+                        {{ i+1 }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %} #}

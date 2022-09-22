@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 @use 'sass:list';
 
-.tag {
+.tagpill {
 	color: $space;
 	background: list.nth($mint_light, 3);
 	display: inline-block;
@@ -11,7 +11,7 @@
 	transition: background-color 150ms;
 }
 
-a.tag {
+a.tagpill {
 	&:after {
 		content: none;
 	}

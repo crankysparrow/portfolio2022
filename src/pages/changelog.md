@@ -5,6 +5,10 @@ tags: page
 layout: page.njk
 subtitle: Updates I've made to this site
 ---
+### September 2022
+* changed `tag` class to `tagpill` because of conflicts with prismJS 
+* vue3 scratchpad notes 
+* edit credits to reference the syntax highlight theme i'm actually using
 
 ### July 27, 2022 
 * setting up for pagination, though not using it yet 

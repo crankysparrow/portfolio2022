@@ -15,7 +15,7 @@
                     <div class='tags-list'>
                         {% for tag in post.data.tags | filterTags %}
                             {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                            <a class='tag reset caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                            <a class='tagpill reset caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
                         {% endfor %}
                     </div>
                 </div>

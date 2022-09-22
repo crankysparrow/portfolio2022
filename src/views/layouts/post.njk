@@ -14,7 +14,7 @@ layout: base.njk
                 <span class='caps'>Tags:</span>
                 {% for tag in tags | filterTags %}
                     {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                    <a class='tag caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
+                    <a class='tagpill caps' href="{{ tagUrl | url }}">#{{ tag }}</a>
                 {% endfor %}
             </div>
 

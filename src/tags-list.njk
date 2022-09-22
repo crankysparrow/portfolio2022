@@ -5,12 +5,9 @@ title: Tags
 ---
 
 <div class="tags-list">
-
     {% for tag in collections.tagList %}
-
         {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-        <a class='caps' href="{{ tagUrl | url }}">{{ tag }}</a>
+        <a class="caps tag" href="{{ tagUrl | url }}">{{ tag }}</a>
 
     {% endfor %}
-    
 </div>
