@@ -9,6 +9,7 @@ subtitle: Updates I've made to this site
 * changed `tag` class to `tagpill` because of conflicts with prismJS 
 * vue3 scratchpad notes 
 * edit credits to reference the syntax highlight theme i'm actually using
+* adjust max-width of post list & work list, and try to uniform-ize titles 
 
 ### July 27, 2022 
 * setting up for pagination, though not using it yet 
