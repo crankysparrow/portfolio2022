@@ -21,10 +21,10 @@ function draw() {
 	text(rounded, 10, 20)
 }
 
-function shape(size, progress) {
+function shape(size, p) {
 	let c1 = size * 0.25
 	let c2 = size - c1
-	let e1 = size * progress
+	let e1 = size * p
 	let e2 = size - e1
 
 	beginShape()

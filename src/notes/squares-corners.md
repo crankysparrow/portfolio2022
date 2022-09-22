@@ -1,7 +1,7 @@
 ---
 title: 'squares, corners'
 date: 2022-07-26
-dateUpdated: 2022-07-29
+dateUpdated: 2022-09-21
 tags: ['generative art']
 excerpt: 'loops & patterns based on modifying a square plus-sign shape & obsessing over little variations'
 order: 2
@@ -18,10 +18,10 @@ The 4 corners of the square (in purple above) are always the same, then the 8 po
 <div class="code-img width-sm" style="--height: 280px; --img-col: 250px;">
 
 {% highlight js %}
-function shapeShape(size, progress) {
+function shapeShape(size, p) {
 	let c1 = size * 0.25
 	let c2 = size - c1
-	let e1 = size * progress
+	let e1 = size * p
 	let e2 = size - e1
 
 	beginShape()
@@ -50,6 +50,12 @@ function shapeShape(size, progress) {
 
 </div>
 </div>
+
+`p` is the progress of the animation loop, between 0 and 1. Using `animLoop.theta` via [p5.createLoop](https://github.com/mrchantey/p5.createLoop):
+
+```js
+let p = map(sin(animLoop.theta), -1, 1, 0, 1)
+```
 
 
 
