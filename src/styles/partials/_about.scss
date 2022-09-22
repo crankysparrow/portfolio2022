@@ -1,6 +1,9 @@
 @use '../helpers' as *;
 
 .page-about-me {
+	.title-wrap {
+		max-width: 1100px;
+	}
 	h1 {
 		margin: 2rem 0;
 	}

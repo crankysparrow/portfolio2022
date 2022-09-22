@@ -10,6 +10,8 @@
 }
 
 .post-list {
+	max-width: 1000px;
+	margin: 0 auto;
 	.post-list-inner {
 		@include sm {
 			display: grid;
@@ -29,14 +31,13 @@
 	background-color: lighten($color-teal-1, 5%);
 	margin-bottom: 3rem;
 	color: $color-indigo-6;
-	transition: box-shadow 400ms ease-in-out,
-		background-position 400ms ease-in-out;
+	transition: box-shadow 400ms ease-in-out, background-position 400ms ease-in-out;
 	display: flex;
 	flex-direction: column;
 
 	//prettier-ignore
-	--box-shadow-1: 		
-		2px 1px 4px #{transparentize(list.nth($turquoise_dark, 7), 0.9)}, 
+	--box-shadow-1:
+		2px 1px 4px #{transparentize(list.nth($turquoise_dark, 7), 0.9)},
 		-11px 7px 24px #{transparentize(list.nth($turquoise_dark, 7), 0.8)},
 		25px 20px 40px -20px #{transparentize(list.nth($turquoise_dark, 7), 0.5)};
 	--box-shadow-2: 15px 10px 20px -10px #{transparentize(
