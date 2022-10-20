@@ -18,5 +18,25 @@
 	{
 		"title": "basic-cross-corners",
 		"script": "squares-corners/basic-cross-corners.js"
+	},
+	{
+		"title": "easings-1",
+		"script": "easings/easings-1.js"
+	},
+	{
+		"title": "easings-2",
+		"script": "easings/easings-2.js"
+	},
+	{
+		"title": "easings-3",
+		"script": "easings/easings-3.js"
+	},
+	{
+		"title": "easings-4",
+		"script": "easings/easings-4.js"
+	},
+	{
+		"title": "easings-5",
+		"script": "easings/easings-5.js"
 	}
 ]

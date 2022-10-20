@@ -72,6 +72,10 @@ module.exports = function (eleventyConfig) {
 		return util.inspect(value, { depth: level })
 	})
 
+	eleventyConfig.addFilter('round', function (val, pos = 2) {
+		return Math.round(val * 10 * pos) / (10 * pos)
+	})
+
 	eleventyConfig.addFilter('dateString', function (d) {
 		return d?.toLocaleDateString('en-US', { dateStyle: 'medium' })
 	})
@@ -101,6 +105,7 @@ module.exports = function (eleventyConfig) {
 			output: '_site',
 			layouts: 'views/layouts',
 			includes: 'views',
+			markdownTemplateEngine: 'njk',
 		},
 	}
 }

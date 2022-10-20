@@ -1,0 +1,185 @@
+/*
+Name:   Base2Tone-Evening Light
+Author: by Bram de Haan, adapted from DuoTone themes by Simurai (http://simurai.com/projects/2016/01/01/duotone-themes)
+
+http://atelierbram.github.io/Base2Tone-prism/demo/evening/light/
+Prism template for Base2Tone by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
+Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
+*/
+
+@use './reasonable-colors' as *;
+
+code[class*='language-'],
+pre[class*='language-'] {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.375;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	background-color: var(--bg);
+	color: var(--main);
+	// --bg: #{mix($color-magenta-1, $color-teal-1, 50)};
+	--bg: #{$color-azure-6};
+	--main: #{mix($color-aquamarine-3, $color-azure-2, 50)};
+	--tag: #{$color-magenta-2};
+	--props: #{$color-aquamarine-2};
+	--insert: #{$color-orange-3};
+	--string: var(--code-str);
+	--variable: #{$color-aquamarine-3};
+	--fade: #{$color-azure-3};
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: var(--bg);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: var(--bg);
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--fade);
+}
+
+.token.punctuation {
+	color: var(--fade);
+}
+
+.token.namespace {
+	opacity: 0.7;
+}
+
+.token.tag,
+.token.operator,
+.token.number {
+	color: var(--tag);
+}
+
+.token.property,
+.token.function {
+	color: var(--props);
+}
+
+.token.tag-id,
+.token.selector,
+.token.atrule-id {
+	color: var(--insert);
+}
+
+code.language-javascript,
+.token.attr-name {
+	color: var(--props);
+}
+
+code.language-css,
+code.language-scss,
+.token.boolean,
+.token.string,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.language-scss .token.string,
+.style .token.string,
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit,
+.token.statement,
+.token.regex,
+.token.atrule {
+	color: var(--string);
+}
+
+.token.placeholder,
+.token.variable {
+	color: var(--variable);
+}
+
+.token.deleted {
+	text-decoration: line-through;
+}
+
+.token.inserted {
+	border-bottom: 1px dotted var(--insert);
+	text-decoration: none;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.important {
+	color: var(--props);
+}
+
+.token.entity {
+	cursor: help;
+}
+
+pre > code.highlight {
+	outline: 0.4em solid var(--props);
+	outline-offset: 0.4em;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers .line-numbers-rows {
+	border-right-color: #ebe6e0;
+}
+
+.line-numbers-rows > span:before {
+	color: #d8d1ca;
+}
+
+/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ * alpha transparency in 8 digits hex notation coming to a browser near you soon:
+ * https://drafts.csswg.org/css-color/#hex-notation
+ */
+.line-highlight {
+	background: #b3753733;
+	background: linear-gradient(to right, #b3753733 70%, #b3753700);
+}
