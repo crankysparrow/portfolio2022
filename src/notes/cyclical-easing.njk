@@ -5,7 +5,9 @@ dateUpdated: 2022-10-20
 layout: post.njk
 excerpt: "A collection of functions and demos"
 tags: ['animation', 'generative art']
-order: 5
+order: 20
+img: '/images/cyclical-easing.png'
+imgAlt: 'screenshot showing the table and demonstration in this post'
 footerScripts:
 - https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js
 - https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js
@@ -31,7 +33,6 @@ footerScripts:
 	</tbody>
 </table>
 
-<div class='codes'></div>
 <div class='code-example' id='inOutSineX2'>
 	{% highlight 'js' %}
 function easeInOutSine(x) {
@@ -145,120 +146,118 @@ let val = easeInCubic(Math.sin(p * Math.PI))
 {% endhighlight %}
 </div>
 
-</div>
-
 <div class='flex'>
 
-<div id='ease-demo'></div>
-<div id='code-demo'></div>
+	<div id='ease-demo'></div>
+	<div id='code-demo'></div>
 
 </div>
 
 <style type='text/css'>
-@media (min-width: 630px) {
+	@media (min-width: 630px) {
+		.flex {
+			display: flex;
+		}
+		.flex .frame-wrap {
+			margin-right: 1rem;
+		}
+	}
+	code[class*=language-],
+	pre,
+	pre[class*=language-] {
+		font-size: 0.75rem;
+		--bg: #e3fff9;
+		--main: #2d0fbf;
+		--tag: #b01fe3;
+		--props: #b01fe3;
+		--insert: #fd4d00;
+		--string: #007f5f;
+		--variable: #007f5f;
+		--fade: #007c6e;
+	}
+
+	canvas {
+		display: block;
+	}
+
+	.code-example pre {
+		margin: 0;
+	}
+
+	#code-demo {
+		flex: 1 0 auto;
+		background-color: #e3fff9;
+		border: 1px solid #63c0bc;
+	}
+
+	#ease-demo {
+		background-color: #e3fff9;
+		border: 1px solid #63c0bc;
+	}
+
 	.flex {
-		display: flex;
+		max-width: 800px;
+		margin-top: 2rem;
 	}
-	.flex .frame-wrap {
-		margin-right: 1rem;
+
+	table#ease-table {
+		font-family: var(--font_code);
+		table-layout: auto;
+		white-space: nowrap;
 	}
-}
-code[class*=language-],
-pre,
-pre[class*=language-] {
-	font-size: 0.75rem;
-	--bg: #e3fff9;
-	--main: #2d0fbf;
-	--tag: #b01fe3;
-	--props: #b01fe3;
-	--insert: #fd4d00;
-	--string: #007f5f;
-	--variable: #007f5f;
-	--fade: #007c6e;
-}
 
-canvas {
-	display: block;
-}
+	table#ease-table td:not(.sr-only) {
+		width: 2.5rem;
+	}
 
-.code-example pre {
-	margin: 0;
-}
+	table#ease-table tr:nth-child(2n) {
+		background-color: hsla(165, 100%, 31%, 0.3);
 
-#code-demo {
-	flex: 1 0 auto;
-	background-color: #e3fff9;
-	border: 1px solid #63c0bc;
-}
+	}
 
-#ease-demo {
-	background-color: #e3fff9;
-	border: 1px solid #63c0bc;
-}
+	table#ease-table tr:nth-child(2n-1) {
+		background-color: hsla(165, 100%, 31%, 0.2);
+	}
 
-.flex {
-	max-width: 800px;
-	margin-top: 2rem;
-}
+	table#ease-table tr:nth-child(1) th:nth-child(1) {
+		background-color: hsla(165, 100%, 21%, 0.5);
+	}
 
-table#ease-table {
-	font-family: var(--font_code);
-	table-layout: auto;
-	white-space: nowrap;
-}
+	table#ease-table th {
+		background-color: hsla(165, 100%, 31%, 0.5);
+		border-top: 1px solid var(--color-teal-3);
+	}
 
-table#ease-table td:not(.sr-only) {
-	width: 2.5rem;
-}
+	table#ease-table th:first-child {
+		border-left: 1px solid var(--color-teal-3);
+	}
 
-table#ease-table tr:nth-child(2n) {
-	background-color: hsla(165, 100%, 31%, 0.3);
+	table#ease-table th .subtitle {
+		font-weight: 300;
+		font-size: 70%;
+	}
 
-}
+	table#ease-table td,
+	table#ease-table th {
+		border-right: 1px solid var(--color-teal-3);
+		border-bottom: 1px solid var(--color-teal-3);
+	}
 
-table#ease-table tr:nth-child(2n-1) {
-	background-color: hsla(165, 100%, 31%, 0.2);
-}
+	table#ease-table tr[aria-current="true"] td,
+	table#ease-table tr[aria-current="true"] th[scope="row"] {
+		background-color: hsla(174, 100%, 50%, 0.4);
+	}
 
-table#ease-table tr:nth-child(1) th:nth-child(1) {
-	background-color: hsla(165, 100%, 21%, 0.5);
-}
+	table#ease-table tr[tabindex="0"]:hover td,
+	table#ease-table tr[tabindex="0"]:focus td,
+	table#ease-table tr[tabindex="0"]:focus th,
+	table#ease-table tr[tabindex="0"]:hover th {
+		cursor: pointer;
+		background-color: hsla(174, 100%, 50%, 0.6);
+	}
 
-table#ease-table th {
-	background-color: hsla(165, 100%, 31%, 0.5);
-	border-top: 1px solid var(--color-teal-3);
-}
-
-table#ease-table th:first-child {
-	border-left: 1px solid var(--color-teal-3);
-}
-
-table#ease-table th .subtitle {
-	font-weight: 300;
-	font-size: 70%;
-}
-
-table#ease-table td,
-table#ease-table th {
-	border-right: 1px solid var(--color-teal-3);
-	border-bottom: 1px solid var(--color-teal-3);
-}
-
-table#ease-table tr[aria-current="true"] td,
-table#ease-table tr[aria-current="true"] th[scope="row"] {
-	background-color: hsla(174, 100%, 50%, 0.4);
-}
-
-table#ease-table tr[tabindex="0"]:hover td,
-table#ease-table tr[tabindex="0"]:focus td,
-table#ease-table tr[tabindex="0"]:focus th,
-table#ease-table tr[tabindex="0"]:hover th {
-	cursor: pointer;
-	background-color: hsla(174, 100%, 50%, 0.6);
-}
-
-table#ease-table tr[tabindex="0"] td,
-table#ease-table tr[tabindex="0"] th {
-	transition: background-color 300ms;
-}
+	table#ease-table tr[tabindex="0"] td,
+	table#ease-table tr[tabindex="0"] th {
+		transition: background-color 300ms;
+	}
 </style>
