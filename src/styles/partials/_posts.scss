@@ -1,4 +1,5 @@
 @use '../helpers' as *;
+@use '../vendor/reasonable-colors' as *;
 @use 'sass:list';
 
 .post-title-wrap.title-wrap {
@@ -51,15 +52,9 @@ table {
 	tr {
 		&:nth-child(2n-1) {
 			background-color: list.nth($turquoise_light, 7);
-			th[scope='row'] {
-				background-color: list.nth($turquoise_light, 6);
-			}
 		}
 		&:nth-child(2n) {
 			background-color: list.nth($turquoise_light, 9);
-			th[scope='row'] {
-				background-color: list.nth($turquoise_light, 5);
-			}
 		}
 	}
 	th {
@@ -68,11 +63,26 @@ table {
 }
 
 table.smaller {
-	table-layout: auto;
 	font-size: 80%;
 	td,
 	th {
-		padding: 0.1rem;
-		border-bottom: 1px solid list.nth($turquoise_light, 3);
+		padding: 0.3rem;
 	}
+}
+
+table.horizontal {
+	th[scope='row'] {
+		text-align: right;
+		padding-right: 0.5rem;
+	}
+}
+
+table td.sr-only {
+	position: absolute;
+	height: 0px !important;
+	width: 0px !important;
+	overflow: hidden;
+	clip: rect(-1px, -1px, 1px, 1px);
+	padding: 0 !important;
+	border: none !important;
 }

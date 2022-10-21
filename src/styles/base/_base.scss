@@ -7,6 +7,25 @@ html {
 	font-size: 16px;
 }
 
+:root {
+	--font_code: #{$jb};
+	--font_v: #{$v};
+	--turquoise-light-1: #9aeade;
+	--turquoise-light-2: #a4ece1;
+	--turquoise-light-3: #aeeee5;
+	--turquoise-light-4: #b8f0e8;
+	--turquoise-light-5: #c2f2eb;
+	--turquoise-light-6: #cdf5ef;
+	--turquoise-light-7: #d7f7f2;
+	--turquoise-light-8: #e1f9f5;
+	--turquoise-dark-1: #8bd3c8;
+	--turquoise-dark-2: #7bbbb2;
+	--turquoise-dark-3: #6ca49b;
+	--turquoise-dark-4: #5c8c85;
+	--turquoise-dark-5: #4d756f;
+	--turquoise-dark-6: #3e5e59;
+}
+
 body {
 	padding: 0;
 	margin: 0;

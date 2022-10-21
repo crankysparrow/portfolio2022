@@ -5,6 +5,12 @@ tags: page
 layout: page.njk
 subtitle: Updates I've made to this site
 ---
+
+### October 2022 
+* cyclical easing notes 
+* messed with syntax highlighting 
+* using reasonable-colors for more stuff, and added css variables. colors are kind of a mess now...
+
 ### September 2022
 * changed `tag` class to `tagpill` because of conflicts with prismJS 
 * vue3 scratchpad notes 

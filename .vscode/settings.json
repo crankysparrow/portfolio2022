@@ -2,5 +2,6 @@
 	"[nunjucks]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
-	}
+	},
+	"prettier.printWidth": 120
 }

@@ -1,0 +1,264 @@
+---
+title: easing functions for cyclical animations
+date: 2022-10-18
+dateUpdated: 2022-10-20
+layout: post.njk
+excerpt: "A collection of functions and demos"
+tags: ['animation', 'generative art']
+order: 5
+footerScripts:
+- https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js
+- https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js
+- '/scripts/notes-easing.js'
+
+---
+
+<p>I often want something like an <a href="https://easings.net/">easing function</a> but that moves back and forth between the same number instead of just from 0 to 1.</p>
+
+<p>Sine and cosine functions obviously do that, but those have a specific feel to them and sometimes I want the motion to feel like something different!</p>
+
+<p>Here's a collection of functions to use in cyclical animations. Click each row of the table to see a demo below.</p>
+
+<table id='ease-table' class='smaller horizontal'>
+	<tbody>
+		<tr>
+			<th scope="row">progress</th>
+			<td class='sr-only'></td>
+			{% for i in range(0, 1, 0.1) -%}
+				<th>{{ i | round }}</th>
+			{%- endfor %}
+		</tr>
+	</tbody>
+</table>
+
+<div class='codes'></div>
+<div class='code-example' id='inOutSineX2'>
+	{% highlight 'js' %}
+function easeInOutSine(x) {
+	return - ( Math.cos( Math.PI * x ) - 1 ) / 2
+}
+
+let p = animLoop.progress
+let val = easeInOutSine(p * 2)
+{% endhighlight %}
+</div>
+<div class='code-example' id='cubicAdjust'>
+	{% highlight 'js' %}
+function easeInCubic(x) {
+	return x * x * x
+}
+
+let p = animLoop.progress
+let val = Math.abs(easeInCubic(p * 2 - 1))
+{% endhighlight %}
+</div>
+
+<div class='code-example' id='easeInQuadCyc'>
+	{% highlight 'js' %}
+function easeInQuad(x) {
+	return x * x
+}
+
+function easeInQuadCyc(p) {
+	if (p < 0.5) {
+		return easeInQuad(p * 2)
+	} else {
+		return 1 - easeInQuad((p - 0.5) * 2)
+	}
+}
+
+let p = animLoop.progress
+let val = easeInQuadCyc(p)
+		{% endhighlight %}
+</div>
+
+<div class='code-example' id='easeInCubicCyc'>
+	{% highlight 'js' %}
+function easeInCubic(x) {
+	return x * x * x
+}
+
+function easeInCubicCyc(p) {
+	if (p < 0.5) {
+		return easeInCubic(p * 2)
+	} else {
+		return 1 - easeInCubic((p - 0.5) * 2)
+	}
+}
+let p = animLoop.progress
+let val = easeInCubicCyc(p)
+
+		{% endhighlight %}
+</div>
+
+<div class='code-example' id='sinPAngle'>
+	{% highlight 'js' %}
+let p = animLoop.progress
+let val = Math.sin(p * Math.PI)
+{% endhighlight %}
+</div>
+
+<div class='code-example' id='inOutQuadCyc'>
+	{% highlight 'js' %}
+function inOutQuad(x) {
+	return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2
+}
+
+function inOutQuadCyc(x) {
+	return x < 0.5 ? inOutQuad(x * 2) : 1 - inOutQuad((x - 0.5) * 2)
+}
+let p = animLoop.progress
+let val = inOutQuadCyc(p)
+
+{% endhighlight %}
+</div>
+
+<div class='code-example' id='cosPAngle'>
+	{% highlight 'js' %}
+let p = animLoop.progress
+let val = Math.abs(Math.cos(p * Math.PI))
+
+{% endhighlight %}
+</div>
+
+<div class='code-example' id='inOutSineAngle'>
+	{% highlight 'js' %}
+function easeInOutSine(x) {
+	return - ( Math.cos( Math.PI * x ) - 1 ) / 2
+}
+
+let p = animLoop.progress
+let val = easeInOutSine(Math.sin(p * Math.PI))
+
+{% endhighlight %}
+</div>
+
+<div class='code-example' id='inCubicAngle'>
+	{% highlight 'js' %}
+function easeInCubic(x) {
+	return x * x * x
+}
+
+let p = animLoop.progress
+let val = easeInCubic(Math.sin(p * Math.PI))
+
+{% endhighlight %}
+</div>
+
+</div>
+
+<div class='flex'>
+
+<div id='ease-demo'></div>
+<div id='code-demo'></div>
+
+</div>
+
+<style type='text/css'>
+@media (min-width: 630px) {
+	.flex {
+		display: flex;
+	}
+	.flex .frame-wrap {
+		margin-right: 1rem;
+	}
+}
+code[class*=language-],
+pre,
+pre[class*=language-] {
+	font-size: 0.75rem;
+	--bg: #e3fff9;
+	--main: #2d0fbf;
+	--tag: #b01fe3;
+	--props: #b01fe3;
+	--insert: #fd4d00;
+	--string: #007f5f;
+	--variable: #007f5f;
+	--fade: #007c6e;
+}
+
+canvas {
+	display: block;
+}
+
+.code-example pre {
+	margin: 0;
+}
+
+#code-demo {
+	flex: 1 0 auto;
+	background-color: #e3fff9;
+	border: 1px solid #63c0bc;
+}
+
+#ease-demo {
+	background-color: #e3fff9;
+	border: 1px solid #63c0bc;
+}
+
+.flex {
+	max-width: 800px;
+	margin-top: 2rem;
+}
+
+table#ease-table {
+	font-family: var(--font_code);
+	table-layout: auto;
+	white-space: nowrap;
+}
+
+table#ease-table td:not(.sr-only) {
+	width: 2.5rem;
+}
+
+table#ease-table tr:nth-child(2n) {
+	background-color: hsla(165, 100%, 31%, 0.3);
+
+}
+
+table#ease-table tr:nth-child(2n-1) {
+	background-color: hsla(165, 100%, 31%, 0.2);
+}
+
+table#ease-table tr:nth-child(1) th:nth-child(1) {
+	background-color: hsla(165, 100%, 21%, 0.5);
+}
+
+table#ease-table th {
+	background-color: hsla(165, 100%, 31%, 0.5);
+	border-top: 1px solid var(--color-teal-3);
+}
+
+table#ease-table th:first-child {
+	border-left: 1px solid var(--color-teal-3);
+}
+
+table#ease-table th .subtitle {
+	font-weight: 300;
+	font-size: 70%;
+}
+
+table#ease-table td,
+table#ease-table th {
+	border-right: 1px solid var(--color-teal-3);
+	border-bottom: 1px solid var(--color-teal-3);
+}
+
+table#ease-table tr[aria-current="true"] td,
+table#ease-table tr[aria-current="true"] th[scope="row"] {
+	background-color: hsla(174, 100%, 50%, 0.4);
+}
+
+table#ease-table tr[tabindex="0"]:hover td,
+table#ease-table tr[tabindex="0"]:focus td,
+table#ease-table tr[tabindex="0"]:focus th,
+table#ease-table tr[tabindex="0"]:hover th {
+	cursor: pointer;
+	background-color: hsla(174, 100%, 50%, 0.6);
+}
+
+table#ease-table tr[tabindex="0"] td,
+table#ease-table tr[tabindex="0"] th {
+	transition: background-color 300ms;
+}
+</style>
