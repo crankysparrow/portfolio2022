@@ -1,36 +1,40 @@
 ---
 title: home
-layout: base.njk
-footerScripts: 
+footerScripts:
 - https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js
 - '/scripts/home.js'
 
 ---
 
-<main id='main'>
-	<div id='sketch'></div>
+{% extends './views/layouts/base.njk' %}
 
-	<div class='wrapper'>
-		<div class='title-wrap'>
-			<h1 class="home-h1">michelle enos</h1>
-			<div class="description callout">front-end developer</div>
-			<div class='animation-btn'>
-				<button id='animate-toggle'>
+{% block baseContent %}
+	<main id='main'>
+		<div id='sketch'></div>
+
+		<div class='wrapper'>
+			<div class='title-wrap'>
+				<h1 class="home-h1">michelle enos</h1>
+				<div class="description callout">front-end developer</div>
+				<div class='animation-btn'>
+					<button id='animate-toggle'>
 					pause <br/> animation</button>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="content wrapper wrapper-sm">
-		<h2>recent notes</h2>
-		{% set currentCollection = collections.post | head(2) %}
+		<div class="content wrapper wrapper-sm">
+			<h2>recent notes</h2>
+			{% set currentCollection = collections.post | head(2) %}
 
-		{% include 'partials/post-list.njk' %}
+			{% include 'partials/post-list.njk' %}
 
-		<div class='align-right'>
-			<a href='/notes' >more notes →</a>
+			<div class='align-right'>
+				<a href='/notes' >more notes →</a>
+			</div>
+
 		</div>
 
-	</div>
+	</main>
 
-</main>
+{% endblock %}

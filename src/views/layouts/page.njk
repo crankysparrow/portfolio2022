@@ -1,21 +1,35 @@
----
-layout: base.njk
----
+{% extends './base.njk' %}
 
-<main id="main">
+{% block baseContent %}
+    <main id="main">
 
-    <div class="wrapper">
+        <div class="wrapper">
 
-        <div class='title-wrap'>
-            <h1>{{ title }}</h1>
-            {% if subtitle %}
-                <div class='description callout'>{{ subtitle }}</div>
+            {% block title %}
+
+                <div class='title-wrap'>
+                    <h1>{{ title }}</h1>
+                    {% if subtitle %}
+                        <div class='description callout'>{{ subtitle }}</div>
+                    {% endif %}
+                </div>
+            {% endblock %}
+
+            {% block content %}
+
+                {{ content | safe }}
+
+            {% endblock %}
+
+            {% if sidebar %}
+                <div class='sidebar' style='background-color: blue;'>
+                    {% block sidebarcontent %}
+                        {# placeholder #}
+                    {% endblock %}
+                </div>
             {% endif %}
+
         </div>
 
-
-        {{ content | safe }}
-
-    </div>
-
-</main>
+    </main>
+{% endblock %}

@@ -1,5 +1,4 @@
 ---
-layout: page.njk
 title: notes
 subtitle: "things i make, things i like. reminders to myself. not a blog, not in chronological order, and nothing is final or even particularly polished."
 pagination:
@@ -7,23 +6,26 @@ pagination:
     size: 7
     alias: notes
 permalink: "notes{% if pagination.pageNumber>0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/"
+layout: page.njk
 ---
 
-{% set currentCollection = notes %}
-{% include 'partials/post-list-imgs.njk' %}
+{% block content %}
 
-<div class='pagination'>
-    {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}">Previous</a>
-    {% else %}
-        <div class='prev-empty'></div>
-    {% endif %}
-    {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}">Next</a>
-    {% endif %}
-</div>
+    {% set currentCollection = notes %}
+    {% include 'partials/post-list-imgs.njk' %}
 
-{# {% if pagination.pages.length > 1 %}
+    <div class='pagination'>
+        {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}">Previous</a>
+        {% else %}
+            <div class='prev-empty'></div>
+        {% endif %}
+        {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}">Next</a>
+        {% endif %}
+    </div>
+
+    {# {% if pagination.pages.length > 1 %}
     <nav class='pagination'>
         <ul>
             {% for i in range(pagination.pages.length) %}
@@ -36,3 +38,5 @@ permalink: "notes{% if pagination.pageNumber>0 %}/page/{{ pagination.pageNumber 
         </ul>
     </nav>
 {% endif %} #}
+
+{% endblock %}
