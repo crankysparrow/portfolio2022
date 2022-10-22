@@ -128,7 +128,6 @@ a {
 		content: '';
 		width: 100%;
 		height: 4px;
-		// background-color: $orange;
 		background-color: $color-orange-3;
 		bottom: 0;
 		left: 0;
@@ -168,13 +167,11 @@ pre {
 }
 
 code {
-	font-size: 0.85rem;
-	background: $color-indigo-1;
+	font-size: 90%;
+	background: var(--color-indigo-1);
 }
 
 pre,
 code {
 	font-family: $jb;
-	font-weight: 300;
-	// font-size: 0.75rem;
 }

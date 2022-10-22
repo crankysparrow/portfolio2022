@@ -1,7 +1,7 @@
 ---
 title: compiling scss with eleventy
 date: 2022-01-30
-dateUpdated: 2022-01-30
+dateUpdated: 2022-10-21
 layout: post.njk
 order: 6
 tags: ['eleventy', 'scss']
@@ -98,6 +98,19 @@ module.exports = function (eleventyConfig) {
 
 * the [example on 11ty.dev](https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy) uses an async function instead
 * [ZeroPoint](https://github.com/MWDelaney/ZeroPoint/blob/master/src/config/templateLanguages.js) starter theme uses `sass.renderSync`
+
+## incremental builds 
+
+__UPDATE 10/21/22__: When I first wrote this, I wasn't able to use eleventy's incremental builds, because there was no way to tell eleventy that editing an scss file with a _ in front of it meant the main style.css files should be updated. But now there seems to be an option for this! The `addExtension` config options include a function called `isIncrementalMatch`. The docs currently don't include any info on how to actually use this function, but I dug around in the code and found a [potential use of `isIncrementalMatch` here](https://github.com/11ty/eleventy/blob/bd3e4a4a7482c3a306654ed83727a782a4180d4c/test/TemplateTest.js#L1899), and [where `isIncrementalMatch` is called](https://github.com/11ty/eleventy/blob/14e0199b2442086a6d21bf90d3d9917e3ddb75bc/src/TemplateContent.js#L515). So I added a couple lines to my config and I _think_ it's working: 
+
+```js
+eleventyConfig.addExtension('scss', {
+	//...
+	isIncrementalMatch: function (incrementalFilePath) {
+		if (incrementalFilePath.endsWith('.scss')) return true
+	}
+})
+```
 
 ## issues
 

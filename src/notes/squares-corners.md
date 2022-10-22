@@ -11,13 +11,15 @@ I was going through some generative art experiments from earlier this year, and 
 
 basic pattern goes like this...
 
-{% include './views/partials/frame.njk' frame: "/sketches/pattern", size: "wide" %}
+{% set frame = "/sketches/pattern" %}
+{% set size = "wide" %}
+{% include '../views/partials/frame.njk' %}
 
 The 4 corners of the square (in purple above) are always the same, then the 8 points around that move in & out depending on the animation's progress. In motion:
 
 <div class="code-img width-sm" style="--height: 280px; --img-col: 250px;">
 
-{% highlight js %}
+```js
 function shapeShape(size, p) {
 	let c1 = size * 0.25
 	let c2 = size - c1
@@ -42,11 +44,13 @@ function shapeShape(size, p) {
 
 	endShape()
 }
-{% endhighlight %}
+```
 
 <div class='img-col'>
 
-{% include './views/partials/frame.njk' frame: "/sketches/basic-cross", size: "sm" %}
+{% set frame = "/sketches/basic-cross" %}
+{% set size = "sm" %}
+{% include '../views/partials/frame.njk'  %}
 
 </div>
 </div>
@@ -63,9 +67,12 @@ Super simple... but makes cool stuff like this:
 
 <div class='flex'>
 
-{% include './views/partials/frame.njk' frame: "/sketches/coolexample1" %}
+{% set size = 'normal' %}
+{% set frame = "/sketches/coolexample1" %}
+{% include '../views/partials/frame.njk' %}
 
-{% include './views/partials/frame.njk' frame: "/sketches/coolexample2" %}
+{% set frame = "/sketches/coolexample2" %}
+{% include '../views/partials/frame.njk' %}
 
 </div>
 
@@ -78,7 +85,10 @@ In the simple example above: \
 
 The values of `corner` and `edge` are included in the p5 sketch below:
 
-{% include './views/partials/frame.njk' frame: "/sketches/basic-cross-corners" size: "wide" style:"--padBottom: 50%" %}
+{% set frame = "/sketches/basic-cross-corners" %}
+{% set size = "wide" %}
+{% set style = "--padBottom: 50%" %}
+{% include '../views/partials/frame.njk' %}
 
 <style type='text/css'>
 	@media (min-width: 630px) {

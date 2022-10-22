@@ -54,7 +54,7 @@ Then I moved it into p5.js:
 
 <div class="code-img">
 
-{% highlight js %}
+```js
 let vShader = `
 attribute vec3 aPosition;
 attribute vec2 aTexCoord;
@@ -92,7 +92,7 @@ shader(shd)
 shd.setUniform('resolution', [width, height])
 rect(0, 0, width, height)
 }
-{% endhighlight %}
+```
 
 <div class='img-col'>
 <em>result: </em>
@@ -112,10 +112,10 @@ Using a smoothstep function instead of step lets us make the shape into a line. 
 
 <div class="code-img">
 
-{% highlight glsl %}
+```glsl
 float c = 1.0 - pow(abs(st.x), 0.5);
 vec3 color = vec3(smoothstep(c - 0.02, c, st.y) - smoothstep(c, c + 0.02, st.y));
-{% endhighlight %}
+```
 
 <div class='img-col'>
 <em>result: </em>
@@ -128,25 +128,25 @@ Then if we adjust the exponent, we can manipulate the shape:
 <div class="code-imgs-columns">
 
 <div class="column">
-{% highlight glsl %}
+```glsl
 float c = 1.0 - pow(abs(st.x), 1.0);
-{% endhighlight %}
+```
 <img src="/images/shaders-shaping/shader3.png" alt="" />
 
 </div>
 
 <div class="column">
-{% highlight glsl %}
+```glsl
 float c = 1.0 - pow(abs(st.x), 1.5);
-{% endhighlight %}
+```
 <img src="/images/shaders-shaping/shader4.png" alt="" />
 
 </div>
 
 <div class="column">
-{% highlight glsl %}
+```glsl
 float c = 1.0 - pow(abs(st.x), 2.0);
-{% endhighlight %}
+```
 <img src="/images/shaders-shaping/shader5.png" alt="" />
 </div>
 
@@ -155,7 +155,7 @@ float c = 1.0 - pow(abs(st.x), 2.0);
 I moved the formula for the shape out into a separate function, and added a second function that would be a reflection of it:
 
 <div class="code-img">
-{% highlight glsl %}
+```glsl
 float shape(float power, float x) {
 	return  1.0 - pow(abs(x), power);
 }
@@ -178,7 +178,7 @@ st -= vec2(1.0, 1.0);
     gl_FragColor = vec4(color, 1.0);
 
 }
-{% endhighlight %}
+```
 <div class='img-col'>
 <em>result</em>
 <img src="/images/shaders-shaping/shader-reflect1.png" alt="" />
@@ -189,11 +189,11 @@ It turned out that to get the effect I was imagining I needed to move the second
 
 <div class="code-img">
 
-{% highlight glsl %}
+```glsl
 float shapeTwo(float power, float x) {
     return pow(abs(x), power) - 1.0;
 }
-{% endhighlight %}
+```
 <div class='img-col'>
 <em>result: </em>
 <img src="/images/shaders-shaping/shader-reflect2.png" alt="" />
@@ -203,14 +203,14 @@ float shapeTwo(float power, float x) {
 Then I added a for loop to basically do the same thing a bunch of times, adjusting the exponent slightly on each iteration of the loop:
 
 <div class="code-img">
-{% highlight glsl %}
+```glsl
 for (float i = -1.0; i < 1.0; i += 0.1) {
     float c1 = shape(power - i, st.x);
     float c2 = shapeTwo(power - i, st.x);
     color += smoothstep(c1-0.02, c1, st.y) - smoothstep(c1, c1+0.02, st.y);
     color += smoothstep(c2-0.02, c2, st.y) - smoothstep(c2, c2+0.02, st.y);
 }
-{%endhighlight %}
+```
 <div class='img-col'>
 <em>result: </em>
 <img src="/images/shaders-shaping/shader-loop.png"  />

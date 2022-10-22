@@ -9,6 +9,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats('scss')
 	eleventyConfig.addExtension('scss', {
 		outputFileExtension: 'css',
+		isIncrementalMatch: function (incrementalFilePath) {
+			if (incrementalFilePath.endsWith('.scss')) return true
+		},
 		compile(content, inputPath) {
 			let parsed = path.parse(inputPath)
 			if (parsed.name.startsWith('_')) return
@@ -32,9 +35,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./src/sketches/scripts')
 
 	eleventyConfig.addFilter('filterTags', function (tags) {
-		return (tags || []).filter(
-			(tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
-		)
+		return (tags || []).filter((tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1)
 	})
 
 	eleventyConfig.addCollection('tagList', function (collections) {
@@ -77,7 +78,10 @@ module.exports = function (eleventyConfig) {
 	})
 
 	eleventyConfig.addFilter('dateString', function (d) {
-		return d?.toLocaleDateString('en-US', { dateStyle: 'medium' })
+		if (d) {
+			let notUTCDate = d.toISOString().slice(0, -1)
+			return new Date(notUTCDate).toLocaleDateString('en-US', { dateStyle: 'medium' })
+		}
 	})
 
 	// https://github.com/11ty/eleventy-base-blog/blob/main/.eleventy.js
@@ -105,7 +109,7 @@ module.exports = function (eleventyConfig) {
 			output: '_site',
 			layouts: 'views/layouts',
 			includes: 'views',
-			markdownTemplateEngine: 'njk',
 		},
+		markdownTemplateEngine: 'njk',
 	}
 }
