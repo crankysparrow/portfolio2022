@@ -128,25 +128,31 @@ Then if we adjust the exponent, we can manipulate the shape:
 <div class="code-imgs-columns">
 
 <div class="column">
+
 ```glsl
 float c = 1.0 - pow(abs(st.x), 1.0);
 ```
+
 <img src="/images/shaders-shaping/shader3.png" alt="" />
 
 </div>
 
 <div class="column">
+
 ```glsl
 float c = 1.0 - pow(abs(st.x), 1.5);
 ```
+
 <img src="/images/shaders-shaping/shader4.png" alt="" />
 
 </div>
 
 <div class="column">
+
 ```glsl
 float c = 1.0 - pow(abs(st.x), 2.0);
 ```
+
 <img src="/images/shaders-shaping/shader5.png" alt="" />
 </div>
 
@@ -155,7 +161,8 @@ float c = 1.0 - pow(abs(st.x), 2.0);
 I moved the formula for the shape out into a separate function, and added a second function that would be a reflection of it:
 
 <div class="code-img">
-```glsl
+
+{% highlight 'glsl' %}
 float shape(float power, float x) {
 	return  1.0 - pow(abs(x), power);
 }
@@ -178,7 +185,8 @@ st -= vec2(1.0, 1.0);
     gl_FragColor = vec4(color, 1.0);
 
 }
-```
+{% endhighlight %}
+
 <div class='img-col'>
 <em>result</em>
 <img src="/images/shaders-shaping/shader-reflect1.png" alt="" />
@@ -194,6 +202,7 @@ float shapeTwo(float power, float x) {
     return pow(abs(x), power) - 1.0;
 }
 ```
+
 <div class='img-col'>
 <em>result: </em>
 <img src="/images/shaders-shaping/shader-reflect2.png" alt="" />
@@ -203,6 +212,7 @@ float shapeTwo(float power, float x) {
 Then I added a for loop to basically do the same thing a bunch of times, adjusting the exponent slightly on each iteration of the loop:
 
 <div class="code-img">
+
 ```glsl
 for (float i = -1.0; i < 1.0; i += 0.1) {
     float c1 = shape(power - i, st.x);
@@ -211,6 +221,7 @@ for (float i = -1.0; i < 1.0; i += 0.1) {
     color += smoothstep(c2-0.02, c2, st.y) - smoothstep(c2, c2+0.02, st.y);
 }
 ```
+
 <div class='img-col'>
 <em>result: </em>
 <img src="/images/shaders-shaping/shader-loop.png"  />
