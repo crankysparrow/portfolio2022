@@ -1,10 +1,10 @@
 ---
-title: sort colors of an image
+title: sort pixels by color
 date: 2022-11-06
 dateUpdated: 2022-11-07
 layout: post.njk
 tags: ['generative art', 'colors', 'p5js']
-excerpt: 'sorting pixels by color'
+excerpt: "accessing, analyzing, and manipulating the pixels array in p5.js"
 img: '/images/sort-paint-lightness.png'
 imgAlt: 'pixelated colors'
 order: 40
