@@ -4,6 +4,53 @@ const sass = require('sass')
 const del = require('del')
 const path = require('path')
 const faviconPlugin = require('eleventy-favicon')
+const Image = require('@11ty/eleventy-img')
+
+async function imageShortcode({
+	src,
+	alt,
+	widths = [720, 1440],
+	sizes = '(min-width: 900px) 720w, 100vw',
+	style = '',
+	classNames = '',
+	quality = 80,
+	formats = ['webp', 'jpeg'],
+}) {
+	let metadata = await Image(src, {
+		widths: widths,
+		outputDir: './_site/img/',
+		formats: formats,
+		sharpOptions: {
+			quality: quality,
+		},
+	})
+
+	let lowsrc, highsrc
+	if (metadata.jpeg) {
+		lowsrc = metadata.jpeg[0]
+		highsrc = metadata.jpeg[metadata.jpeg.length - 1]
+	} else if (metadata.png) {
+		lowsrc = metadata.png[0]
+		highsrc = metadata.png[metadata.png.length - 1]
+	}
+
+	return `<picture style="${style}" class="${classNames}">
+	  ${Object.values(metadata)
+			.map((imageFormat) => {
+				return `<source type="${imageFormat[0].sourceType}" srcset="${imageFormat
+					.map((entry) => entry.srcset)
+					.join(', ')}" sizes="${sizes}">`
+			})
+			.join('\n')}
+		<img
+		  src="${lowsrc.url}"
+		  width="${highsrc.width}"
+		  height="${highsrc.height}"
+		  alt="${alt}"
+		  loading="lazy"
+		  decoding="async">
+	  </picture>`
+}
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats('scss')
@@ -29,7 +76,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addWatchTarget('./src/scripts')
 	eleventyConfig.addWatchTarget('./src/sketches/scripts/**/*.js')
 
-	eleventyConfig.addPassthroughCopy('./src/images')
+	eleventyConfig.addPassthroughCopy({ './src/images-passthrough': 'images' })
 	eleventyConfig.addPassthroughCopy('./src/fonts')
 	eleventyConfig.addPassthroughCopy('./src/scripts')
 	eleventyConfig.addPassthroughCopy('./src/sketches/scripts')
@@ -65,8 +112,15 @@ module.exports = function (eleventyConfig) {
 		})
 	})
 
-	eleventyConfig.addPlugin(syntaxHighlight)
+	eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode)
 
+	eleventyConfig.addNunjucksShortcode(
+		'imgStyle',
+		function (src, alt, style = '', className = '') {
+			return `<img src="${src}" alt="${alt}" style="${style}" />`
+		}
+	)
+	eleventyConfig.addPlugin(syntaxHighlight)
 	eleventyConfig.addPlugin(faviconPlugin)
 
 	eleventyConfig.addFilter('console', function (value, level = 2) {

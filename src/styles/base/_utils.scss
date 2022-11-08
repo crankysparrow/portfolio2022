@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.align-right {
+	text-align: right;
+}
+
+.flex {
+	@include sm {
+		display: flex;
+	}
+}
+
+.flex pre[class*='language-'] {
+	margin: 0;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.content-start {
+	justify-content: start;
+}
+
+.flex.cols-2 .col {
+	@include sm {
+		flex: 0 0 48%;
+	}
+}
+
+.m-0 {
+	margin: 0;
+}

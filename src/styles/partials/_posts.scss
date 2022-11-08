@@ -20,11 +20,17 @@
 		font-size: var(--step--1);
 	}
 
-	p img {
-		max-width: 90%;
+	p img,
+	picture,
+	img {
+		max-width: Min(100%, 720px);
 		height: auto;
 		margin: 0 auto;
 		display: block;
+	}
+	picture img {
+		max-width: Min(100%, 720px);
+		margin: 0;
 	}
 
 	h2 {
@@ -35,13 +41,11 @@
 		margin-top: 2rem;
 	}
 
-	ul {
-		> li {
-			margin-bottom: 1rem;
-			ul li {
-				margin-bottom: 0.5rem;
-			}
-		}
+	ul > li {
+		margin-bottom: 1rem;
+	}
+	ul > li ul li {
+		margin-bottom: 0.5rem;
 	}
 }
 

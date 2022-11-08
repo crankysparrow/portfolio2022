@@ -1,0 +1,37 @@
+details {
+	width: calc(100% + 1.5rem);
+	position: relative;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px -5px rgb(0 0 0 / 50%);
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1.5rem;
+	font-size: 90%;
+	* {
+		box-sizing: border-box;
+	}
+	&[open] {
+		padding-bottom: 1rem;
+		summary {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+details > summary {
+	font-size: 1.2rem;
+	padding: 0.2rem 1rem;
+	box-sizing: border-box;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	width: calc(100% + 2rem);
+	background-color: var(--color-magenta-5);
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background-color: var(--color-magenta-6);
+	}
+}
