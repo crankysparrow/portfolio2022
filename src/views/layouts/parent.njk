@@ -1,11 +1,20 @@
 <html>
     <body>
 
-        {% block title %}
-            <h1>default title</h1>
-        {% endblock %}
-
         <main>
+
+            {# {% block title %}
+                <h1>default title</h1>
+            {% endblock %}
+
+            <div class="content">
+                {% block content %}
+                    {{ content | safe }}
+                {% endblock %}
+            </div> #}
+            {% block title %}
+                <h1>default title</h1>
+            {% endblock %}
             <div class="content">
                 {% block content %}
                     {{ content | safe }}
