@@ -1,7 +1,7 @@
 ---
 title: nunjucks & eleventy notes
 date: 2022-10-21
-dateUpdated: 2022-10-21
+dateUpdated: 2023-04-10
 layout: post.njk
 excerpt: "I've used eleventy in several projects and am using it with Nunjucks (mostly) as a templating language for this site. This is a collection of notes & code snippets."
 tags: ['nunjucks', 'eleventy']
