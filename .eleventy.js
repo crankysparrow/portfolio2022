@@ -75,11 +75,13 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addWatchTarget('./src/styles/**/*.scss')
 	eleventyConfig.addWatchTarget('./src/scripts')
 	eleventyConfig.addWatchTarget('./src/sketches/scripts/**/*.js')
+	eleventyConfig.addWatchTarget('./src/sketchesthree/scripts/**/*.js')
 
 	eleventyConfig.addPassthroughCopy({ './src/images-passthrough': 'images' })
 	eleventyConfig.addPassthroughCopy('./src/fonts')
 	eleventyConfig.addPassthroughCopy('./src/scripts')
 	eleventyConfig.addPassthroughCopy('./src/sketches/scripts')
+	eleventyConfig.addPassthroughCopy('./src/sketchesthree/scripts')
 
 	eleventyConfig.addFilter('filterTags', function (tags) {
 		return (tags || []).filter((tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1)

@@ -1,0 +1,22 @@
+[
+	{
+		"title": "segments",
+		"script": "segments.js"
+	},
+	{
+		"title": "segmentsone",
+		"script": "segmentsone.js"
+	},
+	{
+		"title": "segmentstwo",
+		"script": "segmentstwo.js"
+	},
+	{
+		"title": "wiggly",
+		"script": "wiggly.js"
+	},
+	{
+		"title": "wigglycrazy",
+		"script": "wigglycrazy.js"
+	}
+]

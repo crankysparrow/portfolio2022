@@ -18,9 +18,11 @@ layout: base.njk
                 {% endfor %}
             </div>
 
-            <div class='date'>
-                <strong>Last updated: </strong>{{ dateUpdated | dateString }}
-            </div>
+            {% if dateUpdated %}
+                <div class='date'>
+                    <strong>Last updated: </strong>{{ dateUpdated | dateString }}
+                </div>
+            {% endif %}
 
         </div>
 
