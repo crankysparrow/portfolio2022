@@ -1,7 +1,7 @@
 ---
 title: Terminal ASCII Art
-tech: [ 'nodejs' ]
-image: '/images/work/asciibun.jpg'
+tech: ['nodejs']
+img: '/images/work/asciibun.jpg'
 imageAlt: 'screenshot of terminal showing a rabbit shape made out of ASCII art'
 order: 6
 link: 'https://github.com/crankysparrow/console-ASCII-art'

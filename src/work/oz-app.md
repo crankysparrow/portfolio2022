@@ -1,7 +1,7 @@
 ---
 title: Oz App
-tech: [ 'HTML/CSS', 'WordPress', 'JavaScript', 'jQuery', 'scss' ]
-image: '/images/work/oz-app.jpg'
+tech: ['HTML/CSS', 'WordPress', 'JavaScript', 'jQuery', 'scss']
+img: '/images/work/oz-app.jpg'
 imageAlt: 'Screenshot of site homepage. There is a purple wave image across the top.'
 order: 10
 link: 'https://oz.app/'

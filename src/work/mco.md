@@ -1,7 +1,7 @@
 ---
 title: Muhlenhaupt + Company website
-tech: [ 'wordpress', 'jQuery', 'JavaScript', 'scss', 'HTML/CSS' ]
-image: '/images/work/mco-bars.jpg'
+tech: ['wordpress', 'jQuery', 'JavaScript', 'scss', 'HTML/CSS']
+img: '/images/work/mco-bars.jpg'
 imageAlt: 'screenshot of website homepage'
 order: 5
 link: 'https://www.behance.net/gallery/86935413/Muhlenhaupt-Company-website'

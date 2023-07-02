@@ -9,8 +9,8 @@ const Image = require('@11ty/eleventy-img')
 async function imageShortcode({
 	src,
 	alt,
-	widths = [720, 1440],
-	sizes = '(min-width: 900px) 720w, 100vw',
+	widths = [550, 1000],
+	sizes = '(min-width: 700px) 550w, 100vw',
 	style = '',
 	classNames = '',
 	quality = 80,
@@ -61,6 +61,7 @@ module.exports = function (eleventyConfig) {
 		},
 		compile(content, inputPath) {
 			let parsed = path.parse(inputPath)
+
 			if (parsed.name.startsWith('_')) return
 
 			return (data) => {

@@ -1,7 +1,7 @@
 ---
 title: 'Take Notes'
 tech: ['react', 'html/css', 'bootstrap']
-image: '/images/work/notes.jpg'
+img: '/images/work/notes.jpg'
 imageAlt: 'screenshot of a note-taking app'
 order: 11
 link: 'https://crankysparrow.github.io/take-notes/'
