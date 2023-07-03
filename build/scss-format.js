@@ -5,9 +5,9 @@ function customFormatScss(eleventyConfig) {
 	eleventyConfig.addTemplateFormats('scss')
 	eleventyConfig.addExtension('scss', {
 		outputFileExtension: 'css',
-		isIncrementalMatch: function (incrementalFilePath) {
-			if (incrementalFilePath.endsWith('.scss')) return true
-		},
+		// isIncrementalMatch: function (incrementalFilePath) {
+		// 	if (incrementalFilePath.endsWith('.scss')) return true
+		// },
 		compile(content, inputPath) {
 			let parsed = path.parse(inputPath)
 
@@ -16,6 +16,8 @@ function customFormatScss(eleventyConfig) {
 			return (data) => {
 				console.log('🔮 compiling scss...', inputPath)
 				let result = sass.compile(inputPath)
+
+				this.addDependencies(inputPath, result.loadedUrls)
 
 				return result.css
 			}

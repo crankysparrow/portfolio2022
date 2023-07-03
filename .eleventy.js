@@ -28,6 +28,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight)
 	eleventyConfig.addPlugin(faviconPlugin)
 
+	eleventyConfig.setServerPassthroughCopyBehavior('passthrough')
+
 	return {
 		dir: {
 			input: 'src',

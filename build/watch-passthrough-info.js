@@ -1,5 +1,5 @@
 let watchTargets = [
-	'./src/styles/**/*.scss',
+	// './src/styles/**/*.scss',
 	'./src/scripts',
 	'./src/sketches/scripts/**/*.js',
 	'./src/sketchesthree/scripts/**/*.js',

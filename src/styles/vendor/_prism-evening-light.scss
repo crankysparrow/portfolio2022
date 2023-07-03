@@ -32,7 +32,7 @@ pre[class*='language-'] {
 	color: var(--main);
 	// --bg: #{mix($color-magenta-1, $color-teal-1, 50)};
 	--bg: #{$color-azure-6};
-	--main: #{mix($color-aquamarine-3, $color-azure-2, 50)};
+	--main: #{mix($color-aquamarine-3, $color-azure-2, 50%)};
 	--tag: #{$color-magenta-2};
 	--props: #{$color-aquamarine-2};
 	--insert: #{$color-orange-3};
