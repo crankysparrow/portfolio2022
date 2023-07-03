@@ -1,75 +1,62 @@
 @use '../helpers' as *;
 @use 'sass:list';
 
+.nav a.home-link {
+	display: block;
+	background: none;
+	font-weight: 700;
+	font-family: $jb;
+	text-transform: uppercase;
+	width: 3.5rem;
+	height: 3.5rem;
+	outline: 2px none $turquoise;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $magenta;
+	&:after {
+		content: none;
+	}
+	svg {
+		height: 2rem;
+		width: auto;
+		// fill: $magenta;
+		fill: list.nth($turquoise_light, 9);
+		display: block;
+		overflow: visible;
+		.m-shape {
+			transition: all 200ms linear;
+		}
+		.rect-shape {
+			transition: all 200ms linear;
+		}
+	}
+	&:hover,
+	&:focus {
+		svg {
+			.m-shape {
+				transform: translate(-10px, 0);
+			}
+			.rect-shape {
+				transform: translate(10px, 0);
+			}
+		}
+	}
+}
+
 nav.nav {
-	--right-gap: 0.5rem;
-	display: grid;
-	grid-template-columns: min-content 3.5rem 3.5rem;
 	justify-content: end;
 	grid-column-gap: 0.35rem;
 	position: absolute;
-	font-size: 1.7rem;
+	font-size: 1.2rem;
 	width: 100%;
-	padding-top: 0.5rem;
-	padding-right: var(--right-gap);
-	padding-left: 3%;
-	a.home-link {
-		grid-column: 2;
-		grid-row: 1;
-	}
-	button.ham {
-		grid-column: 3;
-		grid-row: 1;
-	}
-	ul.nav-list {
-		grid-column: 1 / 4;
-		grid-row: 2;
-	}
 
-	a.home-link {
-		display: block;
-		background: none;
-		font-weight: 700;
-		font-family: $jb;
-		text-transform: uppercase;
-		width: 3.5rem;
-		height: 3.5rem;
-		outline: 2px none $turquoise;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: $magenta;
-		&:after {
-			content: none;
-		}
-		svg {
-			height: 2rem;
-			width: auto;
-			// fill: $magenta;
-			fill: list.nth($turquoise_light, 9);
-			display: block;
-			overflow: visible;
-			.m-shape {
-				transition: all 200ms linear;
-			}
-			.rect-shape {
-				transition: all 200ms linear;
-			}
-		}
-		&:hover,
-		&:focus {
-			svg {
-				.m-shape {
-					transform: translate(-10px, 0);
-				}
-				.rect-shape {
-					transform: translate(10px, 0);
-				}
-			}
-		}
-	}
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-	button.ham,
+	padding: 1rem 3% 0 5%;
+
 	a.home-link {
 		&:hover,
 		&:focus {
@@ -77,122 +64,32 @@ nav.nav {
 			border-radius: 0.5rem;
 		}
 		&:focus {
-			outline: 2px solid list.nth($orange_light, 2);
+			outline: 2px solid var(--color-orange-3);
 		}
 		&:focus:not(:focus-visible) {
 			outline: 2px solid $turquoise;
 		}
 		&:focus-visible {
-			outline: 2px solid list.nth($orange_light, 2);
-		}
-	}
-
-	button.ham {
-		background-color: $orange;
-		@include sm {
-			display: none;
-		}
-		width: 3.5rem;
-		height: 3.5rem;
-		border: none;
-		position: relative;
-		margin: 0;
-		z-index: 3;
-		cursor: pointer;
-		color: list.nth($turquoise_light, 9);
-		font-family: $jb;
-		font-size: 1rem;
-		span.btn-text {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 50%;
-			text-align: center;
-			display: flex;
-			align-items: flex-end;
-			justify-content: center;
-		}
-		.btn-inner {
-			display: block;
-			position: absolute;
-			--size: 0.35rem;
-			top: 60%;
-			left: 50%;
-			transition: all 300ms ease-in-out;
-			width: var(--size);
-			height: var(--size);
-			border-radius: 50%;
-			background-color: currentColor;
-			position: absolute;
-			transform: translate(-50%, 0);
-			&:before,
-			&:after {
-				content: '';
-				width: var(--size);
-				height: var(--size);
-				border-radius: 50%;
-				background-color: currentColor;
-				position: absolute;
-				left: 0;
-				top: 0;
-				transition: all 300ms ease-out;
-			}
-			&:before {
-				transform: translate(-0.7rem, 0);
-			}
-			&:after {
-				transform: translate(0.7rem, 0);
-			}
-		}
-
-		&[aria-expanded='true'] {
-			.btn-inner {
-				width: 1.8rem;
-				height: 2px;
-				border-radius: 1px;
-				top: 65%;
-				&:before,
-				&:after {
-					width: 50%;
-					height: 2px;
-					border-radius: 1px;
-					left: 50%;
-					transform-origin: right;
-					transform: rotate(-45deg);
-				}
-				&:after {
-					transform: rotate(45deg);
-					top: 1px;
-				}
-			}
-			// .btn-inner {
-			// 	transform: translate(-50%, 0) scale(2);
-			// 	outline: 1px solid currentColor;
-			// 	background-color: transparent;
-			// 	&:before {
-			// 		// transform: translate(0, 0) scale(0.5);
-			// 		width: 1px;
-			// 		height: 0.5rem;
-			// 		transform: translate(0, 0) scale(0.5);
-			// 		opacity: 0;
-			// 	}
-			// 	&:after {
-			// 		transform: translate(0, 0) scale(0.5);
-			// 		opacity: 0;
-			// 	}
-			// }
+			outline: 2px solid var(--color-orange-3);
 		}
 	}
 
 	ul.nav-list {
+		display: flex;
+		position: relative;
+		flex-wrap: wrap;
+		justify-content: flex-end;
 		line-height: 1;
 		padding: 0;
 		margin: 0;
 		list-style: none;
+
 		a {
 			transition: none;
-			padding: 0.2rem 0.3rem;
+			padding: 0.2rem 0.15rem;
+			margin: 0 0.5rem;
+			display: block;
+
 			&:focus {
 				outline: 2px solid $orange;
 			}
@@ -205,86 +102,12 @@ nav.nav {
 		}
 	}
 
-	@include sm-down {
-		ul.nav-list {
-			position: absolute;
-			top: 0;
-			right: 0;
-			display: none;
-			// min-width: 40%;
-			font-size: 1.4rem;
-			text-align: right;
-			transition: opacity 100ms $easein_sine;
-			// transform: translate(100%, 0);
-			opacity: 0;
-			margin-top: 0.5rem;
-			li {
-				margin-bottom: 0.2rem;
-				a {
-					transition: all 400ms $easein_sine;
-					transform: translate(30%, 100%);
-					opacity: 0;
-					background: list.nth($space_dark, 2);
-					padding-right: var(--right-gap);
-					display: block;
-					padding: 0.5rem 1rem;
-					line-height: 1;
-					position: relative;
-					z-index: 1;
-					color: #fff;
-					&:after {
-						background-color: transparentize($magenta, 0.7);
-						width: 100%;
-						height: 100%;
-						bottom: 0;
-						transform-origin: right;
-						transform: scaleX(0);
-						z-index: -1;
-						transition: all 300ms ease-out;
-					}
-					&:hover,
-					&:focus {
-						&:after {
-							transform: scaleX(1);
-							transform-origin: center;
-						}
-					}
-				}
-				&:nth-child(2) a {
-					transition-delay: 150ms;
-				}
-				&:nth-child(3) a {
-					transition-delay: 300ms;
-				}
-				&:nth-child(4) a {
-					transition-delay: 450ms;
-				}
-			}
-			&.open {
-				transform: none;
-				opacity: 1;
-				li a {
-					transform: none;
-					opacity: 1;
-				}
-			}
-		}
-	}
-
 	@include sm {
-		padding-top: 1rem;
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		padding-right: 5%;
-		padding-left: 5%;
-		ul.nav-list {
-			display: flex;
-			position: relative;
-			a {
-				margin: 0 1rem;
-				display: block;
-			}
+		padding: 1rem 5% 0;
+		font-size: 1.7rem;
+		ul.nav-list a {
+			margin: 0 1rem;
+			padding: 0.2rem 0.3rem;
 		}
 	}
 }
