@@ -45,16 +45,12 @@
 }
 
 nav.nav {
-	justify-content: end;
-	grid-column-gap: 0.35rem;
 	position: absolute;
 	font-size: 1.2rem;
 	width: 100%;
-
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
 	padding: 1rem 3% 0 5%;
 
 	a.home-link {
