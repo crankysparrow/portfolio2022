@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"serve": "npx @11ty/eleventy --serve --incremental",
+		"serve": "npx @11ty/eleventy --serve",
 		"clean": "rm -rf _site",
 		"dev": "run-s clean serve",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
