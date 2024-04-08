@@ -45,11 +45,13 @@ Many of these options are similar to those above.
 
 The command above on its own creates a file that's completely unoptimized and HUGE. So you can add a bunch of other adjustments through a special filter command.
 
+The filter command is preceded by `-filter_complex` or `-vf`. The difference (I think?) is about how many inputs/outputs you have, with `-filter_complex` being used for multiple inputs/outputs with complex filter chains, vs `-vf` which is a simpler, linear filter chain. ([reddit comment about this](https://www.reddit.com/r/ffmpeg/comments/gy4hdb/whats_the_difference_between_vf_and_filter_complex/)).
+
 ```bash
 ffmpeg -f image2 -r 60 -i image-%d.png -filter_complex "FILTER_HERE" output.gif
 ```
 
-This was by far the most confusing part for me, so I'm going to break it into pieces.
+The filter was by far the most confusing part for me, so I'm going to break it into pieces.
 
 #### ffmpeg filter syntax
 
@@ -107,12 +109,26 @@ But the first way, you get it done all at once without having to deal with an ex
 
 There are a bunch of options and details here if you want to go into them; this [blog post discusses palettes in more detail](http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html).
 
-### full gif command
+### example commands
 
-Using all the above filters.
+Using boomerang effect, generating a palette, using `filter_complex`:
 
 ```bash
 ffmpeg -f image2 -r 60 -i image-%d.png -filter_complex "fps=10,scale=320:-1:flags=lanczos,split[main][back];[back]reverse[r];[main][r]concat=n=2:v=1:a=0,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" output.gif
+```
+
+Split into variables, no boomerang, using `-vf`:
+
+```bash
+filters="fps=10,scale=320:-1:flags=lanczos"
+palette="split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"
+ffmpeg -f image2 -r 60 -i image-%d.png -vf "$filters,$palette" output.gif
+```
+
+you can also put an output frame rate using `-vf`, I sort of fiddle with this vs the input to make the speed different, which erm.. sometimes works?
+
+```bash
+ffmpeg -f image2 -r 60 -i image-%d.png -vf "$filters,$palette" -r 30 output.gif
 ```
 
 ## resources
