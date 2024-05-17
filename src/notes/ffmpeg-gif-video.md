@@ -16,20 +16,51 @@ Once I had this series of images, I used [ffmpeg](https://ffmpeg.org/) to pack t
 
 ## images to video
 
-Base ffmpeg command to convert a series of numbered images to video:
+A couple variations on a command to convert a series of numbered images to video:
 
 ```bash
 ffmpeg -r 60 -f image2 -i image-%d.png -crf 23 -r 30 -pix_fmt yuv420p video.mp4
+
+ffmpeg -framerate 30 -i image-%d.png -pix_fmt yuv420p video.mp4
 ```
 
 What the options mean:
 
--   `-r`: frame rate (fps). Note there are two of these. The first one refers to the **input** fps and the second to the **output**.
--   `-f`: format... this is probably optional since ffmpeg usually can figure out what your file formats are
+-   `-r` or `-framerate`: frame rate (fps)
+    -   It doesn't seem these mean the exact same thing. Recent ffmpeg docs say "If in doubt use -framerate instead of the input option -r."
+    -   In the first example (using `-r`): the first instance refers to the **input** fps and the second to the **output**.
+        -   if the output rate is higher than the input rate, ffmpeg will duplicate frames to create that frame rate. Probably not ideal.
+-   `-f`: format... maybe optional?
 -   `-i`: input. `image-%d.png` means just look for a series of images with ascending digits (`image-1.png`, `image-2.png`, etc). There are other ways to write this depending on your filenames. For example, if you have a list of images padded with zeroes to 4 digits (`img0001.png`, `img0002.png`...) use `img%04d.png`.
 -   `-crf` quality. 0 is lossless, max is 51. I believe the default is 23 and most examples I found online kept the number somewhere around there.
 -   `-pix_fmt` pixel format. I found that without adding this option and `yuv420p` the video was created okay and worked online, but quicktime couldn't open it.
 -   last argument is the output: `video.mp4`
+
+### adjustments: selecting images
+
+use every 3rd image (or actually maybe it's the inverse, discard every 3rd?)
+
+```bash
+ffmpeg -framerate 30 -i Image%d.jpg -vf "select='not(mod(n,3))',setpts=N/30/TB" -crf 23 Output.mp4
+```
+
+This [stackexchange question](https://superuser.com/questions/1156837/using-every-nth-image-in-sequence-to-create-video-using-ffmpeg) explains the `setpts` part is to retime the output. Since ffmpeg will read the digits of each image as seconds, without that line, it'll just duplicate frames to get to the necessary 30 fps.
+
+See [ffmpeg filters documentation: select](https://ffmpeg.org/ffmpeg-filters.html#select_002c-aselect). (there are examples below the list of options)
+
+images numbered greater than 2000 (without setpts here you just get a long black screen at the beginning):
+
+```bash
+ffmpeg -framerate 40 -i image-%d.png -vf "select='gt(n,2000)',setpts=N/30/TB" -crf 23 -pix_fmt yuv420p output.mp4
+```
+
+If greater than 50, only use every other frame, otherwise use all frames (I _think_ this is what's happening here, I tested a bunch of commands and it seems to be working...):
+
+```bash
+ffmpeg -framerate 30 -i lines-%d.png -vf "select='if(gt(n,50),not(mod(n,2)),1)',setpts=N/30/TB" -pix_fmt yuv420p output.mp4
+```
+
+Generally, use _n_ to refer to the nth frame.
 
 ## images to gif
 
