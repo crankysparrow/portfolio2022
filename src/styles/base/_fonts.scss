@@ -115,12 +115,11 @@ a {
 	text-decoration: none;
 	position: relative;
 	transition: 200ms linear;
+	display: inline-block;
 
 	img {
 		display: block;
 	}
-
-	display: inline-block;
 
 	&:after {
 		position: absolute;
@@ -168,7 +167,11 @@ pre {
 code {
 	font-size: 90%;
 	// background: transparentize($color-aquamarine-2, 0.5);
-	background: list.nth($mint_light, 2);
+	// background: list.nth($mint_light, 2);
+	background: rgba(255, 255, 255, 0.8);
+	padding-left: 2px;
+	padding-right: 2px;
+	font-weight: 300;
 }
 
 pre,
