@@ -1,4 +1,5 @@
 /*
+Edited version
 Name:   Base2Tone-Evening Light
 Author: by Bram de Haan, adapted from DuoTone themes by Simurai (http://simurai.com/projects/2016/01/01/duotone-themes)
 
@@ -46,7 +47,7 @@ pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
 	text-shadow: none;
-	background: var(--bg);
+	background: $color-azure-5;
 }
 
 pre[class*='language-']::selection,
@@ -54,7 +55,7 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
 	text-shadow: none;
-	background: var(--bg);
+	background: $color-azure-5;
 }
 
 /* Code blocks */
