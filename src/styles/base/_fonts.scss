@@ -52,6 +52,7 @@ h1,
 h2,
 .h2 {
 	font-size: var(--step-4);
+	letter-spacing: -0.05em;
 	line-height: 1.1;
 }
 
@@ -164,7 +165,7 @@ pre {
 	width: 100%;
 }
 
-code {
+code:not([class*='language-']) {
 	font-size: 90%;
 	// background: transparentize($color-aquamarine-2, 0.5);
 	// background: list.nth($mint_light, 2);
@@ -174,7 +175,10 @@ code {
 	font-weight: 300;
 }
 
-pre,
+pre[class*='language-'] code {
+	font-size: 0.85rem;
+}
+
 code {
 	font-family: $jb;
 }
