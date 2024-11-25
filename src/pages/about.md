@@ -5,7 +5,7 @@ permalink: /about/
 layout: about.njk
 ---
 
-Hello! I'm a front-end (mostly) web developer based in Philadelphia, Pennsylvania. I also dabble in [generative art](https://crankysparrow.github.io/generative-art/), and I'm a web accessibility specialist certified by [IAAP](https://www.accessibilityassociation.org/s/).
+Hello! I'm a front-end (mostly) web developer based in Philadelphia, Pennsylvania. I also dabble in [generative art](https://michelleenos.github.io/generative-art/), and I'm a web accessibility specialist certified by [IAAP](https://www.accessibilityassociation.org/s/).
 
 I value simplicity and clear patterns, and want to build things that people actually **like** to use. I'm excited about creating interactions that are both aesthetically pleasing & accessible. I love learning and I regularly jump into new technologies without knowing what I'm doing and figure it out as I go along.
 

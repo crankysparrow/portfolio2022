@@ -11,4 +11,4 @@ I needed to practice making API calls in ReactJS and also wanted to experiment a
 
 I love tarot and witchiness in general! So I built an app to draw a random tarot card and display a bit of information about its meaning.
 
-[GitHub](https://github.com/crankysparrow/tarot-draw) | [live app](https://sp-tarot-app.herokuapp.com/)
+[GitHub](https://github.com/michelleenos/tarot-draw) | [live app](https://sp-tarot-app.herokuapp.com/)
